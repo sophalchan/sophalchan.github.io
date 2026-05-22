@@ -42,6 +42,6 @@ format:
     anchor-sections: true
 
 execute:
-  freeze: auto
+  enabled: false
 
 editor: source
