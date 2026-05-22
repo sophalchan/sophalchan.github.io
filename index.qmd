@@ -15,7 +15,8 @@ listing:
 ---
 
 ::: {.portfolio-hero}
-![Sophal Chan](assets/profile.png){.hero-photo alt="Sophal Chan — professional portrait"}
+
+<img src="assets/profile.png" alt="Sophal Chan — professional portrait" class="hero-photo" width="152" height="152" loading="eager">
 
 # Sophal Chan
 

@@ -21,15 +21,22 @@ h1, h2, h3, .quarto-title {
 }
 
 .portfolio-hero .hero-photo {
-  width: clamp(7rem, 18vw, 9.5rem);
-  height: clamp(7rem, 18vw, 9.5rem);
+  width: clamp(7rem, 22vw, 9.5rem) !important;
+  height: clamp(7rem, 22vw, 9.5rem) !important;
+  max-width: none !important;
   object-fit: cover;
   object-position: center 15%;
   border-radius: 50%;
   border: 3px solid rgba(255, 255, 255, 0.85);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
-  margin: 0 auto 1.25rem;
-  display: block;
+  margin: 0 auto 1.25rem !important;
+  display: block !important;
+  flex-shrink: 0;
+}
+
+.portfolio-hero .quarto-figure,
+.portfolio-hero figure.figure {
+  margin: 0 0 1.25rem;
 }
 
 .portfolio-hero h1 {
