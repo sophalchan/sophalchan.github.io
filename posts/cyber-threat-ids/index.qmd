@@ -1,0 +1,125 @@
+---
+title: "Cyber Threat Detection using Machine Learning Model"
+description: "An intrusion detection system (IDS) using real-world network logs, a Flask-based threat prediction API, and Docker containerization."
+date: 2025-11-15
+categories: [Cybersecurity, AI/ML, Networking]
+author: Sophal Chan
+---
+
+## Overview
+
+This project implements an **intrusion detection system (IDS)** that ingests real-world network traffic logs, engineers security-relevant features, trains a supervised machine learning classifier, and exposes predictions through a **Flask REST API** packaged with **Docker** for reproducible deployment.
+
+**Stack highlights:** Python · pandas · scikit-learn · matplotlib/seaborn · Flask · Docker
+
+## Data Processing
+
+Network captures and flow logs are normalized into a tabular schema suitable for batch training and online scoring. The pipeline handles missing values, encodes categorical protocol fields, and scales numeric features for stable model convergence.
+
+```{python}
+#| label: load-logs
+#| echo: true
+#| eval: false
+
+import pandas as pd
+
+LOG_PATH = "data/network_traffic.csv"
+
+cols = [
+    "timestamp", "src_ip", "dst_ip", "src_port", "dst_port",
+    "protocol", "bytes_sent", "bytes_recv", "duration", "label"
+]
+
+df = pd.read_csv(LOG_PATH, names=cols)
+df["timestamp"] = pd.to_datetime(df["timestamp"])
+df["hour"] = df["timestamp"].dt.hour
+
+# Basic hygiene for ML features
+feature_cols = ["bytes_sent", "bytes_recv", "duration", "hour"]
+df[feature_cols] = df[feature_cols].fillna(0)
+
+print(df.head())
+print("\nClass distribution:\n", df["label"].value_counts())
+```
+
+## Model Implementation
+
+A gradient-boosted or random forest classifier (or comparable ensemble) is trained on labeled flows where `label` indicates benign vs. malicious traffic. Cross-validation guards against overfitting on imbalanced attack classes.
+
+```{python}
+#| label: train-model
+#| echo: true
+#| eval: false
+
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+
+X = df[feature_cols]
+y = (df["label"] == "attack").astype(int)
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, stratify=y, random_state=42
+)
+
+clf = RandomForestClassifier(n_estimators=200, random_state=42)
+clf.fit(X_train, y_train)
+
+print(classification_report(y_test, clf.predict(X_test)))
+```
+
+## Threat Analytics
+
+Anomaly and attack spikes are visualized to support SOC triage—highlighting hours with elevated malicious flow volume and top talker endpoints.
+
+```{python}
+#| label: viz-threats
+#| echo: true
+#| eval: false
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.set_theme(style="whitegrid", context="notebook")
+
+attacks = df[df["label"] == "attack"]
+hourly = attacks.groupby("hour").size()
+
+fig, ax = plt.subplots(figsize=(8, 4))
+hourly.plot(kind="bar", ax=ax, color="#c0392b", edgecolor="#2c3e50")
+ax.set_title("Malicious Flows by Hour of Day")
+ax.set_xlabel("Hour (UTC)")
+ax.set_ylabel("Attack count")
+plt.tight_layout()
+plt.savefig("figures/threat_by_hour.png", dpi=150)
+plt.show()
+```
+
+## Deployment
+
+The trained estimator is serialized and loaded by a lightweight **Flask** service. Container images are built with a multi-stage Dockerfile so the API and model artifacts ship as a single deployable unit suitable for lab or cloud edge environments.
+
+```{bash}
+#| eval: false
+
+docker build -t cyber-threat-api .
+docker run -p 5000:5000 cyber-threat-api
+```
+
+**Example scoring request:**
+
+```json
+POST /predict
+{
+  "bytes_sent": 4096,
+  "bytes_recv": 12000,
+  "duration": 0.42,
+  "hour": 3
+}
+```
+
+## Key Takeaways
+
+- End-to-end IDS workflow from raw logs to containerized inference API
+- Feature engineering aligned with SOC-relevant dimensions (volume, duration, time-of-day)
+- Visualization layer for communicating threat patterns to engineering and security stakeholders

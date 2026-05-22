@@ -1,0 +1,181 @@
+/* --- Global typography & spacing --- */
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #2c3e50;
+  line-height: 1.65;
+}
+
+h1, h2, h3, .quarto-title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* --- Hero banner (homepage) --- */
+.portfolio-hero {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #1a5276 100%);
+  color: #ecf0f1;
+  padding: 3.5rem 2rem;
+  margin: -1rem -1rem 2.5rem -1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-align: center;
+}
+
+.portfolio-hero h1 {
+  color: #ffffff;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.portfolio-hero .hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: #bdc3c7;
+  max-width: 42rem;
+  margin: 0 auto 1.25rem;
+  line-height: 1.6;
+}
+
+.portfolio-hero .hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.portfolio-hero .hero-tag {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ecf0f1;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* --- Navbar polish --- */
+.navbar {
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);
+}
+
+.navbar .nav-link,
+.navbar .navbar-nav .nav-link {
+  font-weight: 500;
+}
+
+/* --- Project listing cards --- */
+.quarto-listing-grid .card,
+.quarto-listing-default .quarto-grid-item {
+  border: 1px solid #e8ecef;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 6px rgba(44, 62, 80, 0.06);
+}
+
+.quarto-listing-grid .card:hover,
+.quarto-listing-default .quarto-grid-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.14);
+}
+
+.quarto-listing-category .category {
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+}
+
+/* --- Sidebar filter UI --- */
+.quarto-listing-filter {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #e8ecef;
+}
+
+/* --- About page (trestles) --- */
+.about-entity .about-image {
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 20px rgba(44, 62, 80, 0.18);
+}
+
+.about-entity .about-links {
+  margin-top: 1rem;
+}
+
+.about-entity .about-links .about-link {
+  margin-bottom: 0.35rem;
+}
+
+/* --- Skills matrix on About --- */
+.skills-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.skill-category {
+  background: #f8f9fa;
+  border-left: 4px solid #2c3e50;
+  padding: 1rem 1.25rem;
+  border-radius: 0 0.35rem 0.35rem 0;
+}
+
+.skill-category h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+.skill-category ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+}
+
+/* --- Timeline --- */
+.timeline {
+  border-left: 3px solid #2c3e50;
+  margin-left: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.85rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  background: #2c3e50;
+  border-radius: 50%;
+}
+
+.timeline-item .timeline-date {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.timeline-item h4 {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 1rem;
+}
+
+/* --- Code blocks in posts --- */
+pre.sourceCode {
+  border-radius: 0.35rem;
+  border: 1px solid #e8ecef;
+}
+
+/* --- Footer --- */
+.nav-footer {
+  border-top: 1px solid #e8ecef;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}

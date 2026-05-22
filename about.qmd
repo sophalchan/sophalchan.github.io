@@ -1,0 +1,125 @@
+---
+title: "About Sophal Chan"
+about:
+  template: trestles
+  image: assets/profile.jpg
+  image-alt: "Professional headshot of Sophal Chan"
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/sophalchan
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/YOUR_LINKEDIN_SLUG
+    - icon: envelope
+      text: sophalcamchan38@gmail.com
+      href: mailto:sophalcamchan38@gmail.com
+---
+
+## Profile
+
+I am a **Certified CompTIA CySA+** professional based in **Fairfield, OH**, with a Bachelor's and Master's degree in Information Technology. My work sits at the intersection of **Cybersecurity**, **AI Engineering**, and **Data Analytics**—from building machine-learning intrusion detection systems to deploying real-time geospatial anomaly dashboards for fraud and internal threat visibility.
+
+I bring hands-on experience across security operations, data interpretation, and full-stack analytics tooling. Whether lecturing on AI engineering, consulting on IT and cybersecurity for financial institutions, or hardening systems against emerging threats, I focus on measurable outcomes: faster detection, clearer visibility, and defensible security posture.
+
+**Contact:** [sophalcamchan38@gmail.com](mailto:sophalcamchan38@gmail.com)
+
+## Technical Skills Matrix
+
+::: {.skills-matrix}
+
+::: {.skill-category}
+#### Operating Systems & Virtualization
+- Linux
+- Windows Server
+- VMware
+- VirtualBox
+:::
+
+::: {.skill-category}
+#### Scripting & Programming
+- Python
+- Bash scripting
+- PowerShell
+:::
+
+::: {.skill-category}
+#### Security & Monitoring
+- Security Event Monitoring
+- Vulnerability Assessment
+- Incident Response
+- SIEM (Splunk, Elasticsearch/Kibana)
+- System Hardening
+:::
+
+::: {.skill-category}
+#### Networking & Protocols
+- Wireshark
+- Cisco Packet Tracer
+- Network Traffic Analysis
+- TCP/IP
+:::
+
+::: {.skill-category}
+#### Data & Analytics
+- Statistics & Data Interpretation
+- Power BI
+- Database Management
+- SQL
+:::
+
+:::
+
+## Education & Professional Development
+
+::: {.timeline}
+
+::: {.timeline-item}
+<span class="timeline-date">Graduate Studies</span>
+#### M.S. in Information Technology
+Prince of Songkla University · GPA **3.91** · ASEAN Hub Scholar · Prince Sirindhorn Scholar
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Undergraduate</span>
+#### B.S. in Information Technology
+Prince of Songkla University · GPA **3.91** · ASEAN Hub Scholar · Prince Sirindhorn Scholar
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Cybersecurity Training</span>
+#### Cybersecurity Analyst Program — Per Scholas
+450+ hands-on lab hours · **CompTIA CySA+** certification pathway
+:::
+
+:::
+
+## Experience Highlights
+
+::: {.timeline}
+
+::: {.timeline-item}
+<span class="timeline-date">Recent</span>
+#### AI Engineering Lecturer
+Delivering applied AI and data engineering curriculum with emphasis on production workflows and security-aware ML systems.
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Consulting</span>
+#### IT & Cybersecurity Consultant — ACLEDA Bank
+Advised on security monitoring, infrastructure resilience, and data-driven risk visibility for financial operations.
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Academia</span>
+#### Senior Lecturer — Institute of Technology of Cambodia
+Led IT and cybersecurity instruction; mentored students on networking, scripting, and security fundamentals.
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Industry</span>
+#### Composite Technician — Eagle Composite
+Applied precision manufacturing discipline and process rigor in a high-reliability production environment.
+:::
+
+:::

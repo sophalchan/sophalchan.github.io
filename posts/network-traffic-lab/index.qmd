@@ -1,0 +1,17 @@
+---
+title: "Network Traffic Analysis Lab"
+description: "Hands-on Wireshark and TCP/IP analysis exercises for security event monitoring and incident response readiness."
+date: 2025-06-10
+categories: [Networking, Cybersecurity]
+author: Sophal Chan
+---
+
+## Overview
+
+A structured lab series covering **Wireshark** packet capture, **TCP/IP** protocol dissection, and correlation with **SIEM** event timelines—supporting vulnerability assessment and incident response workflows.
+
+## Skills Demonstrated
+
+- PCAP filtering and protocol hierarchy analysis
+- Identification of scanning, exfiltration, and C2 beaconing patterns
+- Mapping network artifacts to Splunk/Elastic detection use cases

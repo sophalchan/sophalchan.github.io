@@ -1,0 +1,38 @@
+---
+title: "Sophal Chan"
+page-layout: full
+listing:
+  id: portfolio-listing
+  contents: posts
+  type: grid
+  grid-columns: 2
+  categories: true
+  filter-ui: true
+  sort: "date desc"
+  sort-ui: false
+  feed: false
+  fields: [title, categories, date, description]
+---
+
+::: {.portfolio-hero}
+# Sophal Chan
+
+<p class="hero-subtitle">
+Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, **AI Engineering**, and **Data Analytics**. Building intrusion detection systems, real-time anomaly dashboards, and data-driven security solutions for engineering teams and recruiters who need production-ready technical depth.
+</p>
+
+::: {.hero-tags}
+<span class="hero-tag">Cybersecurity</span>
+<span class="hero-tag">AI / ML</span>
+<span class="hero-tag">Data Analytics</span>
+<span class="hero-tag">Networking</span>
+:::
+
+:::
+
+## Featured Projects
+
+Browse my technical work below. Use the **search bar** and **category filters** in the sidebar to explore projects by domain.
+
+::: {#portfolio-listing}
+:::

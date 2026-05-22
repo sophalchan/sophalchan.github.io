@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Sophal Chan"
+  site-url: https://sophalchan.github.io/
+  description: "Cybersecurity, AI Engineering & Data Analytics Portfolio"
+  navbar:
+    background: "#2c3e50"
+    foreground: "#ecf0f1"
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/sophalchan
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/YOUR_LINKEDIN_SLUG
+        aria-label: LinkedIn
+      - icon: envelope
+        href: mailto:sophalcamchan38@gmail.com
+        aria-label: Email
+
+  page-footer:
+    center: "© 2026 Sophal Chan · Fairfield, OH"
+    border: true
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles.css
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    code-copy: true
+    code-overflow: wrap
+    smooth-scroll: true
+    anchor-sections: true
+
+execute:
+  freeze: auto
+
+editor: source

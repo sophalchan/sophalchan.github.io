@@ -1,0 +1,10 @@
+/.quarto/
+/_site/
+/.quarto_cache/
+**/*.quarto_ipynb
+.DS_Store
+.Rproj.user
+*.log
+
+# Keep rendered site if you commit docs/ manually (optional)
+# /docs/

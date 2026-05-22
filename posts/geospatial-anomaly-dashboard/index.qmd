@@ -1,0 +1,23 @@
+---
+title: "Real-time Geospatial & Transactional Anomaly Dashboards"
+description: "Elasticsearch and Kibana dashboards for fraud detection and internal threat visibility across geospatial and transactional data streams."
+date: 2025-09-20
+categories: [Data Analytics, Cybersecurity]
+author: Sophal Chan
+---
+
+## Overview
+
+Built **real-time anomaly dashboards** using the **Elastic Stack** (Elasticsearch + Kibana) to surface fraudulent transactions and internal threat indicators across geospatial and high-velocity transactional pipelines.
+
+## Architecture
+
+- **Ingestion:** Structured logs and transaction events indexed into Elasticsearch
+- **Detection:** Rule-based and statistical anomaly queries (e.g., velocity spikes, geo-impossible travel)
+- **Visualization:** Kibana dashboards with drill-down filters for fraud analysts and security operations
+
+## Outcomes
+
+- Reduced mean time to detect suspicious patterns across regional transaction clusters
+- Unified view for fraud and insider-threat monitoring stakeholders
+- Repeatable dashboard templates for new data sources
