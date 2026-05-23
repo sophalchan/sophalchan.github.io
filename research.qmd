@@ -20,39 +20,30 @@ I hold an **M.S. and B.S. in Information Technology** (GPA **3.91**, ASEAN Hub S
 
 ## Academic Appointments
 
-::: {.timeline}
-
-::: {.timeline-item markdown="1"}
-<p><span class="timeline-date">2025</span> — <strong>Cybersecurity Analyst Training</strong> · Per Scholas</p>
-
-450+ hands-on hours · **CompTIA CySA+** and Security+ pathway · threat detection, incident response, SIEM/SOAR
-:::
-
-::: {.timeline-item markdown="1"}
-<p><span class="timeline-date">2022–2024</span> — <strong>Data Science Lab Manager</strong> · Institute of Technology of Cambodia</p>
-
-Led applied AI R&D; mentored student teams on deep learning, data analytics, and algorithm design; workshops on Python and ML tools
-:::
-
-::: {.timeline-item markdown="1"}
-<p><span class="timeline-date">2020–2023</span> — <strong>Lecturer</strong> · Institute of Technology of Cambodia</p>
-
-Predictive Analytics, Machine Learning, Power BI, Data Mining, Python; supervised final-year AI and data science projects
-:::
-
-::: {.timeline-item markdown="1"}
-<p><span class="timeline-date">2022</span> — <strong>Visiting Professor</strong> · ENSIIE (Évry, France)</p>
-
-Summer exchange: data science curriculum design, cross-cultural research methods, data modeling seminars
-:::
-
-::: {.timeline-item markdown="1"}
-<p><span class="timeline-date">2016–2020</span> — <strong>Research Assistant</strong> · Prince of Songkla University</p>
-
-Graduate research in medical image analysis and OA classification (see publications below)
-:::
-
-:::
+```{=html}
+<div class="timeline">
+  <div class="timeline-item">
+    <p class="timeline-heading"><span class="timeline-date">2025</span> — <strong>Cybersecurity Analyst Training</strong> · Per Scholas</p>
+    <p>450+ hands-on hours · <strong>CompTIA CySA+</strong> and Security+ pathway · threat detection, incident response, SIEM/SOAR</p>
+  </div>
+  <div class="timeline-item">
+    <p class="timeline-heading"><span class="timeline-date">2022–2024</span> — <strong>Data Science Lab Manager</strong> · Institute of Technology of Cambodia</p>
+    <p>Led applied AI R&amp;D; mentored student teams on deep learning, data analytics, and algorithm design; workshops on Python and ML tools</p>
+  </div>
+  <div class="timeline-item">
+    <p class="timeline-heading"><span class="timeline-date">2020–2023</span> — <strong>Lecturer</strong> · Institute of Technology of Cambodia</p>
+    <p>Predictive Analytics, Machine Learning, Power BI, Data Mining, Python; supervised final-year AI and data science projects</p>
+  </div>
+  <div class="timeline-item">
+    <p class="timeline-heading"><span class="timeline-date">2022</span> — <strong>Visiting Professor</strong> · ENSIIE (Évry, France)</p>
+    <p>Summer exchange: data science curriculum design, cross-cultural research methods, data modeling seminars</p>
+  </div>
+  <div class="timeline-item">
+    <p class="timeline-heading"><span class="timeline-date">2016–2020</span> — <strong>Research Assistant</strong> · Prince of Songkla University</p>
+    <p>Graduate research in medical image analysis and OA classification (see publications below)</p>
+  </div>
+</div>
+```
 
 ## Publications & Scholarly Output
 
