@@ -1,6 +1,6 @@
 ---
-title: "Manufacturing & Composite Production Portfolio"
-description: "Hands-on manufacturing—kit cutting, CNC programming, and engineering drawings for aerospace-grade composite production."
+title: "Manufacturing Production Portfolio"
+description: "Hands-on manufacturing—kit cutting, CNC programming, and engineering drawings for aerospace-grade production."
 date: 2026-03-01
 categories: [Manufacturing]
 author: Sophal Chan
@@ -8,16 +8,16 @@ author: Sophal Chan
 
 ## Overview
 
-Hands-on **manufacturing portfolio** from my work in **composite production**, supporting aerospace and high-reliability manufacturing. This hub links three detailed project write-ups covering **kit cutting machines**, **CNC programming**, and **engineering drawings**—the core workflows I execute on the shop floor.
+Hands-on **manufacturing portfolio** from my work in **production manufacturing**, supporting aerospace and high-reliability builds. This hub links three detailed project write-ups covering **kit cutting machines**, **CNC programming**, and **engineering drawings**—the core workflows I execute on the shop floor.
 
 ## Projects in This Area
 
 | Project | Focus |
 |---------|--------|
-| [Composite Kit Cutting & Ply Nesting](manufacturing-kit-cutting/) | Automated cutting, material traceability, ply kits |
+| [Kit Cutting & Ply Nesting](manufacturing-kit-cutting/) | Automated cutting, material traceability, ply kits |
 | [CNC Programming for Composite Parts](manufacturing-cnc-programming/) | Toolpaths, G-code, machine setup, first-article runs |
 | [Engineering Drawings & Technical Documentation](manufacturing-engineering-drawings/) | GD&T, lamination schedules, revision control |
 
 ## Role Summary
 
-**Focus:** Composite manufacturing · **Activities:** Kit cutting, CNC programming, engineering drawing interpretation
+**Focus:** Manufacturing production · **Activities:** Kit cutting, CNC programming, engineering drawing interpretation

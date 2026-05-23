@@ -69,7 +69,7 @@ I bring hands-on experience across security operations, data interpretation, and
 :::
 
 ::: {.skill-category}
-#### Manufacturing & Composites
+#### Manufacturing Production
 - Kit cutting machine operation & ply nesting
 - CNC programming (CAM, G-code, setup sheets)
 - Engineering drawing interpretation (GD&T, revisions)
@@ -142,7 +142,7 @@ Led IT and cybersecurity instruction; mentored students on networking, scripting
 
 ::: {.timeline-item}
 <span class="timeline-date">Current — Manufacturing</span>
-#### Composite Manufacturing
+#### Manufacturing Production
 Operate **kit cutting machines** for ply nests; develop and prove **CNC programs**; apply **engineering drawings** and lamination schedules to production. [Manufacturing portfolio →](posts/manufacturing-portfolio/)
 :::
 

@@ -1,6 +1,6 @@
 ---
-title: "Composite Kit Cutting & Ply Nesting on Kit Cutting Machine"
-description: "Step-by-step kit cutting workflow—ply nesting, machine setup, material traceability, and QA for composite lamination."
+title: "Kit Cutting & Ply Nesting on Kit Cutting Machine"
+description: "Step-by-step kit cutting workflow—ply nesting, machine setup, material traceability, and QA for production lamination."
 date: 2026-03-15
 categories: [Manufacturing]
 author: Sophal Chan
@@ -8,11 +8,11 @@ author: Sophal Chan
 
 ## Overview
 
-This project documents my **kit cutting** workflow in **composite manufacturing**: preparing ply kits from engineering data, operating the **kit cutting machine**, and delivering labeled, traceable cut patterns ready for layup. Accuracy at this stage prevents costly rework in lamination and cure.
+This project documents my **kit cutting** workflow in **manufacturing production**: preparing ply kits from engineering data, operating the **kit cutting machine**, and delivering labeled, traceable cut patterns ready for layup. Accuracy at this stage prevents costly rework in lamination and cure.
 
 ## Background of the Study
 
-Composite parts are built from stacked **plies** (oriented carbon fiber or fiberglass layers). Each ply must match the **engineering drawing** and **lamination schedule** (fiber direction, sequence, and material grade). Manual cutting is slow and error-prone; **automated kit cutting** uses a digital nest and cutter to reproduce shapes consistently from roll or sheet stock.
+Manufactured parts are built from stacked **plies** (oriented carbon fiber or fiberglass layers). Each ply must match the **engineering drawing** and **lamination schedule** (fiber direction, sequence, and material grade). Manual cutting is slow and error-prone; **automated kit cutting** uses a digital nest and cutter to reproduce shapes consistently from roll or sheet stock.
 
 ## Motivation of the Study
 

@@ -1,6 +1,6 @@
 ---
-title: "Engineering Drawings & Technical Documentation for Composite Builds"
-description: "Step-by-step interpretation of engineering drawings—GD&T, lamination schedules, revisions, and shop-floor documentation."
+title: "Engineering Drawings & Technical Documentation for Production Builds"
+description: "Step-by-step interpretation of engineering drawings—GD&T, lamination schedules, revisions, and shop-floor documentation in manufacturing."
 date: 2026-01-25
 categories: [Manufacturing]
 author: Sophal Chan
@@ -8,11 +8,11 @@ author: Sophal Chan
 
 ## Overview
 
-This project describes how I use **engineering drawings** and **technical documentation** daily in **composite manufacturing**. Drawings are the contract between design and production—every **kit cut**, **CNC operation**, and **inspection** traces back to a controlled revision on paper or PDF.
+This project describes how I use **engineering drawings** and **technical documentation** daily in **manufacturing production**. Drawings are the contract between design and production—every **kit cut**, **CNC operation**, and **inspection** traces back to a controlled revision on paper or PDF.
 
 ## Background of the Study
 
-Composite manufacturing depends on **lamination schedules** (ply order and orientation), **assembly drawings** (how parts fit together), and **detail drawings** (dimensions, tolerances, notes). Misreading a symbol or an old revision can scrap thousands of dollars in material. Structured drawing literacy is as important as machine skills.
+Advanced manufacturing depends on **lamination schedules** (ply order and orientation), **assembly drawings** (how parts fit together), and **detail drawings** (dimensions, tolerances, notes). Misreading a symbol or an old revision can scrap thousands of dollars in material. Structured drawing literacy is as important as machine skills.
 
 ## Motivation of the Study
 
@@ -102,7 +102,7 @@ Composite manufacturing depends on **lamination schedules** (ply order and orien
 
 ## Outcomes & Skills Gained
 
-- Confident **engineering drawing** interpretation for composites  
+- Confident **engineering drawing** interpretation for production builds  
 - **Revision discipline** aligned with aerospace-style quality  
 - Clear handoff between **documentation → kit cutting → CNC → layup**  
 - Portfolio evidence of **manufacturing + technical communication** skills  
