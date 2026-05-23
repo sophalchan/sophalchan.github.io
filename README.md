@@ -21,6 +21,5 @@ Professional portfolio site (Cybersecurity · AI/ML · Data Analytics) built wit
 
 ## Before you publish
 
-1. Replace `YOUR_LINKEDIN_SLUG` in `_quarto.yml` and `about.qmd` with your LinkedIn profile slug.
-2. Add `assets/profile.jpg` (see `assets/README.md`).
+1. Add `assets/profile.jpg` (see `assets/README.md`) if not already present (`profile.png` is used on the homepage).
 3. Site URL: `https://sophalchan.github.io/`
