@@ -1,0 +1,110 @@
+---
+title: "Engineering Drawings & Technical Documentation for Composite Builds"
+description: "Step-by-step interpretation of engineering drawings—GD&T, lamination schedules, revisions, and shop-floor documentation at Eagle Composite."
+date: 2026-01-25
+categories: [Manufacturing]
+author: Sophal Chan
+---
+
+## Overview
+
+This project describes how I use **engineering drawings** and **technical documentation** daily as a **Composite Technician** at **Eagle Composite**. Drawings are the contract between design and production—every **kit cut**, **CNC operation**, and **inspection** traces back to a controlled revision on paper or PDF.
+
+## Background of the Study
+
+Composite manufacturing depends on **lamination schedules** (ply order and orientation), **assembly drawings** (how parts fit together), and **detail drawings** (dimensions, tolerances, notes). Misreading a symbol or an old revision can scrap thousands of dollars in material. Structured drawing literacy is as important as machine skills.
+
+## Motivation of the Study
+
+- Prevent **revision errors** before cutting or machining  
+- Communicate clearly with **engineering, QA, and layup** teams  
+- Connect **IT/documentation habits** (version control mindset) to **shop travelers**  
+- Support career growth across **manufacturing, quality, and technical leadership**  
+
+## Tools & Documents
+
+| Document | Typical use |
+|----------|-------------|
+| Assembly drawing | Overall part structure and interfaces |
+| Detail / lamination drawing | Ply shapes, orientations, materials |
+| Engineering notes block | Process specs, cure cycle references |
+| Revision table | Current rev letter/number and change history |
+| Job traveler | Sign-offs, lot numbers, operation sequence |
+| GD&T feature control frames | Critical tolerances and datums |
+
+## Step-by-Step Workflow
+
+### Step 1 — Obtain controlled drawing
+
+1. Pull drawing from **released document system** (not informal email copies).  
+2. Record **revision letter/number** and **date** on the traveler.  
+3. Confirm drawing **part number** matches work order.
+
+### Step 2 — Read title block and notes
+
+1. Identify **material specification**, **finish**, and **cure reference** in notes.  
+2. Note **scale** (e.g., 1:1 on ply details, 1:5 on assembly).  
+3. List **special process** requirements (autoclave vs. OOA, bagging, demold).
+
+### Step 3 — Interpret lamination schedule
+
+1. Read ply table: **ply number, material, orientation (0/45/90), sequence**.  
+2. Match each ply to **cut nest ID** on kit cutting drawing.  
+3. Flag **missing plies** or **ambiguous orientations** with engineering before layup.
+
+### Step 4 — Extract dimensions for cutting and CNC
+
+1. For kit cutting: verify **outline dimensions** and **fiber direction arrow**.  
+2. For CNC: identify **datums**, **hole patterns**, and **profile tolerances**.  
+3. Highlight **critical-to-quality (CTQ)** dimensions for extra inspection.
+
+### Step 5 — Apply GD&T (as applicable)
+
+1. Locate **datum feature symbols** (A, B, C).  
+2. Read **position, flatness, profile** callouts on mating surfaces.  
+3. If tolerance stack-up is unclear, request **engineering clarification** in writing.
+
+### Step 6 — Cross-check with 3D/CAM (if used)
+
+1. Compare drawing dimensions to **CAD model** revision.  
+2. Resolve discrepancies **before** generating CAM or cut files.  
+3. Save screenshot or redline for quality record if change issued.
+
+### Step 7 — Document on traveler
+
+1. List **operations completed** (cut, CNC, drill, deburr).  
+2. Sign and **date** each operation per shop policy.  
+3. Attach **FAI**, photos, or measurement sheets when required.
+
+### Step 8 — Manage revisions
+
+1. When new rev issued, **quarantine** old kits and obsolete programs.  
+2. Re-cut or re-program only from **new rev** after approval.  
+3. Update **setup sheets** and **program IDs** to match rev.
+
+## Drawing Elements Reference
+
+| Symbol / element | Meaning in practice |
+|------------------|---------------------|
+| Fiber direction arrow | Layup orientation on tool surface |
+| Rev cloud / triangle | Changed area on drawing |
+| ± tolerance | Acceptable dimensional band |
+| Datum Ⓐ | Primary reference for setup and inspection |
+| Section view A-A | Internal ply stack or core detail |
+| Note flag | Mandatory process instruction |
+
+## Quality Control & Safety
+
+- **No manufacturing** from unmarked or “draft” drawings.  
+- **Redlines** require engineering approval before production use.  
+- **Measurement records** retained per traveler for audit trail.  
+- **FOD:** Keep drawings clean and protected from oils and shop debris.  
+
+## Outcomes & Skills Gained
+
+- Confident **engineering drawing** interpretation for composites  
+- **Revision discipline** aligned with aerospace-style quality  
+- Clear handoff between **documentation → kit cutting → CNC → layup**  
+- Portfolio evidence of **manufacturing + technical communication** skills  
+
+**Related:** [Kit Cutting](manufacturing-kit-cutting/) · [CNC Programming](manufacturing-cnc-programming/) · [Manufacturing hub](manufacturing-portfolio/)

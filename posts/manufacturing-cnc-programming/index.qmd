@@ -1,0 +1,121 @@
+---
+title: "CNC Programming for Composite & Production Parts"
+description: "Step-by-step CNC workflow—CAD/CAM input, toolpath strategy, G-code prove-out, setup sheets, and first-article inspection at Eagle Composite."
+date: 2026-02-20
+categories: [Manufacturing]
+author: Sophal Chan
+---
+
+## Overview
+
+This project covers **CNC programming** work I perform as a **Composite Technician** at **Eagle Composite**: translating engineering requirements into **machine-ready programs**, proving toolpaths safely, and supporting **first-article** runs for composite fixtures, trim operations, or metallic/composite hybrid details as assigned.
+
+## Background of the Study
+
+After plies are kitted, many parts require **machined features**—trim edges, holes, pockets, or fixture surfaces—on **CNC mills or routers**. Programming bridges the **engineering drawing** (dimensions, tolerances, datums) and the **physical machine** (spindle, feeds, speeds, fixturing). A documented step-by-step process reduces crashes, scrap, and non-conformance.
+
+## Motivation of the Study
+
+- Produce **repeatable** parts that match drawing tolerances  
+- Minimize **machine downtime** with verified programs before production  
+- Build a skill stack that complements **kit cutting** and **technical drawing** literacy  
+- Apply structured problem-solving from IT/data backgrounds to **CAM and G-code** logic  
+
+## Tools & Equipment
+
+| Item | Purpose |
+|------|---------|
+| CNC mill / router | Execute programmed toolpaths |
+| CAM software | Generate toolpaths from model or drawing |
+| Engineering drawing / 3D model | Source of geometry and tolerances |
+| Tooling (cutters, drills, compression routers) | Material-specific cutting |
+| Dial indicators, edge finders, probes | Establish work coordinate system (WCS) |
+| Setup sheet & program list | Operator instructions and revision control |
+
+## Step-by-Step Workflow
+
+### Step 1 — Review engineering data
+
+1. Obtain **latest drawing revision** and any **3D model** (STEP/IGES) if available.  
+2. Identify **datums**, **critical dimensions**, and **surface finish** notes.  
+3. Confirm **material** (composite sandwich, aluminum fixture, etc.) and **machine** capability.
+
+### Step 2 — Plan machining strategy
+
+1. Decide **operation sequence** (e.g., rough → finish → drill → contour).  
+2. Select **tooling** by material and feature size.  
+3. Define **fixturing** method (vacuum fixture, hard nest, soft jaws) with lead if needed.
+
+### Step 3 — Build CAM model and stock
+
+1. Import geometry into **CAM**; set stock size with machining allowance.  
+2. Define **WCS** aligned to drawing datums.  
+3. Add **hold-down clearance** and **tab/stock links** if required for routers.
+
+### Step 4 — Create toolpaths
+
+1. **Facing / roughing** — remove bulk material efficiently.  
+2. **Finishing** — achieve contour and tolerance on critical surfaces.  
+3. **Drilling / boring** — apply peck cycles where deep holes required.  
+4. **Engraving / marking** — part ID if specified on drawing.  
+5. Simulate in CAM; check for **collisions, gouges, and uncut material**.
+
+### Step 5 — Post-process and review G-code
+
+1. Post to machine **control format** (e.g., Fanuc-compatible).  
+2. Read through **G-code** for obvious errors (wrong units, missing offsets).  
+3. Attach **setup sheet**: tools, offsets, speeds/feeds, zero location.
+
+### Step 6 — Machine setup
+
+1. Install tools per setup sheet; measure **length offsets**.  
+2. Load fixture; indicate **datum surfaces**; set **G54/G55** work offset.  
+3. Load program; run **dry run** or **single-block** at reduced feed if policy requires.
+
+### Step 7 — First-article prove-out
+
+1. Machine **first part** with operator/lead present.  
+2. Measure **critical features** (calipers, micrometers, CMM if available).  
+3. Document results on **first-article report** (FAI) or traveler.  
+4. Adjust offsets or CAM if out of tolerance; re-prove until acceptable.
+
+### Step 8 — Production release
+
+1. Save **approved program revision** to controlled location.  
+2. Train operator on any **special notes** (vacuum, dust collection, depth limits).  
+3. Mark traveler **CNC complete**; route part to next operation (trim, assembly, QA).
+
+## Quality Control & Safety
+
+- **Never run unproven code** at full speed without simulation and prove-out.  
+- **Dust extraction** for composite machining; follow respirator policy.  
+- **Emergency stop** awareness; confirm door interlocks functional.  
+- **Tool breakage** procedure documented on traveler if FOD risk exists.  
+
+## Sample G-Code Concepts (illustrative)
+
+```{text}
+#| eval: false
+# Establish plane, units, and safe start
+G21          ; metric
+G90          ; absolute positioning
+G0 Z25       ; retract to safe Z
+G0 X0 Y0     ; move to WCS origin
+M3 S12000    ; spindle on
+G1 Z-2 F200  ; controlled plunge
+...          ; contour / finish passes
+M5           ; spindle stop
+G0 Z25       ; retract
+M30          ; program end
+```
+
+*Actual feeds, speeds, and offsets come from material supplier charts and shop standards—not generic values.*
+
+## Outcomes & Skills Gained
+
+- End-to-end **CNC programming** from drawing to first-article  
+- **CAM simulation** and G-code review habits  
+- **Setup documentation** for repeatable production  
+- Integration with **kit cutting** upstream and **drawing interpretation** downstream  
+
+**Related:** [Kit Cutting](manufacturing-kit-cutting/) · [Engineering Drawings](manufacturing-engineering-drawings/) · [Manufacturing hub](manufacturing-portfolio/)

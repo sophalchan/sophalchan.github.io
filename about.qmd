@@ -69,6 +69,14 @@ I bring hands-on experience across security operations, data interpretation, and
 :::
 
 ::: {.skill-category}
+#### Manufacturing & Composites
+- Kit cutting machine operation & ply nesting
+- CNC programming (CAM, G-code, setup sheets)
+- Engineering drawing interpretation (GD&T, revisions)
+- Material traceability & first-article inspection
+:::
+
+::: {.skill-category}
 #### Data Science & Analyst
 - Statistics & Data Interpretation
 - Power BI
@@ -133,9 +141,9 @@ Led IT and cybersecurity instruction; mentored students on networking, scripting
 :::
 
 ::: {.timeline-item}
-<span class="timeline-date">Industry</span>
+<span class="timeline-date">Current — Manufacturing</span>
 #### Composite Technician — Eagle Composite
-Applied precision manufacturing discipline and process rigor in a high-reliability production environment.
+Operate **kit cutting machines** for ply nests; develop and prove **CNC programs**; apply **engineering drawings** and lamination schedules to production. Step-by-step workflows: [Manufacturing portfolio →](posts/manufacturing-portfolio/)
 :::
 
 :::

@@ -152,6 +152,22 @@ h1, h2, h3, .quarto-title {
   font-size: 0.9rem;
 }
 
+/* --- Manufacturing step sections --- */
+.posts-container h3,
+main h3 {
+  margin-top: 1.25rem;
+  font-size: 1.05rem;
+  color: #2c3e50;
+}
+
+main ol li {
+  margin-bottom: 0.35rem;
+}
+
+main table {
+  font-size: 0.92rem;
+}
+
 /* --- Research & publications --- */
 .publication-list table {
   width: 100%;

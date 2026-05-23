@@ -1,0 +1,100 @@
+---
+title: "Composite Kit Cutting & Ply Nesting on Kit Cutting Machine"
+description: "Step-by-step kit cutting workflow—ply nesting, machine setup, material traceability, and QA for composite lamination at Eagle Composite."
+date: 2026-03-15
+categories: [Manufacturing]
+author: Sophal Chan
+---
+
+## Overview
+
+This project documents my **kit cutting** workflow as a **Composite Technician** at **Eagle Composite**: preparing ply kits from engineering data, operating the **kit cutting machine**, and delivering labeled, traceable cut patterns ready for layup. Accuracy at this stage prevents costly rework in lamination and cure.
+
+## Background of the Study
+
+Composite parts are built from stacked **plies** (oriented carbon fiber or fiberglass layers). Each ply must match the **engineering drawing** and **lamination schedule** (fiber direction, sequence, and material grade). Manual cutting is slow and error-prone; **automated kit cutting** uses a digital nest and cutter to reproduce shapes consistently from roll or sheet stock.
+
+## Motivation of the Study
+
+- **Reduce scrap** through optimized nesting on the cutting table  
+- **Improve traceability** (lot number, material spec, ply ID on every kit)  
+- **Align production** with drawing revisions before material reaches the clean room  
+- **Bridge IT/analytical skills** with physical manufacturing discipline learned on the floor  
+
+## Tools & Equipment
+
+| Item | Purpose |
+|------|---------|
+| Kit cutting machine | Automated ply cutting from digital nest files |
+| Cutting table / vacuum hold-down | Secure material during cut |
+| Engineering drawing & lamination schedule | Authority for ply shape, orientation, sequence |
+| Material traveler / job traveler | Lot traceability and build history |
+| Calipers, scales, labels | Verify kit completeness and mark ply ID |
+| PPE (gloves, eye protection) | Safe handling of fibers and tooling |
+
+## Step-by-Step Workflow
+
+### Step 1 — Receive the job package
+
+1. Collect the **work order**, **engineering drawing** (latest revision), and **lamination schedule**.  
+2. Confirm **material specification** (e.g., prepreg grade, areal weight, resin system) matches the traveler.  
+3. Note **quantity** of kits required and due date for layup.
+
+### Step 2 — Verify drawing and nest data
+
+1. Open the **cut file** or nest layout linked to the drawing revision.  
+2. Cross-check **ply names/numbers** against the lamination schedule (0°, 45°, 90°, etc.).  
+3. If revision mismatch is found, **stop** and notify engineering or lead before cutting.
+
+### Step 3 — Prepare material
+
+1. Pull roll or sheet stock per traveler **lot number**; record on traveler.  
+2. Inspect for **damage, wrinkles, or out-of-life** material (freezer time for prepreg).  
+3. Acclimate material per shop procedure if required before cutting.
+
+### Step 4 — Load machine and set parameters
+
+1. Load cut file into **kit cutting machine** software.  
+2. Set **knife depth**, **speed**, and **vacuum** per material type and machine checklist.  
+3. Position material on table; enable vacuum hold-down; confirm nest fits usable area.
+
+### Step 5 — Execute test cut (when required)
+
+1. Run **test coupon** or first ply outline on scrap when process is new or material lot changed.  
+2. Verify **fiber direction arrow** on nest matches drawing convention.  
+3. Adjust parameters if fraying, incomplete cut, or offset detected.
+
+### Step 6 — Run production cut
+
+1. Start full nest cut; monitor for **jamming, slip, or vacuum loss**.  
+2. Do not leave machine unattended during critical cuts for flight-critical parts.  
+3. On alarm, follow **stop-safe** procedure before restarting.
+
+### Step 7 — De-nest, label, and kit
+
+1. Remove cut plies carefully to avoid **fiber distortion**.  
+2. Label each ply with **ply ID, orientation, job number, and date**.  
+3. Place plies in **kit bag or sequenced stack** per lamination order.  
+4. Include **offcuts disposition** note if shop tracks scrap.
+
+### Step 8 — Quality check and release
+
+1. Compare kit against **ply count checklist** on drawing.  
+2. Spot-check **critical dimensions** with template or scale for first article.  
+3. Sign traveler **cut complete** and deliver to layup or freezer storage.
+
+## Quality Control & Safety
+
+- **FOD control:** Keep table and kits free of debris; no food/drink in cutting area.  
+- **Revision control:** Only cut from **released** drawing rev.  
+- **Material life:** Track out-time for prepreg; reject expired material.  
+- **PPE:** Cut-resistant gloves when handling sharp edges; respiratory policy per facility.  
+
+## Outcomes & Skills Gained
+
+- Reliable **kit cutting machine** operation and nest verification  
+- **Material traceability** discipline for aerospace-style production  
+- Ability to catch **drawing errors early** before lamination  
+- Foundation for **CNC** and **engineering drawing** workflows on the same build  
+
+**Related:** [CNC Programming](manufacturing-cnc-programming/) · [Engineering Drawings](manufacturing-engineering-drawings/) · [Manufacturing hub](manufacturing-portfolio/)

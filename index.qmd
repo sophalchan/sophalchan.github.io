@@ -21,7 +21,7 @@ listing:
 # Sophal Chan
 
 <p class="hero-subtitle">
-Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, **AI Engineering**, and **Data Analytics**. Building intrusion detection systems, real-time anomaly dashboards, and data-driven security solutions for engineering teams and recruiters who need production-ready technical depth.
+Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, **AI Engineering**, and **Data Analytics**—plus hands-on **manufacturing** experience as a **Composite Technician** (kit cutting, CNC programming, engineering drawings). Building security systems, data-driven solutions, and precision production workflows.
 </p>
 
 ::: {.hero-tags}
@@ -30,15 +30,16 @@ Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, *
 <span class="hero-tag">Data Science and Analyst</span>
 <span class="hero-tag">Quantum Science</span>
 <span class="hero-tag">Research and Academic</span>
+<span class="hero-tag">Manufacturing</span>
 :::
 
 :::
 
 ## Featured Projects
 
-Browse **cybersecurity**, **AI/ML**, and **data science & analyst** work below—including **21 projects** in the [**Data Science Projects Collection**](posts/data-science-collection/) from [PaulChanCyber/Data-Science-Project-](https://github.com/PaulChanCyber/Data-Science-Project-).
+Browse **cybersecurity**, **AI/ML**, **data science**, **research**, and **manufacturing** work below—including [**Manufacturing & Composite Production**](posts/manufacturing-portfolio/) (kit cutting, CNC, drawings) and **21 projects** in the [**Data Science Projects Collection**](posts/data-science-collection/).
 
-Use the sidebar filter **[Research and Academic](posts/research-and-academic/)** for peer-reviewed publications and thesis work, or **Data Science and Analyst** for the 21-project teaching collection. Full citations: **[Research & Academic](research.qmd)**.
+**Filters:** [Manufacturing](posts/manufacturing-portfolio/) · [Research and Academic](posts/research-and-academic/) · [Research & Academic](research.qmd) (publications).
 
 ::: {#portfolio-listing}
 :::
