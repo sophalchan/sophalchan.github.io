@@ -140,10 +140,12 @@ h1, h2, h3, .quarto-title {
   border-radius: 0 0.35rem 0.35rem 0;
 }
 
+.skill-category > p:first-of-type,
 .skill-category h4 {
   margin: 0 0 0.5rem;
   font-size: 0.95rem;
   color: #2c3e50;
+  font-weight: 700;
 }
 
 .skill-category ul {
@@ -220,6 +222,12 @@ main table {
 .timeline-item h4 {
   margin: 0.15rem 0 0.35rem;
   font-size: 1rem;
+  line-height: 1.4;
+}
+
+.timeline-item > p:first-of-type strong,
+.timeline-item h4 {
+  font-weight: 700;
 }
 
 /* --- Code blocks in posts --- */

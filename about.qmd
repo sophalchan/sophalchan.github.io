@@ -28,23 +28,26 @@ I bring hands-on experience across security operations, data interpretation, and
 
 ::: {.skills-matrix}
 
-::: {.skill-category}
-#### Operating Systems & Virtualization
+::: {.skill-category markdown="1"}
+**Operating Systems & Virtualization**
+
 - Linux
 - Windows Server
 - VMware
 - VirtualBox
 :::
 
-::: {.skill-category}
-#### Scripting & Programming
+::: {.skill-category markdown="1"}
+**Scripting & Programming**
+
 - Python
 - Bash scripting
 - PowerShell
 :::
 
-::: {.skill-category}
-#### Security & Monitoring
+::: {.skill-category markdown="1"}
+**Security & Monitoring**
+
 - Security Event Monitoring
 - Vulnerability Assessment
 - Incident Response
@@ -52,32 +55,36 @@ I bring hands-on experience across security operations, data interpretation, and
 - System Hardening
 :::
 
-::: {.skill-category}
-#### Quantum Science
+::: {.skill-category markdown="1"}
+**Quantum Science**
+
 - Quantum computing & information fundamentals
 - Linear algebra for quantum systems
 - Quantum simulation (Qiskit-oriented workflows)
 - Quantum algorithms & optimization basics
 :::
 
-::: {.skill-category}
-#### Research & Medical AI
+::: {.skill-category markdown="1"}
+**Research & Medical AI**
+
 - Medical image mining & texture analysis
 - Osteoarthritis detection (X-ray, ROI, LBP)
 - Feature selection & classifier design (SVM, CNN)
 - Graph-based & deep learning approaches
 :::
 
-::: {.skill-category}
-#### Manufacturing Production
+::: {.skill-category markdown="1"}
+**Manufacturing Production**
+
 - Kit cutting machine operation & ply nesting
 - CNC programming (CAM, G-code, setup sheets)
 - Engineering drawing interpretation (GD&T, revisions)
 - Material traceability & first-article inspection
 :::
 
-::: {.skill-category}
-#### Data Science & Analyst
+::: {.skill-category markdown="1"}
+**Data Science & Analyst**
+
 - Statistics & Data Interpretation
 - Power BI
 - Database Management
@@ -98,21 +105,27 @@ My published research includes **four peer-reviewed outputs** on **machine learn
 
 ::: {.timeline}
 
-::: {.timeline-item}
+::: {.timeline-item markdown="1"}
 <span class="timeline-date">Graduate Studies</span>
-#### M.S. in Information Technology
-Prince of Songkla University · GPA **3.91** · ASEAN Hub Scholar · Prince Sirindhorn Scholar
+
+**M.S. in Information Technology** · **Prince of Songkla University**
+
+GPA **3.91** · ASEAN Hub Scholar · Prince Sirindhorn Scholar
 :::
 
-::: {.timeline-item}
+::: {.timeline-item markdown="1"}
 <span class="timeline-date">Undergraduate</span>
-#### B.S. in Information Technology
-Prince of Songkla University · GPA **3.91** · ASEAN Hub Scholar · Prince Sirindhorn Scholar
+
+**B.S. in Information Technology** · **Prince of Songkla University**
+
+GPA **3.91** · ASEAN Hub Scholar · Prince Sirindhorn Scholar
 :::
 
-::: {.timeline-item}
+::: {.timeline-item markdown="1"}
 <span class="timeline-date">Cybersecurity Training</span>
-#### Cybersecurity Analyst Program — Per Scholas
+
+**Cybersecurity Analyst Program** · **Per Scholas**
+
 450+ hands-on lab hours · **CompTIA CySA+** certification pathway
 :::
 
