@@ -103,32 +103,40 @@ My published research includes **four peer-reviewed outputs** on **machine learn
 
 **Full list, citations, and academic timeline:** [Research & Academic →](research.qmd)
 
-## Education & Professional Development
+## Education
 
 ::: {.timeline}
 
 ::: {.timeline-item markdown="1"}
-<span class="timeline-date">Graduate Studies</span>
+<span class="timeline-date">Jun 2025 – Oct 2025</span>
 
-**M.S. in Information Technology** · **Prince of Songkla University**
+**Cybersecurity Analyst Training Program** · **Per Scholas** · Cincinnati, OH, USA
 
-GPA **3.91** · ASEAN Hub Scholar · Prince Sirindhorn Scholar
+450+ hands-on hours · **CompTIA CySA+** and **Security+** certificates
 :::
 
 ::: {.timeline-item markdown="1"}
-<span class="timeline-date">Undergraduate</span>
+<span class="timeline-date">Jan 2022 – Mar 2022</span>
 
-**B.S. in Information Technology** · **Prince of Songkla University**
+**Big Data for Sustainable Development** · **Hokkaido University** · Hokkaido, Japan
 
-GPA **3.91** · ASEAN Hub Scholar · Prince Sirindhorn Scholar
+Recognized as the **top team** for presentation performance
 :::
 
 ::: {.timeline-item markdown="1"}
-<span class="timeline-date">Cybersecurity Training</span>
+<span class="timeline-date">May 2019</span>
 
-**Cybersecurity Analyst Program** · **Per Scholas**
+**Master of Science in Information Technology** · **Prince of Songkla University** · Phuket, Thailand
 
-450+ hands-on lab hours · **CompTIA CySA+** certification pathway
+GPA **3.91/4.0** · Awarded Thailand's Education Hub for ASEAN Countries Scholarship
+:::
+
+::: {.timeline-item markdown="1"}
+<span class="timeline-date">May 2016</span>
+
+**Bachelor of Science in Information Technology** · **Prince of Songkla University** · Phuket, Thailand
+
+Awarded the **Prince Sirindhorn Scholar**
 :::
 
 :::
