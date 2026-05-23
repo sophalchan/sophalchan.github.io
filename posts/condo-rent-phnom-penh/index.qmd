@@ -2,7 +2,7 @@
 title: "Condo Rent Price Prediction in Phnom Penh"
 description: "Predicts monthly condo rental rates in Phnom Penh from property and neighborhood features."
 date: 2024-04-10
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Condo%20rent%20price%20predicition%20in%20Phnom%20Penh"
 ---

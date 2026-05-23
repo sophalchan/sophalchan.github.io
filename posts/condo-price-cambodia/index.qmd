@@ -2,7 +2,7 @@
 title: "Condo Price Analysis in Cambodia"
 description: "Market analysis and modeling of condominium sale prices in Cambodian urban markets."
 date: 2024-04-05
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Condo%20price%20analysis%20in%20Cambodia"
 ---

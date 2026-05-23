@@ -2,7 +2,7 @@
 title: "Cambodia Tour Price Prediction"
 description: "Predicts tour package pricing from historical travel-market data in Cambodia."
 date: 2024-03-20
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cambodia%20tour%20price%20prediction"
 ---

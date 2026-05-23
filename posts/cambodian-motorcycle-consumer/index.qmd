@@ -2,7 +2,7 @@
 title: "Cambodian Motorcycle Consumer Analysis"
 description: "Consumer behavior analysis in Cambodia's motorcycle market—brands, price bands, and purchase patterns."
 date: 2024-03-25
-categories: ["Data Analytics"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cambodian%20motocycle%20comuser%20analysis"
 ---

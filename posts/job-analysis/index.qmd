@@ -2,7 +2,7 @@
 title: "Job Market Analysis"
 description: "Analyzes Cambodian job postings for salary trends, skill demand, and role distribution."
 date: 2024-04-25
-categories: ["Data Analytics"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Job%20Analysis"
 ---

@@ -61,7 +61,7 @@ I bring hands-on experience across security operations, data interpretation, and
 :::
 
 ::: {.skill-category}
-#### Data & Analytics
+#### Data Science & Analyst
 - Statistics & Data Interpretation
 - Power BI
 - Database Management

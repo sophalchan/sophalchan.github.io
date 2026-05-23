@@ -2,7 +2,7 @@
 title: "Customer Churn Prediction"
 description: "Classification project predicting customer churn for retention campaigns."
 date: 2024-06-15
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Churn%20Prediction_Programming%20for%20Data%20Science.pdf"
 ---

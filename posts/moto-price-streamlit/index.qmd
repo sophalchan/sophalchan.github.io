@@ -2,7 +2,7 @@
 title: "Moto Price Prediction (Streamlit App)"
 description: "Motorbike price prediction with an interactive Streamlit front end for live estimates."
 date: 2024-05-10
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Moto%20price%20prediction%20with%20streamlit%20app"
 ---

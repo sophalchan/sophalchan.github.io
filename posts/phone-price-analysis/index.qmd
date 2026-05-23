@@ -2,7 +2,7 @@
 title: "Phone Price Analysis"
 description: "Smartphone price analysis across brands, specs, and release generations."
 date: 2024-05-25
-categories: ["Data Analytics"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Phone%20Price%20analysis"
 ---

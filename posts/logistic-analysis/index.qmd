@@ -2,7 +2,7 @@
 title: "Logistic Regression Analysis"
 description: "Applied logistic regression for binary outcome modeling with interpretable coefficients."
 date: 2024-06-20
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Logistic%20Analysis.pdf"
 ---

@@ -2,7 +2,7 @@
 title: "Data Science Projects Collection"
 description: "A curated collection of 20+ student term projects on scraping, prediction, and forecasting across Cambodian markets—hosted on PaulChanCyber/GitHub."
 date: 2024-03-01
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-"
 ---
@@ -26,6 +26,7 @@ Python · pandas · NumPy · scikit-learn · Matplotlib · Seaborn · Jupyter ·
 ## Outcomes
 
 Covers real estate, consumer goods, labor markets, currency forecasting, recommender systems, and ML fundamentals—demonstrating breadth in **data analytics** and **applied machine learning** instruction.
+
 
 ## All Projects in This Collection
 
@@ -56,5 +57,3 @@ Covers real estate, consumer goods, labor markets, currency forecasting, recomme
 ## Source Code
 
 [View full repository on GitHub (PaulChanCyber/Data-Science-Project-)](https://github.com/PaulChanCyber/Data-Science-Project-)
-
-*Collection maintained on the [PaulChanCyber](https://github.com/PaulChanCyber) GitHub account; portfolio site by Sophal Chan.*

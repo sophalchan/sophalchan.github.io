@@ -2,7 +2,7 @@
 title: "Outlier Detection and Treatment"
 description: "Identifies and treats outliers using statistical and ML-based detection methods."
 date: 2024-05-20
-categories: ["Data Analytics"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Outlier%20detection%20and%20treatment"
 ---

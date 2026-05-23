@@ -5,6 +5,36 @@ from pathlib import Path
 
 REPO = "https://github.com/PaulChanCyber/Data-Science-Project-"
 TREE = f"{REPO}/tree/main"
+# Single sidebar category for all collection projects
+DS_CATEGORY = "Data Science and Analyst"
+
+HUB_TABLE = '''
+## All Projects in This Collection
+
+| Project | Portfolio page | GitHub folder |
+|---------|----------------|---------------|
+| Book Analysis | [Details](../book-analysis/) | [Book analysis](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Book%20analysis) |
+| Cambodia Land Price | [Details](../cambodia-land-price/) | [Land price](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cambodia%20land%20price%20analysis%20and%20prediction) |
+| Cambodia Tour Price | [Details](../cambodia-tour-price/) | [Tour price](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cambodia%20tour%20price%20prediction) |
+| Motorcycle Consumer Analysis | [Details](../cambodian-motorcycle-consumer/) | [Motorcycle analysis](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cambodian%20motocycle%20comuser%20analysis) |
+| Computer Component Prices | [Details](../computer-component-price/) | [PC components](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Computer%20component%20price%20analysis) |
+| Condo Prices (Cambodia) | [Details](../condo-price-cambodia/) | [Condo sales](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Condo%20price%20analysis%20in%20Cambodia) |
+| Condo Rent (Phnom Penh) | [Details](../condo-rent-phnom-penh/) | [Condo rent](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Condo%20rent%20price%20predicition%20in%20Phnom%20Penh) |
+| Fridge Price Prediction | [Details](../fridge-price-prediction/) | [Fridge prediction](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Fridge%20Price%20prediction) |
+| House Price (Cambodia) | [Details](../house-price-cambodia/) | [House prediction](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/House%20price%20prediction%20in%20Cambodia) |
+| Job Market Analysis | [Details](../job-analysis/) | [Job Analysis](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Job%20Analysis) |
+| Khmer Riel Forecasting | [Details](../khmer-riel-forecasting/) | [ARIMA & LSTM](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Khmer%20Riel%20Currency%20forcesting%20using%20arima%20and%20lstm%20with%20web%20flask%20app%20throw%20docker) |
+| Laptop Price Analysis | [Details](../laptop-price-analysis/) | [Laptop analysis](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Laptop%20price%20analysis) |
+| Moto Price (Streamlit) | [Details](../moto-price-streamlit/) | [Streamlit app](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Moto%20price%20prediction%20with%20streamlit%20app) |
+| Movie Recommendation | [Details](../movie-recommendation/) | [Recommender](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Movie%20Recommendation) |
+| Outlier Detection | [Details](../outlier-detection/) | [Outliers](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Outlier%20detection%20and%20treatment) |
+| Phone Price Analysis | [Details](../phone-price-analysis/) | [Phone analysis](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Phone%20Price%20analysis) |
+| Used Car Price Prediction | [Details](../used-car-price-prediction/) | [Used cars](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Used%20Car%20Price%20Prediction) |
+| Gold Price Forecasting | [Details](../gold-price-forecasting/) | [Notebook](https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Gold%20Price%20forecasting.ipynb) |
+| Home Loan Analysis | [Details](../home-loan-analysis/) | [Notebook](https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Home%20Loan%20Analysis.ipynb) |
+| Customer Churn Prediction | [Details](../churn-prediction/) | [PDF report](https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Churn%20Prediction_Programming%20for%20Data%20Science.pdf) |
+| Logistic Regression Analysis | [Details](../logistic-analysis/) | [PDF report](https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Logistic%20Analysis.pdf) |
+'''
 
 POSTS = [
     {
@@ -342,6 +372,7 @@ def main():
                 f"{p['description']}"
             )
 
+        p["categories"] = [DS_CATEGORY]
         cats = ", ".join(f'"{c}"' for c in p["categories"])
         body = TEMPLATE.format(
             title=p["title"].replace('"', '\\"'),
@@ -356,6 +387,13 @@ def main():
             outcomes=p["outcomes"],
             link_label=link_label,
         )
+        if p.get("is_hub"):
+            body = body.replace(
+                "## Source Code\n\n[View project on GitHub",
+                HUB_TABLE
+                + "\n## Source Code\n\n[View full repository on GitHub",
+                1,
+            )
         (out_dir / "index.qmd").write_text(body, encoding="utf-8")
         print(f"Wrote {out_dir / 'index.qmd'}")
 

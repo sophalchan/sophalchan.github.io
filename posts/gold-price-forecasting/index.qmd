@@ -2,7 +2,7 @@
 title: "Gold Price Forecasting"
 description: "Time-series forecasting of gold prices using historical market data."
 date: 2024-06-05
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Gold%20Price%20forecasting.ipynb"
 ---

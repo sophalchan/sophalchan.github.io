@@ -2,7 +2,7 @@
 title: "Book Analysis"
 description: "Exploratory analysis of book sales and publishing trends from scraped market data."
 date: 2024-03-10
-categories: ["Data Analytics"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Book%20analysis"
 ---

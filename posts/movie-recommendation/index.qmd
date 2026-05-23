@@ -2,7 +2,7 @@
 title: "Movie Recommendation System"
 description: "Collaborative/content-based movie recommender built from ratings and metadata."
 date: 2024-05-15
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Movie%20Recommendation"
 ---

@@ -2,7 +2,7 @@
 title: "House Price Prediction in Cambodia"
 description: "End-to-end house price prediction using Cambodian residential listing data."
 date: 2024-04-20
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/House%20price%20prediction%20in%20Cambodia"
 ---

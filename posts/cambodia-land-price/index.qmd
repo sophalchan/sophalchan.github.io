@@ -2,7 +2,7 @@
 title: "Cambodia Land Price Analysis and Prediction"
 description: "Regression models predicting land values across Cambodian provinces using location and parcel features."
 date: 2024-03-15
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cambodia%20land%20price%20analysis%20and%20prediction"
 ---

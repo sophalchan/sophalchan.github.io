@@ -2,7 +2,7 @@
 title: "Real-time Geospatial & Transactional Anomaly Dashboards"
 description: "Elasticsearch and Kibana dashboards for fraud detection and internal threat visibility across geospatial and transactional data streams."
 date: 2025-09-20
-categories: [Data Analytics, Cybersecurity]
+categories: [Data Science and Analyst, Cybersecurity]
 author: Sophal Chan
 ---
 

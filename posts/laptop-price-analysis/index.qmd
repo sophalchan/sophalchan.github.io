@@ -2,7 +2,7 @@
 title: "Laptop Price Analysis"
 description: "Analyzes laptop listing prices vs. CPU, RAM, storage, and brand across retailers."
 date: 2024-05-05
-categories: ["Data Analytics"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Laptop%20price%20analysis"
 ---

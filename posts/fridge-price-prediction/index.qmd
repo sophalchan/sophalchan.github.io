@@ -2,7 +2,7 @@
 title: "Fridge Price Prediction"
 description: "Predicts refrigerator retail prices from brand, capacity, energy rating, and feature attributes."
 date: 2024-04-15
-categories: ["Data Analytics", "AI/ML"]
+categories: ["Data Science and Analyst"]
 author: Sophal Chan
 repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Fridge%20Price%20prediction"
 ---
