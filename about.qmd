@@ -142,8 +142,8 @@ Led IT and cybersecurity instruction; mentored students on networking, scripting
 
 ::: {.timeline-item}
 <span class="timeline-date">Current — Manufacturing</span>
-#### Composite Technician — Eagle Composite
-Operate **kit cutting machines** for ply nests; develop and prove **CNC programs**; apply **engineering drawings** and lamination schedules to production. Step-by-step workflows: [Manufacturing portfolio →](posts/manufacturing-portfolio/)
+#### Composite Manufacturing
+Operate **kit cutting machines** for ply nests; develop and prove **CNC programs**; apply **engineering drawings** and lamination schedules to production. [Manufacturing portfolio →](posts/manufacturing-portfolio/)
 :::
 
 :::

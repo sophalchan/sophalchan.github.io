@@ -1,6 +1,6 @@
 ---
 title: "Composite Kit Cutting & Ply Nesting on Kit Cutting Machine"
-description: "Step-by-step kit cutting workflow—ply nesting, machine setup, material traceability, and QA for composite lamination at Eagle Composite."
+description: "Step-by-step kit cutting workflow—ply nesting, machine setup, material traceability, and QA for composite lamination."
 date: 2026-03-15
 categories: [Manufacturing]
 author: Sophal Chan
@@ -8,7 +8,7 @@ author: Sophal Chan
 
 ## Overview
 
-This project documents my **kit cutting** workflow as a **Composite Technician** at **Eagle Composite**: preparing ply kits from engineering data, operating the **kit cutting machine**, and delivering labeled, traceable cut patterns ready for layup. Accuracy at this stage prevents costly rework in lamination and cure.
+This project documents my **kit cutting** workflow in **composite manufacturing**: preparing ply kits from engineering data, operating the **kit cutting machine**, and delivering labeled, traceable cut patterns ready for layup. Accuracy at this stage prevents costly rework in lamination and cure.
 
 ## Background of the Study
 

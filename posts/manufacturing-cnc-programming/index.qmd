@@ -1,6 +1,6 @@
 ---
 title: "CNC Programming for Composite & Production Parts"
-description: "Step-by-step CNC workflow—CAD/CAM input, toolpath strategy, G-code prove-out, setup sheets, and first-article inspection at Eagle Composite."
+description: "Step-by-step CNC workflow—CAD/CAM input, toolpath strategy, G-code prove-out, setup sheets, and first-article inspection."
 date: 2026-02-20
 categories: [Manufacturing]
 author: Sophal Chan
@@ -8,7 +8,7 @@ author: Sophal Chan
 
 ## Overview
 
-This project covers **CNC programming** work I perform as a **Composite Technician** at **Eagle Composite**: translating engineering requirements into **machine-ready programs**, proving toolpaths safely, and supporting **first-article** runs for composite fixtures, trim operations, or metallic/composite hybrid details as assigned.
+This project covers **CNC programming** work in **composite and production manufacturing**: translating engineering requirements into **machine-ready programs**, proving toolpaths safely, and supporting **first-article** runs for composite fixtures, trim operations, or metallic/composite hybrid details as assigned.
 
 ## Background of the Study
 

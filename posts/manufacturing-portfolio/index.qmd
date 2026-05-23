@@ -1,6 +1,6 @@
 ---
 title: "Manufacturing & Composite Production Portfolio"
-description: "Composite technician work at Eagle Composite—kit cutting, CNC programming, and engineering drawings for aerospace-grade production."
+description: "Hands-on manufacturing—kit cutting, CNC programming, and engineering drawings for aerospace-grade composite production."
 date: 2026-03-01
 categories: [Manufacturing]
 author: Sophal Chan
@@ -8,7 +8,7 @@ author: Sophal Chan
 
 ## Overview
 
-Hands-on **manufacturing portfolio** from my role as **Composite Technician** at **Eagle Composite**, supporting aerospace and high-reliability composite production. This hub links three detailed project write-ups covering **kit cutting machines**, **CNC programming**, and **engineering drawings**—the core workflows I execute on the shop floor.
+Hands-on **manufacturing portfolio** from my work in **composite production**, supporting aerospace and high-reliability manufacturing. This hub links three detailed project write-ups covering **kit cutting machines**, **CNC programming**, and **engineering drawings**—the core workflows I execute on the shop floor.
 
 ## Projects in This Area
 
@@ -20,5 +20,4 @@ Hands-on **manufacturing portfolio** from my role as **Composite Technician** at
 
 ## Role Summary
 
-**Employer:** Eagle Composite · **Title:** Composite Technician  
-**Core activities:** Operate kit cutting equipment, develop and prove CNC programs, interpret and apply engineering drawings to production builds.
+**Focus:** Composite manufacturing · **Activities:** Kit cutting, CNC programming, engineering drawing interpretation
