@@ -61,6 +61,14 @@ I bring hands-on experience across security operations, data interpretation, and
 :::
 
 ::: {.skill-category}
+#### Research & Medical AI
+- Medical image mining & texture analysis
+- Osteoarthritis detection (X-ray, ROI, LBP)
+- Feature selection & classifier design (SVM, CNN)
+- Graph-based & deep learning approaches
+:::
+
+::: {.skill-category}
 #### Data Science & Analyst
 - Statistics & Data Interpretation
 - Power BI
@@ -72,9 +80,11 @@ I bring hands-on experience across security operations, data interpretation, and
 
 ## Research & Academic
 
-I maintain an active **research and teaching** profile across quantum science, cybersecurity, AI engineering, and data analytics. At ITC I have supervised numerous **Programming for Data Science** capstones—documented in the public [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-)—and continue work on ML-based security analytics and reproducible data pipelines.
+My published research includes **four peer-reviewed outputs** on **machine learning and medical image mining for knee osteoarthritis** detection and staging (Prince of Songkla University), with first-author journal articles in *IJASEIT* (2020, **AUC 0.912**) and *International Journal of Computers and Applications* (2020, **AUC 0.917**), plus a Springer conference paper (2019) and M.S. thesis. I now extend that analytical foundation into **cybersecurity**, **quantum science**, and **data science education** at ITC and beyond.
 
-**Full publications list, research interests, and academic timeline:** [Research & Academic →](research.qmd)
+**Selected publications:** Chan, Dittakan & Garcia-Constantino (2020); Chan, Dittakan & El Salhi (2020); Chan & Dittakan (2019, Springer).
+
+**Full list, citations, and academic timeline:** [Research & Academic →](research.qmd)
 
 ## Education & Professional Development
 

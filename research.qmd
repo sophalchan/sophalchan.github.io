@@ -4,60 +4,52 @@ title: "Research & Academic"
 
 ## Research Profile
 
-My academic work bridges **quantum science**, **cybersecurity**, **artificial intelligence**, and **applied data science**—from supervising large-scale student research portfolios at the **Institute of Technology of Cambodia (ITC)** to hands-on projects in threat detection, market analytics, and scientific computing.
+My research career began at **Prince of Songkla University (PSU), Phuket Campus**, where I completed graduate work in **Information Technology** and published peer-reviewed studies on **medical image mining**, **texture analysis**, and **machine learning for osteoarthritis (OA) detection** from knee X-ray imagery. That foundation in AI, computer vision, and clinical decision support now informs my work in **cybersecurity**, **quantum science**, and **applied data science** as a lecturer, lab manager, and consultant.
 
-I hold an **M.S. and B.S. in Information Technology** (GPA **3.91**, ASEAN Hub Scholar, Prince Sirindhorn Scholar) and combine classroom leadership with practitioner experience in security operations, consulting, and production-oriented ML systems.
+I hold an **M.S. and B.S. in Information Technology** (GPA **3.91**, ASEAN Hub Scholar, Prince Sirindhorn Scholar), served as **Data Science Lab Manager** and **Lecturer** at the **Institute of Technology of Cambodia (ITC)**, and continue professional development in **cybersecurity** (Per Scholas, CompTIA CySA+ pathway).
 
-**Contact for collaboration:** [sophalcamchan38@gmail.com](mailto:sophalcamchan38@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sophalchan)
+**Contact:** [sophalcamchan38@gmail.com](mailto:sophalcamchan38@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sophalchan)
 
 ## Research Interests
 
-::: {.skills-matrix}
-
-::: {.skill-category}
-#### Quantum Science
-- Quantum computing & information fundamentals
-- Linear algebra & probability for quantum systems
-- Quantum algorithms (introductory Qiskit/simulation)
-- Intersection of quantum methods and optimization
-:::
-
-::: {.skill-category}
-#### Cybersecurity & AI
-- Intrusion detection & security event analytics
-- ML for threat prediction and anomaly detection
-- SIEM (Splunk, Elasticsearch/Kibana) and SOC workflows
-:::
-
-::: {.skill-category}
-#### Data Science & Education
-- Scraping-to-model pipelines on real market data
-- Curriculum design for Programming for Data Science (PDS)
-- Reproducible notebooks, Docker/Flask/Streamlit delivery
-:::
-
-:::
+- **Medical image mining & computer vision** — texture descriptors, ROI analysis, OA grading from radiographs
+- **Machine learning & deep learning** — SVM, ensemble methods, CNNs, feature selection (CFS)
+- **Cybersecurity & AI-driven threat detection** — SIEM/SOAR, intrusion analytics, automated response
+- **Quantum science & advanced computing** — quantum information fundamentals and optimization
+- **Data science education** — capstone supervision, reproducible pipelines, deployment (Flask, Docker, Streamlit)
 
 ## Academic Appointments
 
 ::: {.timeline}
 
 ::: {.timeline-item}
-<span class="timeline-date">Current</span>
-#### AI Engineering Lecturer
-Applied AI, data engineering, and security-aware ML systems for production-minded cohorts.
+<span class="timeline-date">2025</span>
+#### Cybersecurity Analyst Training — Per Scholas
+450+ hands-on hours · **CompTIA CySA+** and Security+ pathway · threat detection, incident response, SIEM/SOAR
 :::
 
 ::: {.timeline-item}
-<span class="timeline-date">Academia</span>
-#### Senior Lecturer — Institute of Technology of Cambodia
-Led IT and cybersecurity programs; mentored capstone teams on data science, networking fundamentals, and secure system design.
+<span class="timeline-date">2022–2024</span>
+#### Data Science Lab Manager — Institute of Technology of Cambodia
+Led applied AI R&D; mentored student teams on deep learning, data analytics, and algorithm design; workshops on Python and ML tools
 :::
 
 ::: {.timeline-item}
-<span class="timeline-date">Graduate</span>
-#### M.S. · B.S. Information Technology
-Prince of Songkla University · GPA **3.91** · ASEAN Hub Scholar · Prince Sirindhorn Scholar
+<span class="timeline-date">2020–2023</span>
+#### Lecturer — Institute of Technology of Cambodia
+Predictive Analytics, Machine Learning, Power BI, Data Mining, Python; supervised final-year AI and data science projects
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">2022</span>
+#### Visiting Professor — ENSIIE (Évry, France)
+Summer exchange: data science curriculum design, cross-cultural research methods, data modeling seminars
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">2016–2020</span>
+#### Research Assistant — Prince of Songkla University
+Graduate research in medical image analysis and OA classification (see publications below)
 :::
 
 :::
@@ -66,39 +58,72 @@ Prince of Songkla University · GPA **3.91** · ASEAN Hub Scholar · Prince Siri
 
 ::: {.publication-list}
 
-### Journal & Conference Papers
+### Journal Articles
 
-| Year | Title | Venue | Role | Link |
-|------|-------|-------|------|------|
-| *YYYY* | *[Add your paper title]* | *[Journal / Conference]* | *[Author / Co-author]* | *[DOI or URL]* |
-| *YYYY* | *[Add your paper title]* | *[Journal / Conference]* | *[Author / Co-author]* | *[DOI or URL]* |
+#### 1. Image Texture Analysis for Medical Image Mining: OA Classification from Knee X-Ray
 
-*Add rows above as you publish. Example format: author list, full title, venue, year, DOI.*
+**Authors:** Sophal Chan, Kwankamon Dittakan, Matias Garcia-Constantino  
+**Venue:** *International Journal on Advanced Science, Engineering and Information Technology* (IJASEIT), Vol. 10, No. 6, pp. 2189–2199, Dec. 2020  
+**Role:** First author  
+**Summary:** Compares ten texture descriptors across four knee ROIs (MF, LF, MT, LT) to classify OA vs. non-OA on 131 X-ray images. **Best result:** Lateral Femur (LF) with Local Binary Pattern — **AUC = 0.912**.  
+**Links:** [Journal article](https://ijaseit.insightsociety.org/index.php/ijaseit/article/view/8279) · [PDF](https://ijaseit.insightsociety.org/index.php/ijaseit/article/download/8279/pdf_1596)
 
-### Technical Reports & Working Papers
+#### 2. Osteoarthritis Detection by Applying Quadtree Analysis to Human Joint Knee X-Ray Imagery
 
-- *[Add technical report title]* — *[Institution / client]*, *[Year]*.
-- *[Add working paper or white paper]* — *[Year]*.
+**Authors:** Sophal Chan, Kwankamon Dittakan, Subhieh El Salhi  
+**Venue:** *International Journal of Computers and Applications*, Vol. 44, No. 6 (Taylor & Francis), 2020  
+**DOI:** [10.1080/1206212X.2020.1838145](https://doi.org/10.1080/1206212X.2020.1838145)  
+**Role:** First author  
+**Summary:** Shape-based early OA detection using quadtree decomposition on knee X-rays; evaluates three ROI datasets on 128 participants (66 OA cases). **Best result:** Dataset 3 (Otsu knee joint space ROI), threshold 10 — **AUC = 0.917**.  
+**Link:** [Taylor & Francis](https://www.tandfonline.com/doi/abs/10.1080/1206212X.2020.1838145)
 
-### Supervised Student Research (Selected)
+### Conference Papers
 
-As **Programming for Data Science** instructor at ITC, I supervised multi-year student teams whose capstones are archived in the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (20+ projects: real estate analytics, FX forecasting with ARIMA/LSTM, recommender systems, and market scraping studies). Representative student outputs include peer-reviewed-style reports and deployable apps (Flask, Streamlit, Docker).
+#### 3. Osteoarthritis Stages Classification Using Texture Analysis: Ten Texture Descriptors
 
-### Presentations & Invited Talks
+**Authors:** Sophal Chan, Kwankamon Dittakan *(corresponding author)*  
+**Venue:** *Recent Trends in Image Processing and Pattern Recognition* (RTIP2R 2018), Communications in Computer and Information Science, vol. 1036, pp. 209–225, Springer Singapore, 2019  
+**DOI:** [10.1007/978-981-13-9184-2_19](https://doi.org/10.1007/978-981-13-9184-2_19)  
+**Published online:** 16 July 2019  
+**Role:** First author  
+**Summary:** Classifies OA severity grades (0–4) via texture features and Correlation-based Feature Selection on 130 images. **Best result:** Medial Tibia (MT) ROI — **AUC = 0.871**.  
+**Link:** [Springer chapter](https://link.springer.com/chapter/10.1007/978-981-13-9184-2_19)
 
-| Year | Title | Event / Institution |
-|------|-------|---------------------|
-| *YYYY* | *[Talk title]* | *[Conference, university, or industry event]* |
-| *YYYY* | *[Talk title]* | *[Event]* |
+### Theses
+
+#### 4. Early Detection of Osteoarthritis Stage by Applying Classification Techniques to Human Joint Imagery
+
+**Author:** Sophal Chan  
+**Degree:** Master of Science in Information Technology  
+**Institution:** College of Computing, Prince of Songkla University, Phuket Campus  
+**Summary:** Comprehensive thesis comparing **(i)** texture-based, **(ii)** graph-based, and **(iii)** CNN approaches for OA detection and multi-stage classification. Reports best texture-based **AUC = 0.912** (detection) and **0.871** (staging); graph-based detection **AUC = 0.917**; CNN detection **AUC = 0.880**.  
+**Link:** [PSU Knowledge Bank (PDF)](https://kb.psu.ac.th:8080/psukb/bitstream/2016/13400/1/435044.pdf)
+
+### Publication Summary (from [LinkedIn](https://www.linkedin.com/in/sophalchan))
+
+| Year | Type | Title (short) | Best metric |
+|------|------|---------------|-------------|
+| 2020 | Journal | Texture analysis for OA classification (IJASEIT) | AUC 0.912 |
+| 2020 | Journal | Quadtree shape analysis for OA detection (IJCA) | AUC 0.917 |
+| 2019 | Conference | OA stage classification — 10 texture descriptors (Springer) | AUC 0.871 |
+| 2016–2019 | Thesis | Early OA detection — texture, graph, CNN (M.S. IT, PSU) | Multi-approach |
 
 :::
 
-## Research Themes in Progress
+## Supervised Student Research (Teaching Portfolio)
 
-- **Quantum science applications:** exploring how quantum-inspired and quantum-ready methods relate to optimization and security-relevant computation.
-- **AI-driven cybersecurity:** intrusion detection, containerized inference APIs, and SOC-aligned analytics.
-- **Cambodia-focused data science:** open student research corpora for reproducible teaching and regional market intelligence.
+As **Programming for Data Science** instructor at ITC (**CHAN Sophal**, course lead), I supervised multi-year student capstones archived in the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) — 20+ projects covering real estate analytics, FX forecasting (ARIMA/LSTM + Flask/Docker), recommenders, and Khmer24 market scraping studies.
+
+## Presentations & Professional Development
+
+| Year | Credential / Activity |
+|------|------------------------|
+| 2025 | Per Scholas Cybersecurity Analyst Program (450+ hrs, CySA+) |
+| 2024 | Google Certified Educator L1/L2 · Gemini Certified Educator |
+| 2023 | ACLEDA Bank — AI & GIS microservices consultant |
+| 2022 | ENSIIE (France) — visiting professor, data science curriculum |
+| 2020 | Multiple Coursera specializations (Python, Keras, TensorFlow, data science) |
 
 ---
 
-*To add a publication: edit `research.qmd` in the site repository, or send me the citation (title, authors, venue, year, DOI) and I will format it for you.*
+*Publications listed above match the **Publications** section on [linkedin.com/in/sophalchan](https://www.linkedin.com/in/sophalchan).*
