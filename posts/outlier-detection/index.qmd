@@ -1,6 +1,6 @@
 ---
 title: "Outlier Detection and Treatment"
-description: "Identifies and treats outliers using statistical and ML-based detection methods."
+description: "IQR, Z-score, and Isolation Forest methods for messy marketplace data."
 date: 2024-05-20
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,36 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Outl
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Outlier detection and treatment)—Identifies and treats outliers using statistical and ML-based detection methods.
+**Outlier Detection and Treatment** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). IQR, Z-score, and Isolation Forest methods for messy marketplace data.
 
-## Problem & Data
+## Background & Motivation
 
-Dirty real-world datasets skew models and visualizations without robust outlier handling.
+Foundational PDS lab-style project on **outlier detection and treatment**—applies across all price-prediction capstones in the collection.
 
-## Approach
+Scraped marketplace data contains typos, duplicate listings, and extreme prices that destroy regression unless treated systematically.
 
-IQR/Z-score rules, isolation forest, comparison of imputation vs. removal strategies.
+## Project Guidelines & Objectives
 
-## Technologies
+- Identify outliers via **IQR**, **Z-score**, and **Isolation Forest**
+- Compare **removal vs. imputation** strategies
+- Re-fit a simple model before/after treatment
+- Document policy choice for downstream teams
 
-Python · pandas · scikit-learn · Matplotlib · Jupyter
+## Data Collection & Preparation
 
-## Outcomes
+Sample messy numeric/categorical dataset (market-style) in project notebooks.
 
-Cleaner datasets with documented outlier policy and before/after model impact.
+## Methodology & Analysis
+
+Rule-based and ML detectors; impact analysis on mean/variance and model coefficients.
+
+## Model Evaluation
+
+Before/after model metric comparison.
+
+## Results & Key Learnings
+
+Reusable outlier playbook referenced by other scraping projects in the repo.
 
 ## Source Code
 

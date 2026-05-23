@@ -1,6 +1,6 @@
 ---
 title: "Phone Price Analysis"
-description: "Smartphone price analysis across brands, specs, and release generations."
+description: "Smartphone pricing drivers and brand premiums in the Cambodian market."
 date: 2024-05-25
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Phon
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Phone Price analysis)—Smartphone price analysis across brands, specs, and release generations.
+**Phone Price Analysis** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Smartphone pricing drivers and brand premiums in the Cambodian market.
 
-## Problem & Data
+## Background & Motivation
 
-Rapid SKU turnover makes fair pricing difficult for buyers and resellers.
+**Phone Price Analysis Report** — PDS with formal introduction on mobile market dynamics and competitive pricing.
 
-## Approach
+Smartphone prices reflect brand premium, generation, and specs—buyers and resellers in Cambodia need structured comparisons across Apple, Samsung, and other leaders.
 
-Scrape phone listings, normalize specs, analyze depreciation curves and brand premiums.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Project Guideline* (Phone Price Analysis):**
 
-Python · pandas · Seaborn · Jupyter
+- **Introduction:** importance of understanding mobile pricing for consumers, sellers, manufacturers
+- Analyze factors driving prices—focus on **leading brands** in Cambodian market
+- EDA + modeling pipeline per PDS standards (see report in repo)
 
-## Outcomes
+## Data Collection & Preparation
 
-Spec-adjusted price benchmarks and brand/model depreciation insights.
+Scraped smartphone listings with brand, model, storage, condition, and price.
+
+## Methodology & Analysis
+
+Brand-level EDA; depreciation by generation; regression or comparative pricing tables.
+
+## Model Evaluation
+
+Spec-adjusted price benchmarks; brand premium quantification.
+
+## Results & Key Learnings
+
+Phone market intelligence report aligned with guideline introduction.
 
 ## Source Code
 

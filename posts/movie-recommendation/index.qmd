@@ -1,6 +1,6 @@
 ---
 title: "Movie Recommendation System"
-description: "Collaborative/content-based movie recommender built from ratings and metadata."
+description: "Content-based movie recommender—PDS 2020–2021, Prof. Chan Sophal."
 date: 2024-05-15
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Movi
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Movie Recommendation)—Collaborative/content-based movie recommender built from ratings and metadata.
+**Movie Recommendation System** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Content-based movie recommender—PDS 2020–2021, Prof. Chan Sophal.
 
-## Problem & Data
+## Background & Motivation
 
-Users need personalized suggestions beyond popularity lists.
+**Movie Recommendation System** — PDS 2020–2021, ITC Data Science (3rd year). Lecturer **Prof. Chan Sophal**. Six-member group.
 
-## Approach
+Streaming and rental platforms overwhelm users with choice; content-based recommendations improve discovery when collaborative data is sparse.
 
-User–item matrix construction, similarity metrics (cosine/pearson), and top-N recommendation generation.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Project Guideline: Movie Recommendation System*:**
 
-Python · pandas · scikit-learn · Jupyter
+- **Approach:** **Content-based filtering**
+- **Inputs:** Movie name, ratings, overview, cast/star, gross, votes, similar-user tastes
+- **Steps:** (1) Scrape data (2) Preprocess (3) Build similarity (4) Recommend top-N titles (5) Evaluate relevance (6) Document system
 
-## Outcomes
+## Data Collection & Preparation
 
-Personalized movie lists with explainable similarity to past preferences.
+Scraped movie metadata and rating features (see `Movie_Recommendation_System` subfolder).
+
+## Methodology & Analysis
+
+Content feature vectors; cosine/pearson similarity; top-N recommendations per user profile.
+
+## Model Evaluation
+
+Qualitative and metric-based checks on recommendation relevance.
+
+## Results & Key Learnings
+
+Working recommender prototype and group report for PDS 2020–2021.
 
 ## Source Code
 

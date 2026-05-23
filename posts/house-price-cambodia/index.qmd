@@ -1,6 +1,6 @@
 ---
 title: "House Price Prediction in Cambodia"
-description: "End-to-end house price prediction using Cambodian residential listing data."
+description: "Khmer24 house prices: cleaning, feature engineering, and ML valuation per step-by-step guideline."
 date: 2024-04-20
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Hous
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (House price prediction in Cambodia)—End-to-end house price prediction using Cambodian residential listing data.
+**House Price Prediction in Cambodia** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Khmer24 house prices: cleaning, feature engineering, and ML valuation per step-by-step guideline.
 
-## Problem & Data
+## Background & Motivation
 
-Residential buyers need defensible valuations across diverse neighborhoods and home types.
+**House Price Prediction in Phnom Penh** — detailed PDS guideline on repo with step-by-step data cleaning rules.
 
-## Approach
+Residential buyers in Phnom Penh lack transparent valuation when listings mix USD/KHR formats, vague room counts, and inconsistent location tags.
 
-Multi-feature regression with EDA on location, size, age, and listing metadata; cross-validation for generalization.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Project guideLine* (House Price Prediction):**
 
-Python · pandas · scikit-learn · Jupyter
+- **Goal:** Predict house price from location, size, bedrooms, bathrooms, condition
+- **Data source:** **Khmer24**
+- **Steps:** (1) Data collection (2) Cleaning — strip `$`/`, validate prices, impute bedroom/bathroom `3+` as average 3 (3) **Feature engineering** — combine rooms; drop rare categories; scale; feature selection (4) **Model selection** — compare ML regressors (5) Evaluate on separate test set
 
-## Outcomes
+## Data Collection & Preparation
 
-Predicted sale prices with feature importance for interpretability.
+Khmer24 house listings with price, location, size, bedrooms, bathrooms, condition.
+
+## Methodology & Analysis
+
+Regex price cleaning; rare-category collapsing; normalization; feature selection algorithms; multiple regression candidates.
+
+## Model Evaluation
+
+Separate test dataset per guideline; compare model accuracy.
+
+## Results & Key Learnings
+
+Reproducible Phnom Penh house valuation pipeline documented for PDS grading.
 
 ## Source Code
 

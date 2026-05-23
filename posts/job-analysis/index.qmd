@@ -1,6 +1,6 @@
 ---
 title: "Job Market Analysis"
-description: "Analyzes Cambodian job postings for salary trends, skill demand, and role distribution."
+description: "Salary prediction and skill-demand analysis from Cambodian job postings (ITC PDS 2022–2023)."
 date: 2024-04-25
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,39 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Job%
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Job Analysis)—Analyzes Cambodian job postings for salary trends, skill demand, and role distribution.
+**Job Market Analysis** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Salary prediction and skill-demand analysis from Cambodian job postings (ITC PDS 2022–2023).
 
-## Problem & Data
+## Background & Motivation
 
-Job seekers and educators need visibility into in-demand skills and compensation patterns.
+**Job Analysis Report: Salary Prediction** — ITC PDS 2022–2023. Team: SENG Lay, VANNAK Vireakyuth, YA Manon, VANN Visal, TAING Kimmeng, VINLAY Anusar. Instructor **CHAN Sophal**.
 
-## Approach
+Students and job seekers in Cambodia need evidence on which skills and roles command higher salaries in local postings.
 
-Job board scraping, text and categorical analysis, salary band aggregation, and trend visualization.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Guideline* (Job Analysis):**
 
-Python · pandas · Matplotlib · Jupyter
+- **Introduction** to salary prediction study
+- **Problem statement:** objectives, constraints, **expected deliverables**, **success criteria**
+- **Data collection & preprocessing:** scrape job boards; text preprocessing; feature extraction/encoding; train/test split; imbalance handling if needed
+- **EDA:** descriptive stats, visualizations
+- **Modeling** for salary prediction (see full report in repo)
 
-## Outcomes
+## Data Collection & Preparation
 
-Skill-frequency rankings and salary summaries by sector and experience level.
+Scraped Cambodian job postings with role, skills, experience, and salary fields where available.
+
+## Methodology & Analysis
+
+NLP-style text preprocessing on titles/descriptions; categorical encoding; regression or classification toward salary bands.
+
+## Model Evaluation
+
+Success criteria from guideline—prediction error or tier accuracy vs. deliverables.
+
+## Results & Key Learnings
+
+Skill-demand and salary insight report for career planning and curriculum alignment.
 
 ## Source Code
 

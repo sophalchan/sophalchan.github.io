@@ -1,6 +1,6 @@
 ---
 title: "Khmer Riel Currency Forecasting (ARIMA & LSTM)"
-description: "Forecasts USD/KHR exchange rates with ARIMA and LSTM, served via a Flask web app in Docker."
+description: "USD/KHR forecasting with ARIMA, ETS, LSTM, and Flask apps in Docker (CHAN Sophal capstone)."
 date: 2024-05-01
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,38 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Khme
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Khmer Riel Currency forcesting using arima and lstm with web flask app throw docker)—Forecasts USD/KHR exchange rates with ARIMA and LSTM, served via a Flask web app in Docker.
+**Khmer Riel Currency Forecasting (ARIMA & LSTM)** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). USD/KHR forecasting with ARIMA, ETS, LSTM, and Flask apps in Docker (CHAN Sophal capstone).
 
-## Problem & Data
+## Background & Motivation
 
-Businesses and analysts need short-horizon FX forecasts with both statistical and deep-learning baselines.
+**Khmer Riel Forecasting** — ITC PDS capstone (Instructor **CHAN Sophal**). Team: OUN Vikreth, MAO Kimlang, PEAN Chhinger, NANG Sreynich. Multi-phase: scraping → ARIMA/ETS/LSTM → **Flask + Docker** deployment.
 
-## Approach
+USD/KHR exchange rate affects imports, payroll, and tuition priced in dollars—short-horizon forecasts support planning for SMEs and analysts.
 
-Time-series preprocessing, ARIMA and LSTM model comparison, Flask API/UI for forecasts, Dockerized deployment.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Project Guideline - PDS Final*:**
 
-Python · pandas · statsmodels · TensorFlow/Keras · Flask · Docker · Jupyter
+1. **Define objective** — team scoping meetings → **Khmer Riel Price Forecasting**
+2. **Project 1 — Web scraping** — leader Oun Vikreth; team researches scrape methods and collects FX series
+3. **Project 2 — Models** — Pean Chhinger: data processing; Nang Sreynich: **ARIMA**; Mao Kimlang: **ETS**; Oun Vikreth: **LSTM** + integration review
+4. **Final — Deployment** — Flask apps per model; **Dockerfile**; API endpoints for forecasts
 
-## Outcomes
+## Data Collection & Preparation
 
-Comparable ARIMA vs. LSTM forecasts and a containerized app for interactive prediction.
+Scraped historical USD/KHR (Khmer Riel) exchange rate time series.
+
+## Methodology & Analysis
+
+Time-series cleaning; ARIMA and ETS baselines; LSTM deep model; compare forecasts; containerized Flask services for each model family.
+
+## Model Evaluation
+
+Compare statistical vs. deep forecasts on test horizon; demo via web UI/API.
+
+## Results & Key Learnings
+
+End-to-end FX forecasting capstone with production-style deployment—strong systems + analytics story.
 
 ## Source Code
 

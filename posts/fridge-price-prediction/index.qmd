@@ -1,6 +1,6 @@
 ---
 title: "Fridge Price Prediction"
-description: "Predicts refrigerator retail prices from brand, capacity, energy rating, and feature attributes."
+description: "Appliance price regression from brand, capacity, and energy features."
 date: 2024-04-15
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,36 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Frid
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Fridge Price prediction)—Predicts refrigerator retail prices from brand, capacity, energy rating, and feature attributes.
+**Fridge Price Prediction** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Appliance price regression from brand, capacity, and energy features.
 
-## Problem & Data
+## Background & Motivation
 
-Appliance shoppers compare many SKUs; a model helps normalize price vs. specifications.
+PDS **Fridge Price prediction** module in the collection—retail regression on scraped appliance listings.
 
-## Approach
+Appliance SKUs differ by capacity, energy class, and brand—shoppers need spec-adjusted fair price signals.
 
-Retail data scraping, categorical encoding, regression training, and residual analysis.
+## Project Guidelines & Objectives
 
-## Technologies
+- Collect refrigerator listings (brand, capacity, energy rating, features, price)
+- Handle missing/outlier prices
+- Encode categoricals; scale numerics
+- Train regression; analyze residuals for over/under-priced units
 
-Python · pandas · scikit-learn · Jupyter
+## Data Collection & Preparation
 
-## Outcomes
+Scraped fridge/appliance listings from Cambodian e-commerce or classified sites.
 
-Fair-price estimates highlighting over/under-priced listings.
+## Methodology & Analysis
+
+pandas cleaning; one-hot/ordinal encoding; scikit-learn regression; residual plots.
+
+## Model Evaluation
+
+Test-set RMSE; listing-level fair-price flags.
+
+## Results & Key Learnings
+
+Spec-adjusted fridge price guidance for consumers and resellers.
 
 ## Source Code
 

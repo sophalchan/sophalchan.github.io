@@ -1,6 +1,6 @@
 ---
 title: "Cambodia Tour Price Prediction"
-description: "Predicts tour package pricing from historical travel-market data in Cambodia."
+description: "Tour package price forecasting from historical Cambodian travel-market data."
 date: 2024-03-20
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,39 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Camb
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Cambodia tour price prediction)—Predicts tour package pricing from historical travel-market data in Cambodia.
+**Cambodia Tour Price Prediction** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Tour package price forecasting from historical Cambodian travel-market data.
 
-## Problem & Data
+## Background & Motivation
 
-Tour operators and travelers need fair price expectations amid seasonal demand and package variability.
+**Group 1 — Tour Price Prediction** (PDS). Aligns with collection README: predict tour package prices from Cambodian travel-market data.
 
-## Approach
+Tourism pricing fluctuates with season, route, and inclusions—operators and travelers benefit from historical benchmarks rather than ad hoc quotes.
 
-Historical price ingestion, feature encoding (duration, destination, season), and regression-based forecasting.
+## Project Guidelines & Objectives
 
-## Technologies
+**Typical PDS tour-pricing guideline structure:**
 
-Python · pandas · scikit-learn · Jupyter
+- Scrape or collect tour listings (duration, destination, season, price)
+- Clean and encode categorical route/season features
+- EDA on price vs. seasonality and package type
+- Regression models with cross-validation
+- Report expected price bands for sample itineraries
 
-## Outcomes
+## Data Collection & Preparation
 
-Estimated price ranges for tour products with interpretable drivers (seasonality, route, inclusions).
+Historical tour listing/pricing data scraped for Cambodian tour products (see project folder notebooks).
+
+## Methodology & Analysis
+
+Feature encoding for duration, destination, season; regression training; residual analysis on high-season vs. low-season segments.
+
+## Model Evaluation
+
+Hold-out RMSE/MAE; interpretability of season and route coefficients.
+
+## Results & Key Learnings
+
+Data-supported tour price ranges for planning and coursework demonstration.
 
 ## Source Code
 

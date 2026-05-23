@@ -1,6 +1,6 @@
 ---
 title: "Gold Price Forecasting"
-description: "Time-series forecasting of gold prices using historical market data."
+description: "Time-series gold price forecasts with ARIMA-style models."
 date: 2024-06-05
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Gold
 
 ## Overview
 
-Standalone notebook/report in the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-)—Time-series forecasting of gold prices using historical market data.
+**Gold Price Forecasting** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Time-series gold price forecasts with ARIMA-style models.
 
-## Problem & Data
+## Background & Motivation
 
-Investors and analysts track gold as a macro indicator; short-horizon forecasts aid planning.
+Standalone notebook **Gold Price forecasting.ipynb** in collection root—PDS time-series module.
 
-## Approach
+Gold acts as a macro hedge in emerging markets; short-term forecasts support coursework in time-series methods.
 
-Historical price series EDA, stationarity checks, ARIMA/prophet-style modeling, forecast visualization.
+## Project Guidelines & Objectives
 
-## Technologies
+- Load historical gold price series
+- Test stationarity; difference if needed
+- Fit ARIMA/ETS (or comparable) models
+- Plot forecasts with confidence intervals
+- Interpret limitations (macro shocks, non-stationarity)
 
-Python · pandas · statsmodels · Matplotlib · Jupyter
+## Data Collection & Preparation
 
-## Outcomes
+Historical gold price time series (public market data in notebook).
 
-Forecast plots with confidence intervals and model diagnostics.
+## Methodology & Analysis
+
+Classical time-series EDA; ARIMA-style modeling; forecast visualization.
+
+## Model Evaluation
+
+In-sample vs. out-of-sample forecast error; residual diagnostics.
+
+## Results & Key Learnings
+
+Forecast notebook suitable for PDS time-series grading rubric.
 
 ## Source Code
 

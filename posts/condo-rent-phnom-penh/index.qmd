@@ -1,6 +1,6 @@
 ---
 title: "Condo Rent Price Prediction in Phnom Penh"
-description: "Predicts monthly condo rental rates in Phnom Penh from property and neighborhood features."
+description: "Monthly rent regression from Phnom Penh rental listings."
 date: 2024-04-10
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cond
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Condo rent price predicition in Phnom Penh)—Predicts monthly condo rental rates in Phnom Penh from property and neighborhood features.
+**Condo Rent Price Prediction in Phnom Penh** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Monthly rent regression from Phnom Penh rental listings.
 
-## Problem & Data
+## Background & Motivation
 
-Renters and landlords need accurate rent benchmarks in a fast-moving Phnom Penh rental market.
+PDS project on **condo rent price prediction in Phnom Penh** (collection folder). Complements sale-price condo analysis with rental-specific features.
 
-## Approach
+Phnom Penh's rental market moves quickly; expatriates and locals need rent benchmarks by district, size, and furnishing.
 
-Scrape rental listings, encode location and unit features, train regression models, validate with MAE/RMSE.
+## Project Guidelines & Objectives
 
-## Technologies
+- Scrape rental listings (monthly rent, district, m², bedrooms, furnishing)
+- Clean currency and numeric fields
+- EDA: rent/m² by district
+- Regression with MAE/RMSE on test set
+- Optional: compare furnished vs. unfurnished premiums
 
-Python · pandas · scikit-learn · Jupyter
+## Data Collection & Preparation
 
-## Outcomes
+Phnom Penh rental listings from marketplace scrapes (CSV in project).
 
-Rent estimates with sensitivity to district, size, and furnishing factors.
+## Methodology & Analysis
+
+Feature encoding for location and unit attributes; regression; district-level error analysis.
+
+## Model Evaluation
+
+MAE/RMSE on held-out rentals; interpret top features (district, size).
+
+## Results & Key Learnings
+
+Rent estimation playbook for Phnom Penh condo rentals.
 
 ## Source Code
 

@@ -1,6 +1,6 @@
 ---
 title: "Laptop Price Analysis"
-description: "Analyzes laptop listing prices vs. CPU, RAM, storage, and brand across retailers."
+description: "Khmer24 laptop fair-price model—Team 05, ITC AMS (July 2023)."
 date: 2024-05-05
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Lapt
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Laptop price analysis)—Analyzes laptop listing prices vs. CPU, RAM, storage, and brand across retailers.
+**Laptop Price Analysis** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Khmer24 laptop fair-price model—Team 05, ITC AMS (July 2023).
 
-## Problem & Data
+## Background & Motivation
 
-Consumers face opaque pricing across configurations and brands.
+**Team 05 — Laptop Price Analysis** (ITC AMS, July 2023). Members: Ek Vong Panharith, Chou Vandy, Chorn Seyhak, Chea Rotha.
 
-## Approach
+Laptop SKUs multiply each year; Cambodian buyers on Khmer24 need to know fair price for a given CPU/RAM/storage configuration.
 
-Specification-based feature matrix, correlation analysis, clustering/segmentation, and price trend charts.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Team05_project_guideline*:**
 
-Python · pandas · Seaborn · Jupyter
+- **Objective:** Analyze laptop data, then develop an ML model predicting **laptop prices in the Cambodian market**
+- **Data:** Scraped from **Khmer24**
+- **Flow:** Train model on features→price relationship; use trained model for new listing predictions
 
-## Outcomes
+## Data Collection & Preparation
 
-Specification–price benchmarks and brand premium estimates.
+Khmer24 laptop listings with CPU, RAM, storage, brand, condition, and price.
+
+## Methodology & Analysis
+
+EDA on spec–price correlations; feature matrix; regression or ensemble models; optional price recommendation for sample configs.
+
+## Model Evaluation
+
+Hold-out error on listings; brand premium analysis.
+
+## Results & Key Learnings
+
+Cambodia-specific laptop fair-price model and team report (July 2023).
 
 ## Source Code
 

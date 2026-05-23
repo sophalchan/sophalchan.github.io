@@ -1,6 +1,6 @@
 ---
 title: "Computer Component Price Analysis"
-description: "Tracks and analyzes pricing trends for PC components (CPU, GPU, RAM, storage)."
+description: "Khmer24 PC parts (1,055 rows): Ridge, Lasso, tree, and forest models per project guideline."
 date: 2024-04-01
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Comp
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Computer component price analysis)—Tracks and analyzes pricing trends for PC components (CPU, GPU, RAM, storage).
+**Computer Component Price Analysis** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Khmer24 PC parts (1,055 rows): Ridge, Lasso, tree, and forest models per project guideline.
 
-## Problem & Data
+## Background & Motivation
 
-Component prices fluctuate rapidly; buyers need trend awareness across SKUs and vendors.
+**Group 2 — PC Component price analysis** (PDS guideline on repo).
 
-## Approach
+PC builders face volatile component pricing (GPU, CPU, RAM). Systematic tracking clarifies fair pay-for-spec across Khmer24 listings.
 
-Time-series and cross-sectional analysis of scraped retailer data with outlier review and category breakdowns.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Project Guideline: PC Component price analysis*:**
 
-Python · pandas · Matplotlib · Jupyter
+- **Objective:** PC component **price prediction model** with strong accuracy
+- **Data:** Khmer24 dataset — **11 features, 1,055 rows**
+- **Steps:** Preprocessing (missing values, duplicates, outliers) → EDA (correlation, feature engineering/selection, transforms) → Models: **Multiple Linear Regression, Ridge, Lasso, Decision Tree, Random Forest** → Train/validation/test with **cross-validation**
 
-## Outcomes
+## Data Collection & Preparation
 
-Price trend reports and category comparisons for build-planning and procurement.
+Khmer24 scraped listings — 1,055 observations, 11 features per guideline.
+
+## Methodology & Analysis
+
+Correlation plots vs. price; feature engineering and selection; compare linear, regularized, tree, and ensemble regressors.
+
+## Model Evaluation
+
+Cross-validated performance on validation and test splits.
+
+## Results & Key Learnings
+
+Component price benchmarks and model comparison report for DIY PC market analytics.
 
 ## Source Code
 

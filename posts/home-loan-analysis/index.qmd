@@ -1,6 +1,6 @@
 ---
 title: "Home Loan Analysis"
-description: "Exploratory analysis of home loan applicants—approval factors, income, and credit patterns."
+description: "Loan approval EDA and logistic regression on applicant data."
 date: 2024-06-10
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Home
 
 ## Overview
 
-Standalone notebook/report in the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-)—Exploratory analysis of home loan applicants—approval factors, income, and credit patterns.
+**Home Loan Analysis** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Loan approval EDA and logistic regression on applicant data.
 
-## Problem & Data
+## Background & Motivation
 
-Lenders and applicants benefit from understanding drivers of approval and default risk proxies.
+**Home Loan Analysis.ipynb** — classic PDS tabular classification/regression dataset study.
 
-## Approach
+Loan approval depends on income, credit history, and employment—applicants and analysts benefit from EDA on approval drivers.
 
-Loan dataset EDA, categorical breakdowns, correlation analysis, and logistic/regression prototypes.
+## Project Guidelines & Objectives
 
-## Technologies
+- Import loan applicant dataset
+- EDA: approval rate by income, credit grade, employment
+- Correlation and chi-square style checks on categoricals
+- Prototype logistic regression for approval prediction
+- Summarize risk factors for lending narrative
 
-Python · pandas · scikit-learn · Jupyter
+## Data Collection & Preparation
 
-## Outcomes
+Standard home-loan applicant tabular dataset (see notebook).
 
-Risk-factor summaries and baseline classification metrics.
+## Methodology & Analysis
+
+pandas EDA; visualization; baseline logistic model.
+
+## Model Evaluation
+
+Accuracy, precision/recall, or AUC on hold-out applicants.
+
+## Results & Key Learnings
+
+Risk-factor summary and baseline classifier for lending analytics intro.
 
 ## Source Code
 

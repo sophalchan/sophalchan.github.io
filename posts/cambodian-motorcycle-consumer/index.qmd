@@ -1,6 +1,6 @@
 ---
 title: "Cambodian Motorcycle Consumer Analysis"
-description: "Consumer behavior analysis in Cambodia's motorcycle market—brands, price bands, and purchase patterns."
+description: "Segmentation and brand/price analysis in Cambodia's motorcycle market."
 date: 2024-03-25
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,36 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Camb
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Cambodian motocycle comuser analysis)—Consumer behavior analysis in Cambodia's motorcycle market—brands, price bands, and purchase patterns.
+**Cambodian Motorcycle Consumer Analysis** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Segmentation and brand/price analysis in Cambodia's motorcycle market.
 
-## Problem & Data
+## Background & Motivation
 
-Manufacturers and dealers need visibility into how consumers trade off price, brand, and specifications.
+Consumer behavior study in the **Cambodian motorcycle market** (PDS collection). Focus on segmentation rather than single-price prediction.
 
-## Approach
+Motorcycles dominate urban mobility in Cambodia; brands and dealers need evidence on how consumers trade off price, engine size, and brand loyalty.
 
-Market data scraping, segmentation analysis, and visualization of brand share and price elasticity proxies.
+## Project Guidelines & Objectives
 
-## Technologies
+- Collect listing or survey-style market data on brands, specs, and prices
+- Segment consumers/SKUs by price band and brand share
+- Visualize market structure (bar/box plots, heatmaps)
+- Summarize implications for inventory and marketing
 
-Python · pandas · Seaborn · Jupyter
+## Data Collection & Preparation
 
-## Outcomes
+Scraped motorcycle listing data from Cambodian classified/marketplace sources.
 
-Segment profiles and trend charts supporting marketing and inventory decisions.
+## Methodology & Analysis
+
+EDA, segmentation, brand share analysis, price distribution by specification tier.
+
+## Model Evaluation
+
+Descriptive and comparative metrics; segment stability across price quantiles.
+
+## Results & Key Learnings
+
+Market structure report supporting dealer positioning and PDS consumer-analytics learning outcomes.
 
 ## Source Code
 

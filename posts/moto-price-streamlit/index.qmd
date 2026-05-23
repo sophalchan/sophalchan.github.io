@@ -1,6 +1,6 @@
 ---
 title: "Moto Price Prediction (Streamlit App)"
-description: "Motorbike price prediction with an interactive Streamlit front end for live estimates."
+description: "Used moto price regression with interactive Streamlit app (Ngim Panha, Lim Sunheng)."
 date: 2024-05-10
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,38 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Moto
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Moto price prediction with streamlit app)—Motorbike price prediction with an interactive Streamlit front end for live estimates.
+**Moto Price Prediction (Streamlit App)** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Used moto price regression with interactive Streamlit app (Ngim Panha, Lim Sunheng).
 
-## Problem & Data
+## Background & Motivation
 
-Used moto buyers need instant fair-price estimates from bike attributes.
+**Moto price prediction** — PDS 2022–2023. Members Ngim Panha, Lim Sunheng (ITC AMS). Instructor **CHAN Sophal**.
 
-## Approach
+Used motorbikes are Cambodia's most common vehicle purchase; buyers need instant fair-price estimates from year, brand, and mileage.
 
-Train regression on historical listings; deploy Streamlit UI for user inputs and predicted price output.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Moto price prediction Guideline*:**
 
-Python · scikit-learn · Streamlit · pandas · Jupyter
+- Problem statement: **objectives, constraints, deliverables, success criteria**
+- **Data collection & preprocessing:** scrape, clean, text preprocessing, feature extraction/encoding, train/test split
+- **EDA:** descriptive statistics, visualizations
+- **Modeling** + **Streamlit app** for interactive predictions (project folder name)
 
-## Outcomes
+## Data Collection & Preparation
 
-Interactive app delivering on-demand price predictions for common moto configurations.
+Scraped used moto listings; preprocessed CSV saved for modeling.
+
+## Methodology & Analysis
+
+Full PDS preprocessing pipeline; regression model; **Streamlit** UI for live price quotes from user inputs.
+
+## Model Evaluation
+
+Success criteria from guideline; app demo for instructors/stakeholders.
+
+## Results & Key Learnings
+
+Interactive moto pricing tool—exemplar of analytics + lightweight productization.
 
 ## Source Code
 

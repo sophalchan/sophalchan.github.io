@@ -1,6 +1,6 @@
 ---
 title: "Book Analysis"
-description: "Exploratory analysis of book sales and publishing trends from scraped market data."
+description: "Book price prediction from 2,393 Bookshop listings—format, category, and feature engineering per PDS guideline."
 date: 2024-03-10
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,38 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Book
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Book analysis)—Exploratory analysis of book sales and publishing trends from scraped market data.
+**Book Analysis** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Book price prediction from 2,393 Bookshop listings—format, category, and feature engineering per PDS guideline.
 
-## Problem & Data
+## Background & Motivation
 
-Understanding how title, genre, pricing, and demand signals relate in the book retail market.
+**Group 2** — *Prediction of Books Price* (PDS). The study asks which structural features drive list price in Cambodian e-commerce book listings.
 
-## Approach
+Publishers and online sellers price books using format, length, language, and category signals that are not always transparent to authors or buyers. A data-driven pricing lens supports fair listing and competitive strategy.
 
-Data collection and cleaning, summary statistics, trend visualization, and comparative analysis across categories.
+## Project Guidelines & Objectives
 
-## Technologies
+**From project guideline (*Prediction of Books Price*):**
 
-Python · pandas · Matplotlib · Seaborn · Jupyter
+- **Goal:** Study how book prices are defined by feature; help publishers/authors price competitively while maximizing sales and profitability
+- **Objective:** Build a **high-accuracy book price prediction model** (features in → price out)
+- **Pipeline:** Data collection → preprocessing → EDA → feature engineering → model selection → evaluation
+- **Models specified:** Multiple linear regression, Random Forest, gradient boosting, SVR, neural network regression, Ridge, Lasso
 
-## Outcomes
+## Data Collection & Preparation
 
-Actionable insights into sales patterns and category performance for retail and publishing analytics.
+**BookShopDataset** — scraped from Bookshop website; **2,393 books** with title, pages, format, language, publication date, publisher, author, dimensions, categories, and price (CSV, preprocessed).
+
+## Methodology & Analysis
+
+Preprocessing: missing-value checks; parse length/width/height from dimensions; clean categories (spacing, brackets, sub-sections); outlier removal. Feature engineering: days since publish; bin surface area → cover size (S/M/L); height → thickness (Thin/Medium/Thick); ordinal encoding; target encoding on categories. EDA on format popularity over time (hardcover, paperback, etc.).
+
+## Model Evaluation
+
+Compare regression algorithms on held-out data; select model with strongest accuracy for price prediction use case.
+
+## Results & Key Learnings
+
+Interpretable drivers of book pricing and a reusable regression workflow for retail analytics capstones.
 
 ## Source Code
 

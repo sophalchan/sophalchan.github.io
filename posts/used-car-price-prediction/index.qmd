@@ -1,6 +1,6 @@
 ---
 title: "Used Car Price Prediction"
-description: "Predicts used vehicle prices from mileage, year, brand, and condition features."
+description: "Three-month capstone: scrape → EDA → linear/Ridge/Lasso/polynomial regression."
 date: 2024-06-01
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Used
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Used Car Price Prediction)—Predicts used vehicle prices from mileage, year, brand, and condition features.
+**Used Car Price Prediction** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Three-month capstone: scrape → EDA → linear/Ridge/Lasso/polynomial regression.
 
-## Problem & Data
+## Background & Motivation
 
-Used-car markets need transparent valuations from observable vehicle attributes.
+**Used Car Price Prediction** — three-month PDS timeline in guideline PDF.
 
-## Approach
+Used imported cars dominate Cambodian classifieds; transparent valuation from mileage, year, and brand reduces asymmetric information between buyer and seller.
 
-Listing scrape, feature engineering, ensemble/regression models, error analysis by segment.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Project guidelines* (timeline):**
 
-Python · pandas · scikit-learn · Jupyter
+- **Month 1:** Web scraping → store CSV; web research; data overview; variable selection
+- **Month 2:** EDA — continuous/categorical feature distributions, target distribution
+- **Month 3:** Preprocessing (outliers, encoding) → **Linear, Ridge, Lasso, Polynomial** regression + feature engineering + correlation matrix
 
-## Outcomes
+## Data Collection & Preparation
 
-Price predictions with segment-level accuracy reporting.
+Scraped used-car listings; CSV after month-1 scrape phase.
+
+## Methodology & Analysis
+
+Structured 3-month capstone: EDA → clean → polynomial and regularized regression suite.
+
+## Model Evaluation
+
+Correlation analysis; compare linear and regularized models on test split.
+
+## Results & Key Learnings
+
+Documented semester arc from scrape to valuation model—strong teaching portfolio artifact.
 
 ## Source Code
 

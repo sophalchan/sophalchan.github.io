@@ -1,6 +1,6 @@
 ---
 title: "Customer Churn Prediction"
-description: "Classification project predicting customer churn for retention campaigns."
+description: "Churn classification for retention campaigns (PDS PDF report)."
 date: 2024-06-15
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Chur
 
 ## Overview
 
-Standalone notebook/report in the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-)—Classification project predicting customer churn for retention campaigns.
+**Customer Churn Prediction** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Churn classification for retention campaigns (PDS PDF report).
 
-## Problem & Data
+## Background & Motivation
 
-Subscription businesses lose revenue when churn is detected too late.
+**Churn Prediction — Programming for Data Science** (PDF report in repo root).
 
-## Approach
+Telecom and subscription businesses lose revenue when churn is detected late; early risk scoring targets retention spend.
 
-Feature engineering on usage/billing data, logistic regression and tree models, precision/recall evaluation.
+## Project Guidelines & Objectives
 
-## Technologies
+- Define churn label from usage/billing history
+- Feature engineering on tenure, charges, contract type
+- Train classifiers (logistic regression, trees)
+- Optimize precision/recall for retention campaigns
+- Present business recommendations in PDF report
 
-Python · pandas · scikit-learn · Jupyter
+## Data Collection & Preparation
 
-## Outcomes
+Customer usage and billing features with churn label (per course dataset).
 
-Churn risk scores prioritizing outreach to high-risk accounts.
+## Methodology & Analysis
+
+Classification pipeline; class imbalance handling; ROC and confusion matrix review.
+
+## Model Evaluation
+
+Precision/recall on high-risk segment; ROI narrative for retention.
+
+## Results & Key Learnings
+
+Formal PDS PDF report on churn modeling and intervention strategy.
 
 ## Source Code
 

@@ -1,6 +1,6 @@
 ---
 title: "Cambodia Land Price Analysis and Prediction"
-description: "Regression models predicting land values across Cambodian provinces using location and parcel features."
+description: "ITC Group 3 capstone: scrape land listings, EDA, and best-model selection for Cambodian land prices."
 date: 2024-03-15
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,39 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Camb
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Cambodia land price analysis and prediction)—Regression models predicting land values across Cambodian provinces using location and parcel features.
+**Cambodia Land Price Analysis and Prediction** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). ITC Group 3 capstone: scrape land listings, EDA, and best-model selection for Cambodian land prices.
 
-## Problem & Data
+## Background & Motivation
 
-Land buyers and analysts lack data-driven price benchmarks across heterogeneous districts and plot attributes.
+**Group 3 — Land Price Analysis** (ITC AMS, PDS 2022–2023, Lecturer CHAN Sophal). Five-member team capstone on Cambodian land listings.
 
-## Approach
+Land is a primary store of wealth in Cambodia; buyers and planners need defensible comparables across provinces where listing quality and units vary widely.
 
-Scrape and normalize listing data, engineer location/size/amenity features, train supervised regression models, and evaluate error on hold-out sets.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Final Project Guideline Land Price Analysis*:**
 
-Python · pandas · scikit-learn · Jupyter · visualization libraries
+1. **Define problem & goal** — state the analytical problem; goal: find the **best model for land price analysis**
+2. **Data collection** — web scraping from sites with land listing information
+3. **EDA** — cleaning, preprocessing, visualization
+4. **Modeling & analysis** — train/compare predictive models
+5. **Conclusion** — summarize findings and model choice
 
-## Outcomes
+## Data Collection & Preparation
 
-Predictive price estimates and EDA dashboards supporting real-estate market comparison.
+Scraped land listings from Cambodian property websites; features include location, area, and listing attributes (see project notebooks).
+
+## Methodology & Analysis
+
+Standard PDS pipeline: clean scraped text/numeric fields, visualize price distributions by region, engineer location and parcel features, fit regression models, compare errors.
+
+## Model Evaluation
+
+Model comparison on test split; emphasis on **best predictive model** per guideline goal.
+
+## Results & Key Learnings
+
+Regional land price insights and a documented modeling benchmark for ITC PDS assessment.
 
 ## Source Code
 

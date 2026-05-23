@@ -1,6 +1,6 @@
 ---
 title: "Data Science Projects Collection"
-description: "A curated collection of 20+ student term projects on scraping, prediction, and forecasting across Cambodian markets—hosted on PaulChanCyber/GitHub."
+description: "20+ PDS term projects—scraping, prediction, and forecasting across Cambodian markets (PaulChanCyber/GitHub)."
 date: 2024-03-01
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,44 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-"
 
 ## Overview
 
-This hub links the full **Data Science Projects Collection** on GitHub—a portfolio of term projects focused on data analysis, prediction, and forecasting using real scraped data from Cambodian and regional markets.
+This page is the **master index** for the Data Science Projects Collection on [PaulChanCyber/GitHub](https://github.com/PaulChanCyber/Data-Science-Project-)—student **Programming for Data Science (PDS)** work at the Institute of Technology of Cambodia.
 
-## Problem & Data
+## Background & Motivation
 
-Learners needed end-to-end experience moving from raw web/market data to cleaned datasets, exploratory analysis, predictive models, and—in several cases—deployable apps.
+Projects follow the **Programming for Data Science (PDS)** term-project framework at the **Institute of Technology of Cambodia (ITC)**, Department of Applied Mathematics and Statistics, under instructor **CHAN Sophal**. Typical deliverables include a written guideline alignment, exploratory analysis, modeling notebooks, evaluation metrics, and presentation slides.
 
-## Approach
+This repository aggregates **20+ term projects** from PDS cohorts (2020–2023). Each folder is a student team's end-to-end study—often with **Project Guideline** PDFs, Jupyter notebooks, reports, and (for advanced teams) **Flask**, **Streamlit**, or **Docker** deployments.
 
-Each subdirectory is a standalone project with Jupyter notebooks covering EDA, feature engineering, model training (regression, classification, time series), and visualization. Several projects extend to **Flask**, **Streamlit**, or **Docker** for interactive delivery.
+Cambodia's digital marketplaces (Khmer24, Bookshop, job boards, FX sources) generate rich, under-analyzed data. Student teams need repeatable capstone experience: scrape → clean → model → present—using problems that mirror real analyst workflows.
 
-## Technologies
+## Project Guidelines & Objectives
 
-Python · pandas · NumPy · scikit-learn · Matplotlib · Seaborn · Jupyter · Flask · Streamlit · Docker · ARIMA · LSTM
+**Collection-level expectations (PDS capstone):**
 
-## Outcomes
+- Define a clear **problem statement** and measurable **objectives**
+- Collect data via **web scraping** or curated CSV with documented schema
+- Perform **EDA**, cleaning, outlier review, and **feature engineering**
+- Train and compare **ML / statistical models** with train/validation/test discipline
+- Document **evaluation metrics** (RMSE, MAE, accuracy, F1, etc.) and business interpretation
+- Submit **report + slides + reproducible notebook(s)**
 
-Covers real estate, consumer goods, labor markets, currency forecasting, recommender systems, and ML fundamentals—demonstrating breadth in **data analytics** and **applied machine learning** instruction.
+**Domains covered:** real estate (land, house, condo), consumer goods (phones, laptops, motos, fridges), labor markets, tourism, FX forecasting, recommenders, and ML fundamentals (outliers, logistic regression, churn).
+
+## Data Collection & Preparation
+
+Each sub-project maintains its own scraped or provided dataset (typically CSV in-repo). Sources commonly include **Khmer24**, retailer listings, Bookshop, job portals, and historical FX series.
+
+## Methodology & Analysis
+
+Method varies by project: regression for prices, classification for churn/approval, time series (ARIMA, ETS, LSTM) for forecasting, collaborative filtering for recommendations. See individual project pages for model-specific pipelines.
+
+## Model Evaluation
+
+Teams report hold-out error, cross-validation where applicable, and visual diagnostics (residual plots, confusion matrices, forecast charts). Deployment projects add usability demos via web apps.
+
+## Results & Key Learnings
+
+Graduates demonstrate job-ready skills in **pandas**, **scikit-learn**, visualization, and optional app deployment—applied to Cambodian market contexts recruiters and regional employers recognize.
 
 
 ## All Projects in This Collection

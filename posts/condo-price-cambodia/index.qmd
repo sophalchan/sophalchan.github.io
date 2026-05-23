@@ -1,6 +1,6 @@
 ---
 title: "Condo Price Analysis in Cambodia"
-description: "Market analysis and modeling of condominium sale prices in Cambodian urban markets."
+description: "ITC condo-for-sale study: price drivers, districts, and formal PDS project management."
 date: 2024-04-05
 categories: ["Data Science and Analyst"]
 author: Sophal Chan
@@ -9,23 +9,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cond
 
 ## Overview
 
-Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Condo price analysis in Cambodia)—Market analysis and modeling of condominium sale prices in Cambodian urban markets.
+**Condo Price Analysis in Cambodia** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). ITC condo-for-sale study: price drivers, districts, and formal PDS project management.
 
-## Problem & Data
+## Background & Motivation
 
-Condo investors require comparable unit pricing adjusted for floor, size, district, and amenities.
+**Condo for Sale in Cambodia** — ITC AMS PDS 2022–2023 (Lecturer **CHAN Sophal**). Five-member group with formal project management sections in guideline.
 
-## Approach
+Condo investment in Phnom Penh and provincial cities requires comparables adjusted for district, floor, and amenities—often buried in unstructured listings.
 
-Listing aggregation, feature engineering for unit attributes, EDA, and predictive modeling.
+## Project Guidelines & Objectives
 
-## Technologies
+**From *Project guideline: Condo for Sale in Cambodia*:**
 
-Python · pandas · scikit-learn · Jupyter
+- **Goal:** Analyze condo sale market—which units are most expensive and where; identify **price drivers**
+- **Sections:** Objectives, scope, timeline, resources, risks/mitigation, approvals
+- **Analytical flow:** EDA → modeling → conclusions aligned with condo-for-sale domain
 
-## Outcomes
+## Data Collection & Preparation
 
-District-level price insights and model-based valuation estimates.
+Scraped condo sale listings across Cambodian markets (see team notebooks/reports).
+
+## Methodology & Analysis
+
+Clean listing fields; visualize price by district and unit attributes; regression or tree models for sale price; geographic breakdown of premium segments.
+
+## Model Evaluation
+
+Model error on hold-out listings; map/visual summary of expensive districts.
+
+## Results & Key Learnings
+
+Investor-oriented view of condo price drivers and top-tier districts.
 
 ## Source Code
 
