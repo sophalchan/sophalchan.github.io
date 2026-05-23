@@ -1,0 +1,29 @@
+---
+title: "OA Stage Classification — Ten Texture Descriptors (Springer 2019)"
+description: "First-author Springer RTIP2R conference paper—grades 0–4 OA staging; Medial Tibia ROI AUC 0.871 with CFS feature selection."
+date: 2019-07-16
+categories: [Research and Academic]
+author: Sophal Chan
+---
+
+## Publication
+
+**Authors:** Sophal Chan, Kwankamon Dittakan *(corresponding)*  
+**Venue:** RTIP2R 2018, CCIS vol. 1036, pp. 209–225, Springer Singapore, 2019  
+**DOI:** [10.1007/978-981-13-9184-2_19](https://doi.org/10.1007/978-981-13-9184-2_19)
+
+## Background of the Study
+
+Clinical OA is graded 0–4 on X-rays; automating **stage classification** supports radiologist workflow and population screening.
+
+## Motivation of the Study
+
+Determine which knee ROI and texture pipeline best predicts **OA severity grade** using correlation-based feature selection.
+
+## Key Result
+
+**Medial Tibia (MT) ROI → AUC = 0.871** on 130-image dataset.
+
+## Link
+
+[Springer chapter](https://link.springer.com/chapter/10.1007/978-981-13-9184-2_19)

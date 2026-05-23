@@ -1,0 +1,30 @@
+---
+title: "Research & Academic Portfolio"
+description: "Peer-reviewed medical image mining, osteoarthritis ML studies, ITC teaching research, and scholarly output—first-author publications from Prince of Songkla University."
+date: 2026-05-23
+categories: [Research and Academic]
+author: Sophal Chan
+---
+
+## Overview
+
+This hub collects **scholarly research and academic work** by **Sophal Chan**—including **four published outputs** on machine-learning detection of **knee osteoarthritis** from X-ray imagery, graduate research at **Prince of Songkla University**, and supervision of **Programming for Data Science** capstones at **ITC**.
+
+**Full citations and timeline:** [Research & Academic page](../../research.qmd)
+
+## Featured Publications
+
+| Year | Type | Title | Metric |
+|------|------|-------|--------|
+| 2020 | Journal | [Texture Analysis for OA Classification (IJASEIT)](pub-oa-texture-ijaseit/) | AUC **0.912** |
+| 2020 | Journal | [Quadtree OA Detection (IJCA)](pub-oa-quadtree-ijca/) | AUC **0.917** |
+| 2019 | Conference | [OA Stage Classification — 10 Descriptors (Springer)](pub-oa-stages-springer/) | AUC **0.871** |
+| 2019 | Thesis | [Early OA Detection — M.S. IT (PSU)](pub-oa-thesis-psu/) | Multi-approach |
+
+## Research Interests
+
+Medical image mining · texture & shape analysis · OA grading · SVM/CNN classifiers · cybersecurity analytics · quantum science · data science education.
+
+## Source
+
+Publications match [linkedin.com/in/sophalchan](https://www.linkedin.com/in/sophalchan).

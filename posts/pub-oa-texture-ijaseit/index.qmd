@@ -1,0 +1,28 @@
+---
+title: "OA Classification via Texture Analysis (IJASEIT 2020)"
+description: "First-author journal paper—ten texture descriptors, knee X-ray ROIs, Local Binary Pattern; AUC 0.912 for osteoarthritis vs. non-OA."
+date: 2020-12-01
+categories: [Research and Academic]
+author: Sophal Chan
+---
+
+## Publication
+
+**Authors:** Sophal Chan, Kwankamon Dittakan, Matias Garcia-Constantino  
+**Venue:** *International Journal on Advanced Science, Engineering and Information Technology*, Vol. 10, No. 6, pp. 2189–2199, Dec. 2020
+
+## Background of the Study
+
+Knee osteoarthritis (OA) affects millions in Thailand; early X-ray-based detection can guide prevention when recovery from advanced OA is limited.
+
+## Motivation of the Study
+
+Compare texture descriptors across anatomical ROIs (medial/lateral femur and tibia) to find the most reliable automated OA vs. non-OA classifier.
+
+## Key Result
+
+**Lateral Femur + Local Binary Pattern → AUC = 0.912** (131 images: 68 OA, 63 non-OA).
+
+## Links
+
+[Journal article](https://ijaseit.insightsociety.org/index.php/ijaseit/article/view/8279) · [PDF](https://ijaseit.insightsociety.org/index.php/ijaseit/article/download/8279/pdf_1596)

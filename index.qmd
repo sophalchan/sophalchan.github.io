@@ -38,7 +38,7 @@ Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, *
 
 Browse **cybersecurity**, **AI/ML**, and **data science & analyst** work below—including **21 projects** in the [**Data Science Projects Collection**](posts/data-science-collection/) from [PaulChanCyber/Data-Science-Project-](https://github.com/PaulChanCyber/Data-Science-Project-).
 
-Use the sidebar filters (**Data Science and Analyst**, **Quantum Science**, **Cybersecurity**, etc.) or search by keyword. See **[Research & Academic](research.qmd)** for publications and scholarly work.
+Use the sidebar filter **[Research and Academic](posts/research-and-academic/)** for peer-reviewed publications and thesis work, or **Data Science and Analyst** for the 21-project teaching collection. Full citations: **[Research & Academic](research.qmd)**.
 
 ::: {#portfolio-listing}
 :::

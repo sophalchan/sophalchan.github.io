@@ -1,0 +1,32 @@
+---
+title: "Early OA Detection — M.S. Thesis (Prince of Songkla University)"
+description: "Master's thesis comparing texture, graph-based, and CNN approaches for osteoarthritis detection and multi-stage classification."
+date: 2019-05-01
+categories: [Research and Academic]
+author: Sophal Chan
+---
+
+## Publication
+
+**Author:** Sophal Chan  
+**Degree:** M.S. Information Technology, College of Computing, Prince of Songkla University, Phuket
+
+## Background of the Study
+
+Integrates three representation families—**texture**, **graph**, and **CNN**—for knee OA detection and staging on X-ray imagery.
+
+## Motivation of the Study
+
+Identify which representation + classifier pipeline is most defensible for clinical screening and thesis contribution.
+
+## Key Results
+
+| Approach | OA detection AUC | Stage classification AUC |
+|----------|------------------|---------------------------|
+| Texture-based | **0.912** | **0.871** |
+| Graph-based | 0.917 | 0.819 |
+| CNN | 0.880 | 0.629 |
+
+## Link
+
+[PSU Knowledge Bank (PDF)](https://kb.psu.ac.th:8080/psukb/bitstream/2016/13400/1/435044.pdf)
