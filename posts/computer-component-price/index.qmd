@@ -11,35 +11,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Comp
 
 **Computer Component Price Analysis** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Khmer24 PC parts (1,055 rows): Ridge, Lasso, tree, and forest models per project guideline.
 
-## Background & Motivation
+## Background of the Study
 
-**Group 2 — PC Component price analysis** (PDS guideline on repo).
+This study examines **PC DIY and component resale on Khmer24** in Cambodia—a context where digital classifieds and e-commerce listings have accelerated price transparency but not necessarily price *understanding*. Stakeholders include students, gamers, and IT shops building custom machines. **Group 2 — PC Component price analysis** (PDS guideline on repo). The project folder on GitHub contains notebooks, and in many cases a formal **Project Guideline** PDF that records the instructor-approved objectives, timeline, and evaluation plan. That document is the contract between the student team and the course: it states what will be delivered, which algorithms will be compared, and how success will be measured. The work was completed in the **Programming for Data Science (PDS)** course at the **Institute of Technology of Cambodia (ITC)**, Department of Applied Mathematics and Statistics, under instructor **CHAN Sophal**. Deliverables typically include a **Project Guideline** alignment document, Jupyter notebooks, visualizations, a written report, and presentation slides—mirroring how data analysts are expected to document real engagements for technical and non-technical audiences.
 
-PC builders face volatile component pricing (GPU, CPU, RAM). Systematic tracking clarifies fair pay-for-spec across Khmer24 listings.
+## Motivation of the Study
+
+**Why this topic matters:** CPU/GPU/RAM prices are volatile; buyers need spec-adjusted benchmarks before purchasing. PC builders face volatile component pricing (GPU, CPU, RAM). Systematic tracking clarifies fair pay-for-spec across Khmer24 listings. From an academic standpoint, **Computer Component Price Analysis** trains competencies employers list repeatedly: pandas data wrangling, visualization literacy, scikit-learn modeling, and clear written communication. From a practical standpoint, even a simple benchmark model helps students, gamers, and IT shops building custom machines negotiate fairer deals and spot overpriced listings. The motivation is therefore both **social** (fairer, more informed transactions) and **pedagogical** (evidence that the team followed the guideline, compared models fairly, and can explain limitations such as sample bias, missing data, and temporal drift).
 
 ## Project Guidelines & Objectives
 
-**From *Project Guideline: PC Component price analysis*:**
+The following objectives and steps are taken from the team's **Project Guideline** (see GitHub) and reflect how the instructor graded the capstone: **From *Project Guideline: PC Component price analysis*:**
 
 - **Objective:** PC component **price prediction model** with strong accuracy
 - **Data:** Khmer24 dataset — **11 features, 1,055 rows**
-- **Steps:** Preprocessing (missing values, duplicates, outliers) → EDA (correlation, feature engineering/selection, transforms) → Models: **Multiple Linear Regression, Ridge, Lasso, Decision Tree, Random Forest** → Train/validation/test with **cross-validation**
+- **Steps:** Preprocessing (missing values, duplicates, outliers) → EDA (correlation, feature engineering/selection, transforms) → Models: **Multiple Linear Regression, Ridge, Lasso, Decision Tree, Random Forest** → Train/validation/test with **cross-validation** Teams were expected to show intermediate artifacts—not only a final accuracy number. That includes data dictionaries, plots defending modeling choices, and a short conclusion on which model to deploy or recommend for the stated business question.
 
 ## Data Collection & Preparation
 
-Khmer24 scraped listings — 1,055 observations, 11 features per guideline.
+Reliable conclusions depend on documenting **where data came from**, **how often it was collected**, and **what each column means**. For this project: Khmer24 scraped listings — 1,055 observations, 11 features per guideline. Typical preparation steps across PDS scraping projects include deduplicating listings, standardizing currencies (USD vs. KHR), parsing text fields (e.g., '3+ bedrooms'), handling missing values with explicit rules, and flagging extreme prices before modeling. Those steps reduce leakage and prevent a single erroneous row from dominating metrics.
 
 ## Methodology & Analysis
 
-Correlation plots vs. price; feature engineering and selection; compare linear, regularized, tree, and ensemble regressors.
+Analytical work proceeded in reproducible notebook stages so instructors could rerun cells during defense sessions: Correlation plots vs. price; feature engineering and selection; compare linear, regularized, tree, and ensemble regressors. Where applicable, teams compared multiple algorithms rather than reporting a single default model. Feature engineering was justified with plots (distributions, correlations, geographic breakdowns) so stakeholders could see *why* variables entered the model—not only *that* they improved error metrics.
 
 ## Model Evaluation
 
-Cross-validated performance on validation and test splits.
+Model evaluation followed train/validation/test discipline taught in PDS: Cross-validated performance on validation and test splits. Beyond scalar error, teams were encouraged to inspect **residuals** (regression), **confusion matrices** (classification), or **forecast overlays** (time series) to detect systematic bias—such as underpricing premium districts or overfitting rare categories.
 
 ## Results & Key Learnings
 
-Component price benchmarks and model comparison report for DIY PC market analytics.
+Component price benchmarks and model comparison report for DIY PC market analytics. Completing **Computer Component Price Analysis** provides evidence of end-to-end data science execution: from raw scrape to defended conclusions. For portfolio readers, the GitHub repository contains the artifacts to verify claims—notebooks, and in many folders, slide decks and PDF reports. Limitations are worth stating explicitly: scraped data snapshots age quickly; models trained in 2022–2023 may need retraining as market conditions shift. That honesty is part of professional practice.
 
 ## Source Code
 

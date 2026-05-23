@@ -11,17 +11,19 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-"
 
 This page is the **master index** for the Data Science Projects Collection on [PaulChanCyber/GitHub](https://github.com/PaulChanCyber/Data-Science-Project-)—student **Programming for Data Science (PDS)** work at the Institute of Technology of Cambodia.
 
-## Background & Motivation
+## Background of the Study
 
 Projects follow the **Programming for Data Science (PDS)** term-project framework at the **Institute of Technology of Cambodia (ITC)**, Department of Applied Mathematics and Statistics, under instructor **CHAN Sophal**. Typical deliverables include a written guideline alignment, exploratory analysis, modeling notebooks, evaluation metrics, and presentation slides.
 
-This repository aggregates **20+ term projects** from PDS cohorts (2020–2023). Each folder is a student team's end-to-end study—often with **Project Guideline** PDFs, Jupyter notebooks, reports, and (for advanced teams) **Flask**, **Streamlit**, or **Docker** deployments.
+The **Data Science Projects Collection** on GitHub (account: **PaulChanCyber**) archives multi-year student capstones from Cambodia-focused data science coursework. Rather than synthetic textbook datasets alone, most teams work with **scraped marketplace and public records data**—Khmer24 listings, Bookshop catalogs, job boards, and FX series—so methods are tested on noisy, real-world tables. This repository aggregates **20+ term projects** from PDS cohorts (2020–2023). Each folder is a student team's end-to-end study—often with **Project Guideline** PDFs, Jupyter notebooks, reports, and (for advanced teams) **Flask**, **Streamlit**, or **Docker** deployments. Across cohorts (approximately 2020–2023), projects share a common pedagogical arc even when domains differ: articulate a business question, collect and document data provenance, clean and explore, engineer features, train models, evaluate with appropriate metrics, and communicate findings in reports and slides. Several advanced teams extended notebooks into **Flask**, **Streamlit**, or **Docker** deployments, demonstrating that analytics prototypes can be shared as lightweight applications. The work was completed in the **Programming for Data Science (PDS)** course at the **Institute of Technology of Cambodia (ITC)**, Department of Applied Mathematics and Statistics, under instructor **CHAN Sophal**. Deliverables typically include a **Project Guideline** alignment document, Jupyter notebooks, visualizations, a written report, and presentation slides—mirroring how data analysts are expected to document real engagements for technical and non-technical audiences.
 
-Cambodia's digital marketplaces (Khmer24, Bookshop, job boards, FX sources) generate rich, under-analyzed data. Student teams need repeatable capstone experience: scrape → clean → model → present—using problems that mirror real analyst workflows.
+## Motivation of the Study
+
+Cambodia's economy is increasingly digitized: property, vehicles, electronics, and jobs are advertised online long before they appear in traditional channels. That shift creates an educational opportunity—students can practice the same workflows used by working data analysts (scraping, cleaning, modeling, deployment) on problems their families and communities recognize. Cambodia's digital marketplaces (Khmer24, Bookshop, job boards, FX sources) generate rich, under-analyzed data. Student teams need repeatable capstone experience: scrape → clean → model → present—using problems that mirror real analyst workflows. Motivation for maintaining a **public collection** is threefold: (1) showcase student achievement for employers and graduate programs; (2) give future cohorts exemplar pipelines; (3) document instructor **CHAN Sophal**'s PDS curriculum impact across real estate, consumer goods, labor, and finance domains. For visitors to this portfolio, the collection demonstrates breadth: regression for prices, classification for churn and loan approval, time series for gold and FX, recommenders for movies, and dedicated modules on outlier treatment that underpin every other scrape-heavy project.
 
 ## Project Guidelines & Objectives
 
-**Collection-level expectations (PDS capstone):**
+The following objectives and steps are taken from the team's **Project Guideline** (see GitHub) and reflect how the instructor graded the capstone: **Collection-level expectations (PDS capstone):**
 
 - Define a clear **problem statement** and measurable **objectives**
 - Collect data via **web scraping** or curated CSV with documented schema
@@ -30,23 +32,23 @@ Cambodia's digital marketplaces (Khmer24, Bookshop, job boards, FX sources) gene
 - Document **evaluation metrics** (RMSE, MAE, accuracy, F1, etc.) and business interpretation
 - Submit **report + slides + reproducible notebook(s)**
 
-**Domains covered:** real estate (land, house, condo), consumer goods (phones, laptops, motos, fridges), labor markets, tourism, FX forecasting, recommenders, and ML fundamentals (outliers, logistic regression, churn).
+**Domains covered:** real estate (land, house, condo), consumer goods (phones, laptops, motos, fridges), labor markets, tourism, FX forecasting, recommenders, and ML fundamentals (outliers, logistic regression, churn). Teams were expected to show intermediate artifacts—not only a final accuracy number. That includes data dictionaries, plots defending modeling choices, and a short conclusion on which model to deploy or recommend for the stated business question.
 
 ## Data Collection & Preparation
 
-Each sub-project maintains its own scraped or provided dataset (typically CSV in-repo). Sources commonly include **Khmer24**, retailer listings, Bookshop, job portals, and historical FX series.
+Reliable conclusions depend on documenting **where data came from**, **how often it was collected**, and **what each column means**. For this project: Each sub-project maintains its own scraped or provided dataset (typically CSV in-repo). Sources commonly include **Khmer24**, retailer listings, Bookshop, job portals, and historical FX series. Typical preparation steps across PDS scraping projects include deduplicating listings, standardizing currencies (USD vs. KHR), parsing text fields (e.g., '3+ bedrooms'), handling missing values with explicit rules, and flagging extreme prices before modeling. Those steps reduce leakage and prevent a single erroneous row from dominating metrics.
 
 ## Methodology & Analysis
 
-Method varies by project: regression for prices, classification for churn/approval, time series (ARIMA, ETS, LSTM) for forecasting, collaborative filtering for recommendations. See individual project pages for model-specific pipelines.
+Analytical work proceeded in reproducible notebook stages so instructors could rerun cells during defense sessions: Method varies by project: regression for prices, classification for churn/approval, time series (ARIMA, ETS, LSTM) for forecasting, collaborative filtering for recommendations. See individual project pages for model-specific pipelines. Where applicable, teams compared multiple algorithms rather than reporting a single default model. Feature engineering was justified with plots (distributions, correlations, geographic breakdowns) so stakeholders could see *why* variables entered the model—not only *that* they improved error metrics.
 
 ## Model Evaluation
 
-Teams report hold-out error, cross-validation where applicable, and visual diagnostics (residual plots, confusion matrices, forecast charts). Deployment projects add usability demos via web apps.
+Model evaluation followed train/validation/test discipline taught in PDS: Teams report hold-out error, cross-validation where applicable, and visual diagnostics (residual plots, confusion matrices, forecast charts). Deployment projects add usability demos via web apps. Beyond scalar error, teams were encouraged to inspect **residuals** (regression), **confusion matrices** (classification), or **forecast overlays** (time series) to detect systematic bias—such as underpricing premium districts or overfitting rare categories.
 
 ## Results & Key Learnings
 
-Graduates demonstrate job-ready skills in **pandas**, **scikit-learn**, visualization, and optional app deployment—applied to Cambodian market contexts recruiters and regional employers recognize.
+Graduates demonstrate job-ready skills in **pandas**, **scikit-learn**, visualization, and optional app deployment—applied to Cambodian market contexts recruiters and regional employers recognize. Completing **Data Science Projects Collection** provides evidence of end-to-end data science execution: from raw scrape to defended conclusions. For portfolio readers, the GitHub repository contains the artifacts to verify claims—notebooks, and in many folders, slide decks and PDF reports. Limitations are worth stating explicitly: scraped data snapshots age quickly; models trained in 2022–2023 may need retraining as market conditions shift. That honesty is part of professional practice.
 
 
 ## All Projects in This Collection

@@ -4,6 +4,7 @@
 from pathlib import Path
 from urllib.parse import quote
 
+from ds_content_expander import get_expanded
 from ds_projects_enriched import COMMON_PDS, ENRICHED
 
 REPO = "https://github.com/PaulChanCyber/Data-Science-Project-"
@@ -99,9 +100,11 @@ repo-url: "{repo_url}"
 
 {overview}
 
-## Background & Motivation
+## Background of the Study
 
 {background}
+
+## Motivation of the Study
 
 {motivation}
 
@@ -142,7 +145,7 @@ def repo_url_for(slug, dir_name, file_name):
 def main():
     root = Path(__file__).resolve().parents[1] / "posts"
     for slug, title, date, description, dir_name, file_name in POSTS_META:
-        e = ENRICHED[slug]
+        e = get_expanded(slug, title)
         url, link_label = repo_url_for(slug, dir_name, file_name)
 
         if slug == "data-science-collection":
@@ -178,8 +181,8 @@ def main():
         if slug == "data-science-collection":
             pds_note = COMMON_PDS.strip() + "\n\n"
             body = body.replace(
-                "## Background & Motivation\n\n" + e["background"].strip(),
-                "## Background & Motivation\n\n" + pds_note + e["background"].strip(),
+                "## Background of the Study\n\n",
+                "## Background of the Study\n\n" + pds_note,
                 1,
             )
             body = body.replace(

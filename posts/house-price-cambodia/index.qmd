@@ -11,35 +11,37 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Hous
 
 **House Price Prediction in Cambodia** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Khmer24 house prices: cleaning, feature engineering, and ML valuation per step-by-step guideline.
 
-## Background & Motivation
+## Background of the Study
 
-**House Price Prediction in Phnom Penh** — detailed PDS guideline on repo with step-by-step data cleaning rules.
+This study examines **residential resale listings (Phnom Penh focus)** in Cambodia—a context where digital classifieds and e-commerce listings have accelerated price transparency but not necessarily price *understanding*. Stakeholders include families, agents, and small developers. **House Price Prediction in Phnom Penh** — detailed PDS guideline on repo with step-by-step data cleaning rules. The project folder on GitHub contains notebooks, and in many cases a formal **Project Guideline** PDF that records the instructor-approved objectives, timeline, and evaluation plan. That document is the contract between the student team and the course: it states what will be delivered, which algorithms will be compared, and how success will be measured. The work was completed in the **Programming for Data Science (PDS)** course at the **Institute of Technology of Cambodia (ITC)**, Department of Applied Mathematics and Statistics, under instructor **CHAN Sophal**. Deliverables typically include a **Project Guideline** alignment document, Jupyter notebooks, visualizations, a written report, and presentation slides—mirroring how data analysts are expected to document real engagements for technical and non-technical audiences.
 
-Residential buyers in Phnom Penh lack transparent valuation when listings mix USD/KHR formats, vague room counts, and inconsistent location tags.
+## Motivation of the Study
+
+**Why this topic matters:** House ads mix currencies, vague room counts, and inconsistent location tags—clean data plus models improve trust. Residential buyers in Phnom Penh lack transparent valuation when listings mix USD/KHR formats, vague room counts, and inconsistent location tags. From an academic standpoint, **House Price Prediction in Cambodia** trains competencies employers list repeatedly: pandas data wrangling, visualization literacy, scikit-learn modeling, and clear written communication. From a practical standpoint, even a simple benchmark model helps families, agents, and small developers negotiate fairer deals and spot overpriced listings. The motivation is therefore both **social** (fairer, more informed transactions) and **pedagogical** (evidence that the team followed the guideline, compared models fairly, and can explain limitations such as sample bias, missing data, and temporal drift).
 
 ## Project Guidelines & Objectives
 
-**From *Project guideLine* (House Price Prediction):**
+The following objectives and steps are taken from the team's **Project Guideline** (see GitHub) and reflect how the instructor graded the capstone: **From *Project guideLine* (House Price Prediction):**
 
 - **Goal:** Predict house price from location, size, bedrooms, bathrooms, condition
 - **Data source:** **Khmer24**
-- **Steps:** (1) Data collection (2) Cleaning — strip `$`/`, validate prices, impute bedroom/bathroom `3+` as average 3 (3) **Feature engineering** — combine rooms; drop rare categories; scale; feature selection (4) **Model selection** — compare ML regressors (5) Evaluate on separate test set
+- **Steps:** (1) Data collection (2) Cleaning — strip `$`/`, validate prices, impute bedroom/bathroom `3+` as average 3 (3) **Feature engineering** — combine rooms; drop rare categories; scale; feature selection (4) **Model selection** — compare ML regressors (5) Evaluate on separate test set Teams were expected to show intermediate artifacts—not only a final accuracy number. That includes data dictionaries, plots defending modeling choices, and a short conclusion on which model to deploy or recommend for the stated business question.
 
 ## Data Collection & Preparation
 
-Khmer24 house listings with price, location, size, bedrooms, bathrooms, condition.
+Reliable conclusions depend on documenting **where data came from**, **how often it was collected**, and **what each column means**. For this project: Khmer24 house listings with price, location, size, bedrooms, bathrooms, condition. Typical preparation steps across PDS scraping projects include deduplicating listings, standardizing currencies (USD vs. KHR), parsing text fields (e.g., '3+ bedrooms'), handling missing values with explicit rules, and flagging extreme prices before modeling. Those steps reduce leakage and prevent a single erroneous row from dominating metrics.
 
 ## Methodology & Analysis
 
-Regex price cleaning; rare-category collapsing; normalization; feature selection algorithms; multiple regression candidates.
+Analytical work proceeded in reproducible notebook stages so instructors could rerun cells during defense sessions: Regex price cleaning; rare-category collapsing; normalization; feature selection algorithms; multiple regression candidates. Where applicable, teams compared multiple algorithms rather than reporting a single default model. Feature engineering was justified with plots (distributions, correlations, geographic breakdowns) so stakeholders could see *why* variables entered the model—not only *that* they improved error metrics.
 
 ## Model Evaluation
 
-Separate test dataset per guideline; compare model accuracy.
+Model evaluation followed train/validation/test discipline taught in PDS: Separate test dataset per guideline; compare model accuracy. Beyond scalar error, teams were encouraged to inspect **residuals** (regression), **confusion matrices** (classification), or **forecast overlays** (time series) to detect systematic bias—such as underpricing premium districts or overfitting rare categories.
 
 ## Results & Key Learnings
 
-Reproducible Phnom Penh house valuation pipeline documented for PDS grading.
+Reproducible Phnom Penh house valuation pipeline documented for PDS grading. Completing **House Price Prediction in Cambodia** provides evidence of end-to-end data science execution: from raw scrape to defended conclusions. For portfolio readers, the GitHub repository contains the artifacts to verify claims—notebooks, and in many folders, slide decks and PDF reports. Limitations are worth stating explicitly: scraped data snapshots age quickly; models trained in 2022–2023 may need retraining as market conditions shift. That honesty is part of professional practice.
 
 ## Source Code
 

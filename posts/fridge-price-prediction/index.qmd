@@ -11,34 +11,36 @@ repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Frid
 
 **Fridge Price Prediction** — part of the [Data Science Projects Collection](https://github.com/PaulChanCyber/Data-Science-Project-). Appliance price regression from brand, capacity, and energy features.
 
-## Background & Motivation
+## Background of the Study
 
-PDS **Fridge Price prediction** module in the collection—retail regression on scraped appliance listings.
+This study examines **home appliance retail in Cambodia** in Cambodia—a context where digital classifieds and e-commerce listings have accelerated price transparency but not necessarily price *understanding*. Stakeholders include households upgrading appliances and small retailers. PDS **Fridge Price prediction** module in the collection—retail regression on scraped appliance listings. The project folder on GitHub contains notebooks, and in many cases a formal **Project Guideline** PDF that records the instructor-approved objectives, timeline, and evaluation plan. That document is the contract between the student team and the course: it states what will be delivered, which algorithms will be compared, and how success will be measured. The work was completed in the **Programming for Data Science (PDS)** course at the **Institute of Technology of Cambodia (ITC)**, Department of Applied Mathematics and Statistics, under instructor **CHAN Sophal**. Deliverables typically include a **Project Guideline** alignment document, Jupyter notebooks, visualizations, a written report, and presentation slides—mirroring how data analysts are expected to document real engagements for technical and non-technical audiences.
 
-Appliance SKUs differ by capacity, energy class, and brand—shoppers need spec-adjusted fair price signals.
+## Motivation of the Study
+
+**Why this topic matters:** Refrigerator prices depend on capacity, brand, and energy class—features that are easy to misread in ads. Appliance SKUs differ by capacity, energy class, and brand—shoppers need spec-adjusted fair price signals. From an academic standpoint, **Fridge Price Prediction** trains competencies employers list repeatedly: pandas data wrangling, visualization literacy, scikit-learn modeling, and clear written communication. From a practical standpoint, even a simple benchmark model helps households upgrading appliances and small retailers negotiate fairer deals and spot overpriced listings. The motivation is therefore both **social** (fairer, more informed transactions) and **pedagogical** (evidence that the team followed the guideline, compared models fairly, and can explain limitations such as sample bias, missing data, and temporal drift).
 
 ## Project Guidelines & Objectives
 
-- Collect refrigerator listings (brand, capacity, energy rating, features, price)
+The following objectives and steps are taken from the team's **Project Guideline** (see GitHub) and reflect how the instructor graded the capstone: - Collect refrigerator listings (brand, capacity, energy rating, features, price)
 - Handle missing/outlier prices
 - Encode categoricals; scale numerics
-- Train regression; analyze residuals for over/under-priced units
+- Train regression; analyze residuals for over/under-priced units Teams were expected to show intermediate artifacts—not only a final accuracy number. That includes data dictionaries, plots defending modeling choices, and a short conclusion on which model to deploy or recommend for the stated business question.
 
 ## Data Collection & Preparation
 
-Scraped fridge/appliance listings from Cambodian e-commerce or classified sites.
+Reliable conclusions depend on documenting **where data came from**, **how often it was collected**, and **what each column means**. For this project: Scraped fridge/appliance listings from Cambodian e-commerce or classified sites. Typical preparation steps across PDS scraping projects include deduplicating listings, standardizing currencies (USD vs. KHR), parsing text fields (e.g., '3+ bedrooms'), handling missing values with explicit rules, and flagging extreme prices before modeling. Those steps reduce leakage and prevent a single erroneous row from dominating metrics.
 
 ## Methodology & Analysis
 
-pandas cleaning; one-hot/ordinal encoding; scikit-learn regression; residual plots.
+Analytical work proceeded in reproducible notebook stages so instructors could rerun cells during defense sessions: pandas cleaning; one-hot/ordinal encoding; scikit-learn regression; residual plots. Where applicable, teams compared multiple algorithms rather than reporting a single default model. Feature engineering was justified with plots (distributions, correlations, geographic breakdowns) so stakeholders could see *why* variables entered the model—not only *that* they improved error metrics.
 
 ## Model Evaluation
 
-Test-set RMSE; listing-level fair-price flags.
+Model evaluation followed train/validation/test discipline taught in PDS: Test-set RMSE; listing-level fair-price flags. Beyond scalar error, teams were encouraged to inspect **residuals** (regression), **confusion matrices** (classification), or **forecast overlays** (time series) to detect systematic bias—such as underpricing premium districts or overfitting rare categories.
 
 ## Results & Key Learnings
 
-Spec-adjusted fridge price guidance for consumers and resellers.
+Spec-adjusted fridge price guidance for consumers and resellers. Completing **Fridge Price Prediction** provides evidence of end-to-end data science execution: from raw scrape to defended conclusions. For portfolio readers, the GitHub repository contains the artifacts to verify claims—notebooks, and in many folders, slide decks and PDF reports. Limitations are worth stating explicitly: scraped data snapshots age quickly; models trained in 2022–2023 may need retraining as market conditions shift. That honesty is part of professional practice.
 
 ## Source Code
 
