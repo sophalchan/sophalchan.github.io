@@ -216,6 +216,7 @@ main table {
   font-weight: 600;
 }
 
+.timeline-item > p:first-of-type,
 .timeline-item h4 {
   margin: 0.15rem 0 0.35rem;
   font-size: 1rem;
