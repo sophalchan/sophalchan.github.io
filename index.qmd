@@ -21,7 +21,7 @@ listing:
 # Sophal Chan
 
 <p class="hero-subtitle">
-Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, **AI Engineering**, and **Data Analytics**—plus hands-on **manufacturing** experience as a **Composite Technician** (kit cutting, CNC programming, engineering drawings). Building security systems, data-driven solutions, and precision production workflows.
+Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, **AI Engineering**, and **Data Analytics**—plus hands-on **manufacturing** experience (kit cutting, CNC programming, engineering drawings). Building security systems, data-driven solutions, and precision production workflows.
 </p>
 
 ::: {.hero-tags}
