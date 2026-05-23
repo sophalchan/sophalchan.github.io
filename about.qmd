@@ -148,7 +148,7 @@ Awarded the **Prince Sirindhorn Scholar**
 ::: {.timeline-item markdown="1"}
 <span class="timeline-date">May 2020 – Present</span>
 
-**Senior IT Engineer (Part-Time)** · **Krulabs.ai** · Ohio, USA
+**Senior IT Engineer** <span class="employment-type">(Part-Time)</span> · **Krulabs.ai** · Ohio, USA
 
 - Conduct comprehensive system analysis to understand end-to-end architecture, ensuring seamless integration and alignment across all IT infrastructure components.
 - Design and execute rigorous smoke and integration tests to validate system stability, identify critical edge cases, and maintain high software reliability.
@@ -159,7 +159,7 @@ Awarded the **Prince Sirindhorn Scholar**
 ::: {.timeline-item markdown="1"}
 <span class="timeline-date">Aug 2024 – Present</span>
 
-**Composite Technician (Full-Time)** · **Eagle Composite** · Ohio, USA
+**Composite Technician** <span class="employment-type">(Full-Time)</span> · **Eagle Composite** · Ohio, USA
 
 - Perform specimen preparation, cutting, and finishing of composite and metallic materials for testing and evaluation.
 - Operate and program CNC and manual machines to meet customer specifications and tolerances.

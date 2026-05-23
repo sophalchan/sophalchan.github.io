@@ -230,6 +230,12 @@ main table {
   font-weight: 700;
 }
 
+.timeline-item .employment-type {
+  font-weight: 700;
+  color: #1a5276;
+  white-space: nowrap;
+}
+
 /* --- Code blocks in posts --- */
 pre.sourceCode {
   border-radius: 0.35rem;
