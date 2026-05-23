@@ -2,7 +2,7 @@
 title: "Network Traffic Analysis Lab"
 description: "Hands-on Wireshark and TCP/IP analysis exercises for security event monitoring and incident response readiness."
 date: 2025-06-10
-categories: [Networking, Cybersecurity]
+categories: [Quantum Science, Cybersecurity]
 author: Sophal Chan
 ---
 

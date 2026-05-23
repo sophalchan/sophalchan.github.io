@@ -53,11 +53,11 @@ I bring hands-on experience across security operations, data interpretation, and
 :::
 
 ::: {.skill-category}
-#### Networking & Protocols
-- Wireshark
-- Cisco Packet Tracer
-- Network Traffic Analysis
-- TCP/IP
+#### Quantum Science
+- Quantum computing & information fundamentals
+- Linear algebra for quantum systems
+- Quantum simulation (Qiskit-oriented workflows)
+- Quantum algorithms & optimization basics
 :::
 
 ::: {.skill-category}
@@ -69,6 +69,12 @@ I bring hands-on experience across security operations, data interpretation, and
 :::
 
 :::
+
+## Research & Academic
+
+I maintain an active **research and teaching** profile across quantum science, cybersecurity, AI engineering, and data analytics. At ITC I have supervised numerous **Programming for Data Science** capstones—documented in the public [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-)—and continue work on ML-based security analytics and reproducible data pipelines.
+
+**Full publications list, research interests, and academic timeline:** [Research & Academic →](research.qmd)
 
 ## Education & Professional Development
 

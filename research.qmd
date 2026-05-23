@@ -1,0 +1,104 @@
+---
+title: "Research & Academic"
+---
+
+## Research Profile
+
+My academic work bridges **quantum science**, **cybersecurity**, **artificial intelligence**, and **applied data science**—from supervising large-scale student research portfolios at the **Institute of Technology of Cambodia (ITC)** to hands-on projects in threat detection, market analytics, and scientific computing.
+
+I hold an **M.S. and B.S. in Information Technology** (GPA **3.91**, ASEAN Hub Scholar, Prince Sirindhorn Scholar) and combine classroom leadership with practitioner experience in security operations, consulting, and production-oriented ML systems.
+
+**Contact for collaboration:** [sophalcamchan38@gmail.com](mailto:sophalcamchan38@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sophalchan)
+
+## Research Interests
+
+::: {.skills-matrix}
+
+::: {.skill-category}
+#### Quantum Science
+- Quantum computing & information fundamentals
+- Linear algebra & probability for quantum systems
+- Quantum algorithms (introductory Qiskit/simulation)
+- Intersection of quantum methods and optimization
+:::
+
+::: {.skill-category}
+#### Cybersecurity & AI
+- Intrusion detection & security event analytics
+- ML for threat prediction and anomaly detection
+- SIEM (Splunk, Elasticsearch/Kibana) and SOC workflows
+:::
+
+::: {.skill-category}
+#### Data Science & Education
+- Scraping-to-model pipelines on real market data
+- Curriculum design for Programming for Data Science (PDS)
+- Reproducible notebooks, Docker/Flask/Streamlit delivery
+:::
+
+:::
+
+## Academic Appointments
+
+::: {.timeline}
+
+::: {.timeline-item}
+<span class="timeline-date">Current</span>
+#### AI Engineering Lecturer
+Applied AI, data engineering, and security-aware ML systems for production-minded cohorts.
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Academia</span>
+#### Senior Lecturer — Institute of Technology of Cambodia
+Led IT and cybersecurity programs; mentored capstone teams on data science, networking fundamentals, and secure system design.
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Graduate</span>
+#### M.S. · B.S. Information Technology
+Prince of Songkla University · GPA **3.91** · ASEAN Hub Scholar · Prince Sirindhorn Scholar
+:::
+
+:::
+
+## Publications & Scholarly Output
+
+::: {.publication-list}
+
+### Journal & Conference Papers
+
+| Year | Title | Venue | Role | Link |
+|------|-------|-------|------|------|
+| *YYYY* | *[Add your paper title]* | *[Journal / Conference]* | *[Author / Co-author]* | *[DOI or URL]* |
+| *YYYY* | *[Add your paper title]* | *[Journal / Conference]* | *[Author / Co-author]* | *[DOI or URL]* |
+
+*Add rows above as you publish. Example format: author list, full title, venue, year, DOI.*
+
+### Technical Reports & Working Papers
+
+- *[Add technical report title]* — *[Institution / client]*, *[Year]*.
+- *[Add working paper or white paper]* — *[Year]*.
+
+### Supervised Student Research (Selected)
+
+As **Programming for Data Science** instructor at ITC, I supervised multi-year student teams whose capstones are archived in the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (20+ projects: real estate analytics, FX forecasting with ARIMA/LSTM, recommender systems, and market scraping studies). Representative student outputs include peer-reviewed-style reports and deployable apps (Flask, Streamlit, Docker).
+
+### Presentations & Invited Talks
+
+| Year | Title | Event / Institution |
+|------|-------|---------------------|
+| *YYYY* | *[Talk title]* | *[Conference, university, or industry event]* |
+| *YYYY* | *[Talk title]* | *[Event]* |
+
+:::
+
+## Research Themes in Progress
+
+- **Quantum science applications:** exploring how quantum-inspired and quantum-ready methods relate to optimization and security-relevant computation.
+- **AI-driven cybersecurity:** intrusion detection, containerized inference APIs, and SOC-aligned analytics.
+- **Cambodia-focused data science:** open student research corpora for reproducible teaching and regional market intelligence.
+
+---
+
+*To add a publication: edit `research.qmd` in the site repository, or send me the citation (title, authors, venue, year, DOI) and I will format it for you.*
