@@ -22,33 +22,43 @@ I hold an **M.S. and B.S. in Information Technology** (GPA **3.91**, ASEAN Hub S
 
 ::: {.timeline}
 
-::: {.timeline-item}
+::: {.timeline-item markdown="1"}
 <span class="timeline-date">2025</span>
-#### Cybersecurity Analyst Training — Per Scholas
+
+**Cybersecurity Analyst Training** · **Per Scholas**
+
 450+ hands-on hours · **CompTIA CySA+** and Security+ pathway · threat detection, incident response, SIEM/SOAR
 :::
 
-::: {.timeline-item}
+::: {.timeline-item markdown="1"}
 <span class="timeline-date">2022–2024</span>
-#### Data Science Lab Manager — Institute of Technology of Cambodia
+
+**Data Science Lab Manager** · **Institute of Technology of Cambodia**
+
 Led applied AI R&D; mentored student teams on deep learning, data analytics, and algorithm design; workshops on Python and ML tools
 :::
 
-::: {.timeline-item}
+::: {.timeline-item markdown="1"}
 <span class="timeline-date">2020–2023</span>
-#### Lecturer — Institute of Technology of Cambodia
+
+**Lecturer** · **Institute of Technology of Cambodia**
+
 Predictive Analytics, Machine Learning, Power BI, Data Mining, Python; supervised final-year AI and data science projects
 :::
 
-::: {.timeline-item}
+::: {.timeline-item markdown="1"}
 <span class="timeline-date">2022</span>
-#### Visiting Professor — ENSIIE (Évry, France)
+
+**Visiting Professor** · **ENSIIE** (Évry, France)
+
 Summer exchange: data science curriculum design, cross-cultural research methods, data modeling seminars
 :::
 
-::: {.timeline-item}
+::: {.timeline-item markdown="1"}
 <span class="timeline-date">2016–2020</span>
-#### Research Assistant — Prince of Songkla University
+
+**Research Assistant** · **Prince of Songkla University**
+
 Graduate research in medical image analysis and OA classification (see publications below)
 :::
 
