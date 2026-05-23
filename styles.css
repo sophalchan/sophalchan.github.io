@@ -218,6 +218,17 @@ main table {
   font-weight: 600;
 }
 
+.timeline-item > p:has(.timeline-date) {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.timeline-item > p:has(.timeline-date) strong {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
 .timeline-item > p:first-of-type,
 .timeline-item h4 {
   margin: 0.15rem 0 0.35rem;
