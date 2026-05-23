@@ -60,44 +60,44 @@ Graduate research in medical image analysis and OA classification (see publicati
 
 ### Journal Articles
 
-#### 1. Image Texture Analysis for Medical Image Mining: OA Classification from Knee X-Ray
+#### 1. Image Texture Analysis for Medical Image Mining: A Comparative Study Direct to Osteoarthritis Classification using Knee X-ray Image
 
 **Authors:** Sophal Chan, Kwankamon Dittakan, Matias Garcia-Constantino  
 **Venue:** *International Journal on Advanced Science, Engineering and Information Technology* (IJASEIT), Vol. 10, No. 6, pp. 2189–2199, Dec. 2020  
 **Role:** First author  
 **Summary:** Compares ten texture descriptors across four knee ROIs (MF, LF, MT, LT) to classify OA vs. non-OA on 131 X-ray images. **Best result:** Lateral Femur (LF) with Local Binary Pattern — **AUC = 0.912**.  
-**Links:** [Journal article](https://ijaseit.insightsociety.org/index.php/ijaseit/article/view/8279) · [PDF](https://ijaseit.insightsociety.org/index.php/ijaseit/article/download/8279/pdf_1596)
+**Link:** [View paper (IJASEIT)](https://ijaseit.insightsociety.org/index.php/ijaseit/article/view/8279)
 
-#### 2. Osteoarthritis Detection by Applying Quadtree Analysis to Human Joint Knee X-Ray Imagery
+#### 2. Osteoarthritis detection by applying quadtree analysis to human joint knee X-ray imagery
 
 **Authors:** Sophal Chan, Kwankamon Dittakan, Subhieh El Salhi  
 **Venue:** *International Journal of Computers and Applications*, Vol. 44, No. 6 (Taylor & Francis), 2020  
 **DOI:** [10.1080/1206212X.2020.1838145](https://doi.org/10.1080/1206212X.2020.1838145)  
 **Role:** First author  
 **Summary:** Shape-based early OA detection using quadtree decomposition on knee X-rays; evaluates three ROI datasets on 128 participants (66 OA cases). **Best result:** Dataset 3 (Otsu knee joint space ROI), threshold 10 — **AUC = 0.917**.  
-**Link:** [Taylor & Francis](https://www.tandfonline.com/doi/abs/10.1080/1206212X.2020.1838145)
+**Link:** [View paper (Taylor & Francis)](https://www.tandfonline.com/doi/abs/10.1080/1206212X.2020.1838145?journalCode=tjca20)
 
 ### Conference Papers
 
-#### 3. Osteoarthritis Stages Classification Using Texture Analysis: Ten Texture Descriptors
+#### 3. Osteoarthritis Stages Classification to Human Joint Imagery Using Texture Analysis: A Comparative Study on Ten Texture Descriptors
 
 **Authors:** Sophal Chan, Kwankamon Dittakan *(corresponding author)*  
 **Venue:** *Recent Trends in Image Processing and Pattern Recognition* (RTIP2R 2018), Communications in Computer and Information Science, vol. 1036, pp. 209–225, Springer Singapore, 2019  
 **DOI:** [10.1007/978-981-13-9184-2_19](https://doi.org/10.1007/978-981-13-9184-2_19)  
-**Published online:** 16 July 2019  
+**Published online:** 16 July 2019 · **956+ accesses · 4 citations** ([Springer](https://link.springer.com/chapter/10.1007/978-981-13-9184-2_19))  
 **Role:** First author  
 **Summary:** Classifies OA severity grades (0–4) via texture features and Correlation-based Feature Selection on 130 images. **Best result:** Medial Tibia (MT) ROI — **AUC = 0.871**.  
-**Link:** [Springer chapter](https://link.springer.com/chapter/10.1007/978-981-13-9184-2_19)
+**Link:** [View paper (Springer)](https://link.springer.com/chapter/10.1007/978-981-13-9184-2_19)
 
 ### Theses
 
-#### 4. Early Detection of Osteoarthritis Stage by Applying Classification Techniques to Human Joint Imagery
+#### 4. Early Detection of Osteoarthritis Stage by Applying Classification Techniques to Human joint Imagery
 
 **Author:** Sophal Chan  
 **Degree:** Master of Science in Information Technology  
 **Institution:** College of Computing, Prince of Songkla University, Phuket Campus  
 **Summary:** Comprehensive thesis comparing **(i)** texture-based, **(ii)** graph-based, and **(iii)** CNN approaches for OA detection and multi-stage classification. Reports best texture-based **AUC = 0.912** (detection) and **0.871** (staging); graph-based detection **AUC = 0.917**; CNN detection **AUC = 0.880**.  
-**Link:** [PSU Knowledge Bank (PDF)](https://kb.psu.ac.th:8080/psukb/bitstream/2016/13400/1/435044.pdf)
+**Link:** [View thesis (PDF — PSU Knowledge Bank)](http://kb.psu.ac.th:8080/psukb/bitstream/2016/13400/1/435044.pdf)
 
 ### Publication Summary (from [LinkedIn](https://www.linkedin.com/in/sophalchan))
 

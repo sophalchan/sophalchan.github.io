@@ -1,10 +1,15 @@
 ---
-title: "OA Detection via Quadtree Analysis (IJCA 2020)"
-description: "First-author Taylor & Francis paper—shape decomposition on knee X-rays; best ROI AUC 0.917 for early osteoarthritis detection."
+title: "Osteoarthritis Detection via Quadtree Analysis (IJCA 2020)"
+description: "Osteoarthritis detection by applying quadtree analysis to human joint knee X-ray imagery — AUC 0.917."
 date: 2020-01-01
 categories: [Research and Academic]
 author: Sophal Chan
+paper-url: "https://www.tandfonline.com/doi/abs/10.1080/1206212X.2020.1838145?journalCode=tjca20"
 ---
+
+## View Paper
+
+**[Osteoarthritis detection by applying quadtree analysis to human joint knee X-ray imagery](https://www.tandfonline.com/doi/abs/10.1080/1206212X.2020.1838145?journalCode=tjca20)**
 
 ## Publication
 
@@ -23,7 +28,3 @@ Apply **quadtree decomposition** to identify ROIs and thresholds that maximize s
 ## Key Result
 
 Dataset 3 (Otsu knee joint space ROI), threshold **10** → **AUC = 0.917** (128 participants, 66 OA images).
-
-## Link
-
-[Taylor & Francis](https://www.tandfonline.com/doi/abs/10.1080/1206212X.2020.1838145)

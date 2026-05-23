@@ -1,10 +1,15 @@
 ---
 title: "Early OA Detection — M.S. Thesis (Prince of Songkla University)"
-description: "Master's thesis comparing texture, graph-based, and CNN approaches for osteoarthritis detection and multi-stage classification."
+description: "Early Detection of Osteoarthritis Stage by Applying Classification Techniques to Human joint Imagery."
 date: 2019-05-01
 categories: [Research and Academic]
 author: Sophal Chan
+paper-url: "http://kb.psu.ac.th:8080/psukb/bitstream/2016/13400/1/435044.pdf"
 ---
+
+## View Paper
+
+**[Early Detection of Osteoarthritis Stage by Applying Classification Techniques to Human joint Imagery](http://kb.psu.ac.th:8080/psukb/bitstream/2016/13400/1/435044.pdf)** (PDF)
 
 ## Publication
 
@@ -26,7 +31,3 @@ Identify which representation + classifier pipeline is most defensible for clini
 | Texture-based | **0.912** | **0.871** |
 | Graph-based | 0.917 | 0.819 |
 | CNN | 0.880 | 0.629 |
-
-## Link
-
-[PSU Knowledge Bank (PDF)](https://kb.psu.ac.th:8080/psukb/bitstream/2016/13400/1/435044.pdf)

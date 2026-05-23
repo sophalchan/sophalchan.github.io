@@ -16,10 +16,10 @@ This hub collects **scholarly research and academic work** by **Sophal Chan**—
 
 | Year | Type | Title | Metric |
 |------|------|-------|--------|
-| 2020 | Journal | [Texture Analysis for OA Classification (IJASEIT)](pub-oa-texture-ijaseit/) | AUC **0.912** |
-| 2020 | Journal | [Quadtree OA Detection (IJCA)](pub-oa-quadtree-ijca/) | AUC **0.917** |
-| 2019 | Conference | [OA Stage Classification — 10 Descriptors (Springer)](pub-oa-stages-springer/) | AUC **0.871** |
-| 2019 | Thesis | [Early OA Detection — M.S. IT (PSU)](pub-oa-thesis-psu/) | Multi-approach |
+| 2020 | Journal | [Image Texture Analysis for Medical Image Mining (IJASEIT)](https://ijaseit.insightsociety.org/index.php/ijaseit/article/view/8279) · [portfolio](pub-oa-texture-ijaseit/) | AUC **0.912** |
+| 2020 | Journal | [Quadtree OA detection (Taylor & Francis)](https://www.tandfonline.com/doi/abs/10.1080/1206212X.2020.1838145?journalCode=tjca20) · [portfolio](pub-oa-quadtree-ijca/) | AUC **0.917** |
+| 2019 | Conference | [OA Stages — Ten Texture Descriptors (Springer)](https://link.springer.com/chapter/10.1007/978-981-13-9184-2_19) · [portfolio](pub-oa-stages-springer/) | AUC **0.871** |
+| 2019 | Thesis | [Early OA Detection (PSU PDF)](http://kb.psu.ac.th:8080/psukb/bitstream/2016/13400/1/435044.pdf) · [portfolio](pub-oa-thesis-psu/) | Multi-approach |
 
 ## Research Interests
 

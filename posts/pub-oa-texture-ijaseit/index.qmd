@@ -1,10 +1,15 @@
 ---
-title: "OA Classification via Texture Analysis (IJASEIT 2020)"
-description: "First-author journal paper—ten texture descriptors, knee X-ray ROIs, Local Binary Pattern; AUC 0.912 for osteoarthritis vs. non-OA."
+title: "Image Texture Analysis for Medical Image Mining (IJASEIT 2020)"
+description: "A Comparative Study Direct to Osteoarthritis Classification using Knee X-ray Image — AUC 0.912."
 date: 2020-12-01
 categories: [Research and Academic]
 author: Sophal Chan
+paper-url: "https://ijaseit.insightsociety.org/index.php/ijaseit/article/view/8279"
 ---
+
+## View Paper
+
+**[Image Texture Analysis for Medical Image Mining: A Comparative Study Direct to Osteoarthritis Classification using Knee X-ray Image](https://ijaseit.insightsociety.org/index.php/ijaseit/article/view/8279)**
 
 ## Publication
 
@@ -22,7 +27,3 @@ Compare texture descriptors across anatomical ROIs (medial/lateral femur and tib
 ## Key Result
 
 **Lateral Femur + Local Binary Pattern → AUC = 0.912** (131 images: 68 OA, 63 non-OA).
-
-## Links
-
-[Journal article](https://ijaseit.insightsociety.org/index.php/ijaseit/article/view/8279) · [PDF](https://ijaseit.insightsociety.org/index.php/ijaseit/article/download/8279/pdf_1596)
