@@ -1,0 +1,32 @@
+---
+title: "Khmer Riel Currency Forecasting (ARIMA & LSTM)"
+description: "Forecasts USD/KHR exchange rates with ARIMA and LSTM, served via a Flask web app in Docker."
+date: 2024-05-01
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Khmer%20Riel%20Currency%20forcesting%20using%20arima%20and%20lstm%20with%20web%20flask%20app%20throw%20docker"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Khmer Riel Currency forcesting using arima and lstm with web flask app throw docker)—Forecasts USD/KHR exchange rates with ARIMA and LSTM, served via a Flask web app in Docker.
+
+## Problem & Data
+
+Businesses and analysts need short-horizon FX forecasts with both statistical and deep-learning baselines.
+
+## Approach
+
+Time-series preprocessing, ARIMA and LSTM model comparison, Flask API/UI for forecasts, Dockerized deployment.
+
+## Technologies
+
+Python · pandas · statsmodels · TensorFlow/Keras · Flask · Docker · Jupyter
+
+## Outcomes
+
+Comparable ARIMA vs. LSTM forecasts and a containerized app for interactive prediction.
+
+## Source Code
+
+[View project on GitHub (Khmer Riel Currency forcesting using arima and lstm with web flask app throw docker)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Khmer%20Riel%20Currency%20forcesting%20using%20arima%20and%20lstm%20with%20web%20flask%20app%20throw%20docker)

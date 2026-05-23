@@ -1,0 +1,32 @@
+---
+title: "Phone Price Analysis"
+description: "Smartphone price analysis across brands, specs, and release generations."
+date: 2024-05-25
+categories: ["Data Analytics"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Phone%20Price%20analysis"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Phone Price analysis)—Smartphone price analysis across brands, specs, and release generations.
+
+## Problem & Data
+
+Rapid SKU turnover makes fair pricing difficult for buyers and resellers.
+
+## Approach
+
+Scrape phone listings, normalize specs, analyze depreciation curves and brand premiums.
+
+## Technologies
+
+Python · pandas · Seaborn · Jupyter
+
+## Outcomes
+
+Spec-adjusted price benchmarks and brand/model depreciation insights.
+
+## Source Code
+
+[View project on GitHub (Phone Price analysis)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Phone%20Price%20analysis)

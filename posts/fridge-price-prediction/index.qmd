@@ -1,0 +1,32 @@
+---
+title: "Fridge Price Prediction"
+description: "Predicts refrigerator retail prices from brand, capacity, energy rating, and feature attributes."
+date: 2024-04-15
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Fridge%20Price%20prediction"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Fridge Price prediction)—Predicts refrigerator retail prices from brand, capacity, energy rating, and feature attributes.
+
+## Problem & Data
+
+Appliance shoppers compare many SKUs; a model helps normalize price vs. specifications.
+
+## Approach
+
+Retail data scraping, categorical encoding, regression training, and residual analysis.
+
+## Technologies
+
+Python · pandas · scikit-learn · Jupyter
+
+## Outcomes
+
+Fair-price estimates highlighting over/under-priced listings.
+
+## Source Code
+
+[View project on GitHub (Fridge Price prediction)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Fridge%20Price%20prediction)

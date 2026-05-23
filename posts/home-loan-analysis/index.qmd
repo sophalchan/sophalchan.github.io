@@ -1,0 +1,32 @@
+---
+title: "Home Loan Analysis"
+description: "Exploratory analysis of home loan applicants—approval factors, income, and credit patterns."
+date: 2024-06-10
+categories: ["Data Analytics"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Home%20Loan%20Analysis.ipynb"
+---
+
+## Overview
+
+Standalone notebook/report in the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-)—Exploratory analysis of home loan applicants—approval factors, income, and credit patterns.
+
+## Problem & Data
+
+Lenders and applicants benefit from understanding drivers of approval and default risk proxies.
+
+## Approach
+
+Loan dataset EDA, categorical breakdowns, correlation analysis, and logistic/regression prototypes.
+
+## Technologies
+
+Python · pandas · scikit-learn · Jupyter
+
+## Outcomes
+
+Risk-factor summaries and baseline classification metrics.
+
+## Source Code
+
+[View project on GitHub (Home Loan Analysis.ipynb)](https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Home%20Loan%20Analysis.ipynb)

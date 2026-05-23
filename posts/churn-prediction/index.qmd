@@ -1,0 +1,32 @@
+---
+title: "Customer Churn Prediction"
+description: "Classification project predicting customer churn for retention campaigns."
+date: 2024-06-15
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Churn%20Prediction_Programming%20for%20Data%20Science.pdf"
+---
+
+## Overview
+
+Standalone notebook/report in the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-)—Classification project predicting customer churn for retention campaigns.
+
+## Problem & Data
+
+Subscription businesses lose revenue when churn is detected too late.
+
+## Approach
+
+Feature engineering on usage/billing data, logistic regression and tree models, precision/recall evaluation.
+
+## Technologies
+
+Python · pandas · scikit-learn · Jupyter
+
+## Outcomes
+
+Churn risk scores prioritizing outreach to high-risk accounts.
+
+## Source Code
+
+[View project on GitHub (Churn Prediction_Programming for Data Science.pdf)](https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Churn%20Prediction_Programming%20for%20Data%20Science.pdf)

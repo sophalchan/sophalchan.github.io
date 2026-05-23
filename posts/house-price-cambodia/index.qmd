@@ -1,0 +1,32 @@
+---
+title: "House Price Prediction in Cambodia"
+description: "End-to-end house price prediction using Cambodian residential listing data."
+date: 2024-04-20
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/House%20price%20prediction%20in%20Cambodia"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (House price prediction in Cambodia)—End-to-end house price prediction using Cambodian residential listing data.
+
+## Problem & Data
+
+Residential buyers need defensible valuations across diverse neighborhoods and home types.
+
+## Approach
+
+Multi-feature regression with EDA on location, size, age, and listing metadata; cross-validation for generalization.
+
+## Technologies
+
+Python · pandas · scikit-learn · Jupyter
+
+## Outcomes
+
+Predicted sale prices with feature importance for interpretability.
+
+## Source Code
+
+[View project on GitHub (House price prediction in Cambodia)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/House%20price%20prediction%20in%20Cambodia)

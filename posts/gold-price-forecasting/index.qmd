@@ -1,0 +1,32 @@
+---
+title: "Gold Price Forecasting"
+description: "Time-series forecasting of gold prices using historical market data."
+date: 2024-06-05
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Gold%20Price%20forecasting.ipynb"
+---
+
+## Overview
+
+Standalone notebook/report in the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-)—Time-series forecasting of gold prices using historical market data.
+
+## Problem & Data
+
+Investors and analysts track gold as a macro indicator; short-horizon forecasts aid planning.
+
+## Approach
+
+Historical price series EDA, stationarity checks, ARIMA/prophet-style modeling, forecast visualization.
+
+## Technologies
+
+Python · pandas · statsmodels · Matplotlib · Jupyter
+
+## Outcomes
+
+Forecast plots with confidence intervals and model diagnostics.
+
+## Source Code
+
+[View project on GitHub (Gold Price forecasting.ipynb)](https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Gold%20Price%20forecasting.ipynb)

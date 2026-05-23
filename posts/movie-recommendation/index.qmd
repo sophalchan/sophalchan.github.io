@@ -1,0 +1,32 @@
+---
+title: "Movie Recommendation System"
+description: "Collaborative/content-based movie recommender built from ratings and metadata."
+date: 2024-05-15
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Movie%20Recommendation"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Movie Recommendation)—Collaborative/content-based movie recommender built from ratings and metadata.
+
+## Problem & Data
+
+Users need personalized suggestions beyond popularity lists.
+
+## Approach
+
+User–item matrix construction, similarity metrics (cosine/pearson), and top-N recommendation generation.
+
+## Technologies
+
+Python · pandas · scikit-learn · Jupyter
+
+## Outcomes
+
+Personalized movie lists with explainable similarity to past preferences.
+
+## Source Code
+
+[View project on GitHub (Movie Recommendation)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Movie%20Recommendation)

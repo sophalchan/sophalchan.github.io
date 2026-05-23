@@ -1,0 +1,32 @@
+---
+title: "Cambodia Tour Price Prediction"
+description: "Predicts tour package pricing from historical travel-market data in Cambodia."
+date: 2024-03-20
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cambodia%20tour%20price%20prediction"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Cambodia tour price prediction)—Predicts tour package pricing from historical travel-market data in Cambodia.
+
+## Problem & Data
+
+Tour operators and travelers need fair price expectations amid seasonal demand and package variability.
+
+## Approach
+
+Historical price ingestion, feature encoding (duration, destination, season), and regression-based forecasting.
+
+## Technologies
+
+Python · pandas · scikit-learn · Jupyter
+
+## Outcomes
+
+Estimated price ranges for tour products with interpretable drivers (seasonality, route, inclusions).
+
+## Source Code
+
+[View project on GitHub (Cambodia tour price prediction)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cambodia%20tour%20price%20prediction)

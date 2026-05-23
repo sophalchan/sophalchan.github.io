@@ -1,0 +1,32 @@
+---
+title: "Used Car Price Prediction"
+description: "Predicts used vehicle prices from mileage, year, brand, and condition features."
+date: 2024-06-01
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Used%20Car%20Price%20Prediction"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Used Car Price Prediction)—Predicts used vehicle prices from mileage, year, brand, and condition features.
+
+## Problem & Data
+
+Used-car markets need transparent valuations from observable vehicle attributes.
+
+## Approach
+
+Listing scrape, feature engineering, ensemble/regression models, error analysis by segment.
+
+## Technologies
+
+Python · pandas · scikit-learn · Jupyter
+
+## Outcomes
+
+Price predictions with segment-level accuracy reporting.
+
+## Source Code
+
+[View project on GitHub (Used Car Price Prediction)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Used%20Car%20Price%20Prediction)

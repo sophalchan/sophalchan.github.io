@@ -35,7 +35,9 @@ Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, *
 
 ## Featured Projects
 
-Browse my technical work below. Use the **search bar** and **category filters** in the sidebar to explore projects by domain.
+Browse **cybersecurity**, **AI/ML**, and **data analytics** work below—including a full [**Data Science Projects Collection**](posts/data-science-collection/) from [PaulChanCyber/Data-Science-Project-](https://github.com/PaulChanCyber/Data-Science-Project-) with detailed write-ups for each student term project.
+
+Use the **search bar** and **category filters** in the sidebar to sort by domain (e.g. Data Analytics, AI/ML, Cybersecurity).
 
 ::: {#portfolio-listing}
 :::

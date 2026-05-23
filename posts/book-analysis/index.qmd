@@ -1,0 +1,32 @@
+---
+title: "Book Analysis"
+description: "Exploratory analysis of book sales and publishing trends from scraped market data."
+date: 2024-03-10
+categories: ["Data Analytics"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Book%20analysis"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Book analysis)—Exploratory analysis of book sales and publishing trends from scraped market data.
+
+## Problem & Data
+
+Understanding how title, genre, pricing, and demand signals relate in the book retail market.
+
+## Approach
+
+Data collection and cleaning, summary statistics, trend visualization, and comparative analysis across categories.
+
+## Technologies
+
+Python · pandas · Matplotlib · Seaborn · Jupyter
+
+## Outcomes
+
+Actionable insights into sales patterns and category performance for retail and publishing analytics.
+
+## Source Code
+
+[View project on GitHub (Book analysis)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Book%20analysis)

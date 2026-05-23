@@ -1,0 +1,32 @@
+---
+title: "Outlier Detection and Treatment"
+description: "Identifies and treats outliers using statistical and ML-based detection methods."
+date: 2024-05-20
+categories: ["Data Analytics"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Outlier%20detection%20and%20treatment"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Outlier detection and treatment)—Identifies and treats outliers using statistical and ML-based detection methods.
+
+## Problem & Data
+
+Dirty real-world datasets skew models and visualizations without robust outlier handling.
+
+## Approach
+
+IQR/Z-score rules, isolation forest, comparison of imputation vs. removal strategies.
+
+## Technologies
+
+Python · pandas · scikit-learn · Matplotlib · Jupyter
+
+## Outcomes
+
+Cleaner datasets with documented outlier policy and before/after model impact.
+
+## Source Code
+
+[View project on GitHub (Outlier detection and treatment)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Outlier%20detection%20and%20treatment)

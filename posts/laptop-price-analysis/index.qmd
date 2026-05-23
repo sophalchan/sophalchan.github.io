@@ -1,0 +1,32 @@
+---
+title: "Laptop Price Analysis"
+description: "Analyzes laptop listing prices vs. CPU, RAM, storage, and brand across retailers."
+date: 2024-05-05
+categories: ["Data Analytics"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Laptop%20price%20analysis"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Laptop price analysis)—Analyzes laptop listing prices vs. CPU, RAM, storage, and brand across retailers.
+
+## Problem & Data
+
+Consumers face opaque pricing across configurations and brands.
+
+## Approach
+
+Specification-based feature matrix, correlation analysis, clustering/segmentation, and price trend charts.
+
+## Technologies
+
+Python · pandas · Seaborn · Jupyter
+
+## Outcomes
+
+Specification–price benchmarks and brand premium estimates.
+
+## Source Code
+
+[View project on GitHub (Laptop price analysis)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Laptop%20price%20analysis)

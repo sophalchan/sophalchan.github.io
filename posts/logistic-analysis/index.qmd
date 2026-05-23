@@ -1,0 +1,32 @@
+---
+title: "Logistic Regression Analysis"
+description: "Applied logistic regression for binary outcome modeling with interpretable coefficients."
+date: 2024-06-20
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Logistic%20Analysis.pdf"
+---
+
+## Overview
+
+Standalone notebook/report in the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-)—Applied logistic regression for binary outcome modeling with interpretable coefficients.
+
+## Problem & Data
+
+Many business questions are yes/no outcomes requiring probabilistic classifiers with explainability.
+
+## Approach
+
+Data prep, odds-ratio interpretation, ROC/AUC evaluation, and confusion-matrix review.
+
+## Technologies
+
+Python · pandas · scikit-learn · statsmodels · Jupyter
+
+## Outcomes
+
+Calibrated probability estimates and coefficient-driven business narratives.
+
+## Source Code
+
+[View project on GitHub (Logistic Analysis.pdf)](https://github.com/PaulChanCyber/Data-Science-Project-/blob/main/Logistic%20Analysis.pdf)

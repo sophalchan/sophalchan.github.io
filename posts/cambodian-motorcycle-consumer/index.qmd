@@ -1,0 +1,32 @@
+---
+title: "Cambodian Motorcycle Consumer Analysis"
+description: "Consumer behavior analysis in Cambodia's motorcycle market—brands, price bands, and purchase patterns."
+date: 2024-03-25
+categories: ["Data Analytics"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cambodian%20motocycle%20comuser%20analysis"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Cambodian motocycle comuser analysis)—Consumer behavior analysis in Cambodia's motorcycle market—brands, price bands, and purchase patterns.
+
+## Problem & Data
+
+Manufacturers and dealers need visibility into how consumers trade off price, brand, and specifications.
+
+## Approach
+
+Market data scraping, segmentation analysis, and visualization of brand share and price elasticity proxies.
+
+## Technologies
+
+Python · pandas · Seaborn · Jupyter
+
+## Outcomes
+
+Segment profiles and trend charts supporting marketing and inventory decisions.
+
+## Source Code
+
+[View project on GitHub (Cambodian motocycle comuser analysis)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Cambodian%20motocycle%20comuser%20analysis)

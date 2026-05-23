@@ -1,0 +1,32 @@
+---
+title: "Moto Price Prediction (Streamlit App)"
+description: "Motorbike price prediction with an interactive Streamlit front end for live estimates."
+date: 2024-05-10
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Moto%20price%20prediction%20with%20streamlit%20app"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Moto price prediction with streamlit app)—Motorbike price prediction with an interactive Streamlit front end for live estimates.
+
+## Problem & Data
+
+Used moto buyers need instant fair-price estimates from bike attributes.
+
+## Approach
+
+Train regression on historical listings; deploy Streamlit UI for user inputs and predicted price output.
+
+## Technologies
+
+Python · scikit-learn · Streamlit · pandas · Jupyter
+
+## Outcomes
+
+Interactive app delivering on-demand price predictions for common moto configurations.
+
+## Source Code
+
+[View project on GitHub (Moto price prediction with streamlit app)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Moto%20price%20prediction%20with%20streamlit%20app)

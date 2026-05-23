@@ -1,0 +1,32 @@
+---
+title: "Computer Component Price Analysis"
+description: "Tracks and analyzes pricing trends for PC components (CPU, GPU, RAM, storage)."
+date: 2024-04-01
+categories: ["Data Analytics"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Computer%20component%20price%20analysis"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Computer component price analysis)—Tracks and analyzes pricing trends for PC components (CPU, GPU, RAM, storage).
+
+## Problem & Data
+
+Component prices fluctuate rapidly; buyers need trend awareness across SKUs and vendors.
+
+## Approach
+
+Time-series and cross-sectional analysis of scraped retailer data with outlier review and category breakdowns.
+
+## Technologies
+
+Python · pandas · Matplotlib · Jupyter
+
+## Outcomes
+
+Price trend reports and category comparisons for build-planning and procurement.
+
+## Source Code
+
+[View project on GitHub (Computer component price analysis)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Computer%20component%20price%20analysis)

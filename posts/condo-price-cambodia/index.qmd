@@ -1,0 +1,32 @@
+---
+title: "Condo Price Analysis in Cambodia"
+description: "Market analysis and modeling of condominium sale prices in Cambodian urban markets."
+date: 2024-04-05
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Condo%20price%20analysis%20in%20Cambodia"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Condo price analysis in Cambodia)—Market analysis and modeling of condominium sale prices in Cambodian urban markets.
+
+## Problem & Data
+
+Condo investors require comparable unit pricing adjusted for floor, size, district, and amenities.
+
+## Approach
+
+Listing aggregation, feature engineering for unit attributes, EDA, and predictive modeling.
+
+## Technologies
+
+Python · pandas · scikit-learn · Jupyter
+
+## Outcomes
+
+District-level price insights and model-based valuation estimates.
+
+## Source Code
+
+[View project on GitHub (Condo price analysis in Cambodia)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Condo%20price%20analysis%20in%20Cambodia)

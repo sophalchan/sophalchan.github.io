@@ -1,0 +1,32 @@
+---
+title: "Condo Rent Price Prediction in Phnom Penh"
+description: "Predicts monthly condo rental rates in Phnom Penh from property and neighborhood features."
+date: 2024-04-10
+categories: ["Data Analytics", "AI/ML"]
+author: Sophal Chan
+repo-url: "https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Condo%20rent%20price%20predicition%20in%20Phnom%20Penh"
+---
+
+## Overview
+
+Part of the [**Data Science Projects Collection**](https://github.com/PaulChanCyber/Data-Science-Project-) (Condo rent price predicition in Phnom Penh)—Predicts monthly condo rental rates in Phnom Penh from property and neighborhood features.
+
+## Problem & Data
+
+Renters and landlords need accurate rent benchmarks in a fast-moving Phnom Penh rental market.
+
+## Approach
+
+Scrape rental listings, encode location and unit features, train regression models, validate with MAE/RMSE.
+
+## Technologies
+
+Python · pandas · scikit-learn · Jupyter
+
+## Outcomes
+
+Rent estimates with sensitivity to district, size, and furnishing factors.
+
+## Source Code
+
+[View project on GitHub (Condo rent price predicition in Phnom Penh)](https://github.com/PaulChanCyber/Data-Science-Project-/tree/main/Condo%20rent%20price%20predicition%20in%20Phnom%20Penh)
