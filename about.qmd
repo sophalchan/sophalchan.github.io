@@ -22,6 +22,8 @@ I am a **Certified CompTIA CySA+** professional based in **Fairfield, OH**, with
 
 I bring hands-on experience across security operations, data interpretation, and full-stack analytics tooling. Whether lecturing on AI engineering, consulting on IT and cybersecurity for financial institutions, or hardening systems against emerging threats, I focus on measurable outcomes: faster detection, clearer visibility, and defensible security posture.
 
+Alongside my IT and security work, I bring practical **manufacturing production** experience on the shop floor—programming and operating **CNC** machines, running **3D printing** workflows for prototypes and tooling, building and validating **3D models** from engineering drawings, and supporting **PLC**-driven automation for repeatable, spec-compliant output. That blend of digital systems and hands-on fabrication helps me connect software, hardware, and production quality in one workflow.
+
 **Contact:** [sophalcamchan38@gmail.com](mailto:sophalcamchan38@gmail.com)
 
 ## Technical Skills Matrix
