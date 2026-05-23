@@ -118,32 +118,75 @@ Prince of Songkla University · GPA **3.91** · ASEAN Hub Scholar · Prince Siri
 
 :::
 
-## Experience Highlights
+## Professional Experience
 
 ::: {.timeline}
 
 ::: {.timeline-item}
-<span class="timeline-date">Recent</span>
-#### AI Engineering Lecturer
-Delivering applied AI and data engineering curriculum with emphasis on production workflows and security-aware ML systems.
+<span class="timeline-date">May 2020 – Present</span>
+#### Senior IT Engineer · Krulabs.ai · Ohio, USA
+- Conduct comprehensive system analysis to understand end-to-end architecture, ensuring seamless integration and alignment across all IT infrastructure components.
+- Design and execute rigorous smoke and integration tests to validate system stability, identify critical edge cases, and maintain high software reliability.
+- Spearhead the architecture and preparation for local LLM (Large Language Model) fine-tuning, optimizing open-source models for specialized domain-specific medical applications.
+- Collaborate cross-functionally to ensure data privacy, security compliance, and high-performance compute availability for local AI training workflows.
 :::
 
 ::: {.timeline-item}
-<span class="timeline-date">Consulting</span>
-#### IT & Cybersecurity Consultant — ACLEDA Bank
-Advised on security monitoring, infrastructure resilience, and data-driven risk visibility for financial operations.
+<span class="timeline-date">Aug 2024 – Present</span>
+#### Composite Technician · Eagle Composite · Ohio, USA
+- Perform specimen preparation, cutting, and finishing of composite and metallic materials for testing and evaluation.
+- Operate and program CNC and manual machines to meet customer specifications and tolerances.
+- Maintain shop safety and cleanliness, performing regular equipment checks and maintenance.
+- Collaborate with engineers to ensure proper material setup, machining accuracy, and dimensional compliance.
 :::
 
 ::: {.timeline-item}
-<span class="timeline-date">Academia</span>
-#### Senior Lecturer — Institute of Technology of Cambodia
-Led IT and cybersecurity instruction; mentored students on networking, scripting, and security fundamentals.
+<span class="timeline-date">Nov 2025 – Present</span>
+#### AI Lecturer (Volunteer) · Cambodia (Remote)
+- Delivered engaging lectures and hands-on labs in Artificial Intelligence and Machine Learning, covering Python, data analysis, model development, and real-world applications.
+- Mentor students on problem-solving, critical thinking, and industry best practices.
 :::
 
 ::: {.timeline-item}
-<span class="timeline-date">Current — Manufacturing</span>
-#### Manufacturing Production
-Operate **kit cutting machines** for ply nests; develop and prove **CNC programs**; apply **engineering drawings** and lamination schedules to production. [Manufacturing portfolio →](posts/manufacturing-portfolio/)
+<span class="timeline-date">Mar 2024 – Aug 2024</span>
+#### Professional Development Career Break
+- Completed technical training and hands-on labs in cybersecurity analyst, network security, threat detection, and cyber threat intelligence.
+- Developed and deployed a machine learning-based intrusion detection system (IDS).
+- Gained skills in security log analysis, SIEM tools, API security, and containerized deployments of threat detection models using Docker and Flask.
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Feb 2020 – Mar 2024</span>
+#### Lecturer · Institute of Technology of Cambodia · Cambodia
+- Delivered technical courses integrating cybersecurity use cases in Big Data, Data Mining, and Python; emphasized anomaly detection and secure data processing.
+- Set up and maintained a TensorFlow-based deep learning server used for projects on malware classification and cyber threat detection.
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Nov 2023 – Mar 2024</span>
+#### AI & GIS API Consultant (Part-Time) · ACLEDA Bank · Cambodia
+- Developed real-time dashboards (Logstack) using Kibana and Elasticsearch to monitor geospatial and transactional data for anomaly and fraud detection.
+- Advised teams on secure API deployment, endpoint hardening, and log monitoring strategies for internal audit and threat visibility.
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Apr 2021 – Mar 2024</span>
+#### AI and Data Science Coach (Part-Time) · Sabai Code · Cambodia
+- Led cybersecurity-focused training in log analysis, threat detection, and anomaly modeling using machine learning and cloud platforms.
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">May 2019 – Dec 2020</span>
+#### Senior Lecturer · ACLEDA University of Business · Cambodia
+- Taught core computing subjects foundational to cybersecurity, including Data Structures, Algorithms, and C/C++, with a focus on secure programming principles.
+- Supervised student research on hashing, encryption basics, and vulnerability-aware coding practices in system development.
+:::
+
+::: {.timeline-item}
+<span class="timeline-date">Dec 2015 – May 2016</span>
+#### Network Engineer (Internship) · XPlink · Thailand
+- Configured DHCP server, internal firewall, and handled network setup tasks.
+- Conducted log analysis and system monitoring to ensure optimal performance.
 :::
 
 :::
