@@ -1,0 +1,21 @@
+examples:
+  - input: |
+      Alert: 47 failed RDP logins from single IP to nurse station in 3 minutes.
+    output: |
+      {
+        "incident_id": "INC-EX-001",
+        "severity": "high",
+        "summary": "Brute-force RDP pattern against clinical workstation.",
+        "recommended_actions": ["Block source IP", "Force password reset", "Review RDP exposure"],
+        "needs_escalation": true
+      }
+  - input: |
+      Alert: Scheduled vulnerability scan flagged outdated OpenSSL on dev server (no PHI).
+    output: |
+      {
+        "incident_id": "INC-EX-002",
+        "severity": "low",
+        "summary": "Non-production dev server patch drift.",
+        "recommended_actions": ["Schedule patch window", "Verify no PHI on host"],
+        "needs_escalation": false
+      }

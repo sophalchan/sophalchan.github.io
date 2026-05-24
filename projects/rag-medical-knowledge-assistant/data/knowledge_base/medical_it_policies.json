@@ -1,0 +1,50 @@
+[
+  {
+    "id": "hipaa-access-001",
+    "title": "HIPAA Minimum Necessary Access",
+    "category": "compliance",
+    "text": "Protected Health Information (PHI) access must follow the minimum necessary standard. Workforce members may only access PHI required to perform their job function. Role-based access control (RBAC) should map clinical, billing, and IT support roles to distinct permission sets. Access reviews must occur quarterly for privileged accounts and annually for standard users."
+  },
+  {
+    "id": "hipaa-audit-002",
+    "title": "HIPAA Audit Logging Requirements",
+    "category": "compliance",
+    "text": "Systems that store or transmit ePHI must maintain audit logs capturing user identity, timestamp, action type, and resource accessed. Logs must be retained for at least six years unless state law requires longer retention. SIEM integration should alert on bulk exports, after-hours access to high-sensitivity records, and failed authentication spikes."
+  },
+  {
+    "id": "local-llm-001",
+    "title": "Local LLM Deployment for Medical NLP",
+    "category": "ai-engineering",
+    "text": "On-premise LLM fine-tuning for medical applications requires isolated GPU compute, encrypted model artifacts, and dataset de-identification before training. Use held-out clinical note samples for evaluation; never tune on identifiable patient data without IRB approval. Document model version, training data hash, and prompt template for every deployment."
+  },
+  {
+    "id": "local-llm-002",
+    "title": "RAG Architecture for Clinical Knowledge",
+    "category": "ai-engineering",
+    "text": "Retrieval-Augmented Generation reduces hallucination by grounding answers in approved policy documents and clinical guidelines. Chunk documents at 400-800 tokens with 10-15% overlap. Store embeddings in a vector database with metadata filters for department and document version. Always return source citations with retrieved passages."
+  },
+  {
+    "id": "security-001",
+    "title": "Medical Device Network Segmentation",
+    "category": "security",
+    "text": "IoMT devices should reside on dedicated VLANs with deny-by-default firewall rules to corporate and internet zones. Monitor east-west traffic for anomalous protocols. Patch windows must align with FDA guidance for validated systems; use compensating controls when immediate patching is not permitted."
+  },
+  {
+    "id": "security-002",
+    "title": "Incident Response for Healthcare Ransomware",
+    "category": "security",
+    "text": "Healthcare ransomware playbooks prioritize patient safety and EHR availability. Isolate affected segments within 15 minutes of confirmed encryption activity. Notify legal, compliance, and cyber insurance within one hour. Preserve forensic images before recovery. Test backup restoration monthly; offline immutable copies are required for tier-1 clinical systems."
+  },
+  {
+    "id": "privacy-001",
+    "title": "De-identification for ML Datasets",
+    "category": "privacy",
+    "text": "Safe Harbor and Expert Determination are two HIPAA de-identification paths. Remove 18 identifiers for Safe Harbor or obtain statistician attestation for Expert Determination. Re-identification risk assessments must be repeated when linking external datasets. Synthetic data generation may supplement but not replace compliance review."
+  },
+  {
+    "id": "ops-001",
+    "title": "Smoke and Integration Testing for Health IT",
+    "category": "operations",
+    "text": "Smoke tests validate critical paths after each deployment: authentication, patient search, order entry read-back, and HL7/FHIR interface heartbeat. Integration tests cover EMR-to-billing and lab result routing. Failed smoke tests block production promotion. Maintain test patients in a dedicated non-production environment mirroring production schema."
+  }
+]

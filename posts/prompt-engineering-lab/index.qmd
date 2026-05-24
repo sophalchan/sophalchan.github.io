@@ -1,0 +1,129 @@
+---
+title: "Prompt Engineering Lab for AI Engineering"
+description: "Step-by-step prompt engineering toolkit—YAML templates, few-shot and chain-of-thought patterns, Pydantic validation, and A/B prompt evaluation."
+date: 2026-05-22
+categories: [AI/ML]
+author: Sophal Chan
+repo-url: "https://github.com/sophalchan/prompt-engineering-lab"
+---
+
+## Overview
+
+This project is a **Prompt Engineering Lab** for AI engineering teams who need **repeatable, testable prompts**—not one-off ChatGPT copy-paste. It provides YAML templates, **few-shot** and **chain-of-thought** patterns, **Pydantic JSON schemas**, automated evaluators, and **A/B comparison** of prompt variants for cybersecurity triage and medical note summarization demos.
+
+**GitHub:** [sophalchan/prompt-engineering-lab](https://github.com/sophalchan/prompt-engineering-lab)
+
+**Stack:** Python · Jinja2 · PyYAML · Pydantic · Rich CLI
+
+## Background of the Study
+
+Large language models are sensitive to **prompt structure**. Small changes in instructions, examples, or output format can shift accuracy, JSON validity, and safety behavior. Production AI engineering requires **version-controlled prompts**, **schema-constrained outputs**, and **automated scoring**—the same discipline applied to unit tests in traditional software.
+
+This lab supports **SOC triage** and **de-identified clinical note** workflows aligned with my work in **cybersecurity**, **medical AI research**, and **AI engineering** instruction.
+
+## Motivation of the Study
+
+- **Standardize prompts** in YAML instead of scattered notebook cells  
+- **Compare techniques**: zero-shot vs few-shot vs chain-of-thought  
+- **Enforce JSON schemas** with Pydantic for downstream automation  
+- **Score outputs automatically** (field presence, length, safety rules)  
+- **Run offline** with a mock LLM—no API key required for demos  
+
+## Tools & Components
+
+| Component | Purpose |
+|-----------|---------|
+| `prompts/templates.yaml` | Prompt catalog with Jinja2 variables |
+| `prompts/few_shot_cyber_analyst.yaml` | Few-shot SOC examples |
+| `src/template_engine.py` | Render system + user prompts |
+| `src/schema.py` | Pydantic models for expected JSON |
+| `src/evaluator.py` | Rule-based scoring of model output |
+| `src/mock_llm.py` | Deterministic offline responses |
+| `cli.py` | Run and compare prompts from terminal |
+
+## Step-by-Step Workflow
+
+### Step 1 — Clone and install
+
+```bash
+git clone https://github.com/sophalchan/prompt-engineering-lab.git
+cd prompt-engineering-lab
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Step 2 — Run a zero-shot security triage prompt
+
+```bash
+python cli.py run security_triage_v1 \
+  --alert-type "Suspicious PowerShell" \
+  --hostname "WS-CLINICAL-07" \
+  --details "Encoded command with outbound connection"
+```
+
+Review the **rendered user prompt** and **JSON output**. Check the evaluation score.
+
+### Step 3 — Compare zero-shot vs chain-of-thought
+
+```bash
+python cli.py compare security_triage_v1 security_triage_cot_v2 \
+  --alert-type "Possible ransomware" \
+  --hostname "EHR-APP-02" \
+  --details "Mass file rename activity after hours"
+```
+
+The CLI prints a comparison table with **score** and **passed** flags for each variant.
+
+### Step 4 — Run the security triage example script
+
+```bash
+python examples/run_security_triage.py
+```
+
+This A/B test uses a **data exfiltration** scenario on a PACS archive host.
+
+### Step 5 — Run the medical summary prompt
+
+```bash
+python examples/run_medical_summary.py
+```
+
+Confirms structured JSON with `key_findings`, `follow_up_questions`, and a **non-clinical disclaimer**.
+
+### Step 6 — Add your own prompt template
+
+1. Edit `prompts/templates.yaml` and add a new `prompt_id`.  
+2. Define `system`, `user`, and optional `few_shot_file`.  
+3. Add a Pydantic schema in `src/schema.py` if needed.  
+4. Register an evaluator in `src/evaluator.py`.  
+5. Run: `python cli.py run your_prompt_id`.
+
+### Step 7 — Wire a live LLM (production path)
+
+1. Set `use_mock=False` in `src/runner.py` and add OpenAI/Ollama client code.  
+2. Keep the same YAML templates and evaluators.  
+3. Track prompt version + score in CI for regression testing.
+
+## Prompt Techniques Covered
+
+| Technique | Prompt ID | Description |
+|-----------|-----------|-------------|
+| Zero-shot JSON | `security_triage_v1` | Direct schema instruction |
+| Few-shot + CoT | `security_triage_cot_v2` | Examples + step-by-step reasoning |
+| Structured output | `medical_summary_structured` | Safety disclaimer + field constraints |
+
+## Evaluation Rules (examples)
+
+- **Security triage:** valid JSON, severity enum, summary length, escalation logic  
+- **Medical summary:** findings present, disclaimer required, no diagnosis language  
+
+## Outcomes & Skills Gained
+
+- **Production-style prompt management** with templates and variables  
+- **Structured output engineering** using Pydantic schemas  
+- **A/B prompt testing** with quantitative scores  
+- **Safety-aware prompting** for healthcare and SOC domains  
+- Reusable pattern for **LLM evaluation pipelines** before deployment  
+
+**Related:** [Medical IT RAG Assistant](../rag-medical-knowledge-assistant/) · [Cyber Threat IDS](../cyber-threat-ids/)

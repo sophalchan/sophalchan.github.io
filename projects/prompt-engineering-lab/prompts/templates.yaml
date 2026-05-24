@@ -1,0 +1,43 @@
+prompts:
+  security_triage_v1:
+    technique: zero-shot-json
+    system: |
+      You are a Tier-2 cybersecurity analyst assistant for a healthcare SOC.
+      Respond with ONLY valid JSON matching this schema:
+      incident_id, severity (low|medium|high|critical), summary, recommended_actions[], needs_escalation.
+    user: |
+      Analyze this alert bundle and produce structured triage JSON.
+
+      Alert source: {{ source }}
+      Alert type: {{ alert_type }}
+      Host: {{ hostname }}
+      Details: {{ details }}
+
+  security_triage_cot_v2:
+    technique: chain-of-thought-json
+    few_shot_file: few_shot_cyber_analyst.yaml
+    system: |
+      You are a healthcare SOC lead. Think step-by-step internally, then output ONLY JSON.
+      Schema: incident_id, severity, summary, recommended_actions[], needs_escalation.
+    user: |
+      Step 1 — Identify asset criticality and PHI exposure.
+      Step 2 — Map alert to MITRE technique if possible.
+      Step 3 — Decide severity and escalation.
+
+      Alert source: {{ source }}
+      Alert type: {{ alert_type }}
+      Host: {{ hostname }}
+      Details: {{ details }}
+
+      Return JSON only.
+
+  medical_summary_structured:
+    technique: structured-output
+    system: |
+      You summarize de-identified clinical engineering notes for an AI pipeline demo.
+      Output JSON only with: patient_context, key_findings[], follow_up_questions[], disclaimer.
+      Never provide diagnosis or treatment advice.
+    user: |
+      Summarize the following note for an engineering handoff:
+
+      {{ clinical_note }}

@@ -1,0 +1,130 @@
+---
+title: "Medical IT RAG Knowledge Assistant"
+description: "Step-by-step Retrieval-Augmented Generation pipeline—document ingestion, vector search, grounded answers, and Flask API for medical IT policy Q&A."
+date: 2026-05-20
+categories: [AI/ML]
+author: Sophal Chan
+repo-url: "https://github.com/sophalchan/rag-medical-knowledge-assistant"
+---
+
+## Overview
+
+This project implements a **Retrieval-Augmented Generation (RAG)** assistant for **medical IT, HIPAA compliance, and local LLM deployment** questions. Instead of asking a model to memorize policies, the system **retrieves approved document chunks** and **grounds every answer in source text** with citations—reducing hallucination risk in regulated environments.
+
+**GitHub:** [sophalchan/rag-medical-knowledge-assistant](https://github.com/sophalchan/rag-medical-knowledge-assistant)
+
+**Stack:** Python · sentence-transformers · ChromaDB · Flask · Ollama/OpenAI (optional)
+
+## Background of the Study
+
+Healthcare organizations maintain large policy libraries—HIPAA access rules, audit logging standards, IoMT segmentation, and AI governance for clinical NLP. Analysts and engineers waste time searching PDFs and wikis. **RAG** connects a natural-language interface to a **version-controlled knowledge base**, making institutional knowledge queryable while preserving traceability.
+
+This project mirrors real **AI engineering** work at the intersection of **medical applications**, **security compliance**, and **local LLM fine-tuning preparation** (Krulabs.ai context).
+
+## Motivation of the Study
+
+- **Ground answers** in approved policy text—not model guesses  
+- **Support local-first AI** with on-prem embeddings and optional Ollama generation  
+- **Return citations** (document title, category, relevance score) for auditability  
+- **Provide a deployable API** (`POST /ask`) for integration into internal tools  
+- **Build a reusable pipeline** from ingestion → chunking → embedding → retrieval → generation  
+
+## Tools & Components
+
+| Component | Purpose |
+|-----------|---------|
+| `data/knowledge_base/` | Source JSON documents (HIPAA, security, local LLM policy) |
+| `src/ingest.py` | Load documents and chunk with overlap |
+| `src/embeddings.py` | Local `all-MiniLM-L6-v2` sentence embeddings |
+| `src/vector_store.py` | Persistent ChromaDB index |
+| `src/retriever.py` | Top-k semantic search + context formatting |
+| `src/generator.py` | Extractive, Ollama, or OpenAI-compatible generation |
+| `app.py` | Flask REST API |
+| `scripts/build_index.py` | One-command index rebuild |
+
+## Step-by-Step Workflow
+
+### Step 1 — Clone and install dependencies
+
+```bash
+git clone https://github.com/sophalchan/rag-medical-knowledge-assistant.git
+cd rag-medical-knowledge-assistant
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+```
+
+### Step 2 — Review the knowledge base
+
+1. Open `data/knowledge_base/medical_it_policies.json`.  
+2. Each record has `id`, `title`, `category`, and `text`.  
+3. Add your own policies (HIPAA, IRB, AI governance) before production use.
+
+### Step 3 — Build the vector index
+
+```bash
+python scripts/build_index.py
+```
+
+Expected output: `Index built successfully — N chunks indexed.`
+
+This step chunks documents (~320 words, 48-word overlap), embeds them, and stores vectors in `./chroma_db`.
+
+### Step 4 — Query from the CLI
+
+```bash
+python scripts/query_cli.py "What are HIPAA audit logging requirements?"
+python scripts/query_cli.py "How should we deploy local LLMs for medical NLP?" --json
+```
+
+Verify that **sources** list matching policy titles with relevance scores.
+
+### Step 5 — Run the Flask API
+
+```bash
+python app.py
+```
+
+```bash
+curl -X POST http://localhost:8080/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What is the incident response playbook for healthcare ransomware?"}'
+```
+
+### Step 6 — Switch generator backend (optional)
+
+| `LLM_BACKEND` | When to use |
+|---------------|-------------|
+| `extractive` | Default—works offline, no API key |
+| `ollama` | Local LLM (`OLLAMA_HOST`, `OLLAMA_MODEL`) |
+| `openai` | OpenAI-compatible API with `OPENAI_API_KEY` |
+
+Update `.env`, restart the app, and re-test the same question to compare answer quality.
+
+### Step 7 — Validate grounding
+
+1. Ask a question **not** in the knowledge base.  
+2. Confirm the system reports insufficient context (extractive mode) or refuses to invent policy (LLM mode with system prompt).  
+3. Log `sources[]` for compliance review.
+
+## Architecture
+
+```text
+User question
+    → Embed query (sentence-transformers)
+    → ChromaDB top-k retrieval
+    → Format context block with citations
+    → Generator (extractive / Ollama / OpenAI)
+    → JSON response { answer, sources, backend }
+```
+
+## Outcomes & Skills Gained
+
+- End-to-end **RAG pipeline** design for regulated domains  
+- **Vector database** indexing and cosine similarity retrieval  
+- **Multi-backend generation** strategy (offline → local LLM → cloud API)  
+- **Flask API** packaging for engineering integration  
+- Foundation for **local LLM fine-tuning** data preparation and evaluation  
+
+**Related:** [Prompt Engineering Lab](../prompt-engineering-lab/) · [Cyber Threat IDS](../cyber-threat-ids/)

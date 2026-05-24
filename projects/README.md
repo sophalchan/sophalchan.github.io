@@ -1,0 +1,30 @@
+# AI Engineering Projects (Local Source)
+
+Runnable project code lives here before you push each repo to GitHub.
+
+| Project | Folder | Portfolio page | Planned GitHub repo |
+|---------|--------|----------------|---------------------|
+| Medical IT RAG Assistant | `rag-medical-knowledge-assistant/` | [Portfolio post](../posts/rag-medical-knowledge-assistant/) | [sophalchan/rag-medical-knowledge-assistant](https://github.com/sophalchan/rag-medical-knowledge-assistant) |
+| Prompt Engineering Lab | `prompt-engineering-lab/` | [Portfolio post](../posts/prompt-engineering-lab/) | [sophalchan/prompt-engineering-lab](https://github.com/sophalchan/prompt-engineering-lab) |
+
+## Push to GitHub (when ready)
+
+```bash
+# RAG project
+cd projects/rag-medical-knowledge-assistant
+git init
+git add .
+git commit -m "Initial commit: medical IT RAG pipeline"
+git remote add origin https://github.com/sophalchan/rag-medical-knowledge-assistant.git
+git push -u origin main
+
+# Prompt Engineering Lab
+cd ../prompt-engineering-lab
+git init
+git add .
+git commit -m "Initial commit: prompt engineering lab"
+git remote add origin https://github.com/sophalchan/prompt-engineering-lab.git
+git push -u origin main
+```
+
+Create the empty repos on GitHub first (`gh repo create sophalchan/rag-medical-knowledge-assistant --public`).
