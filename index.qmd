@@ -16,6 +16,8 @@ listing:
 
 ::: {.portfolio-hero}
 
+<img src="assets/profile-avatar.png" alt="Sophal Chan — professional portrait" class="hero-photo" width="152" height="152" loading="eager">
+
 # Sophal Chan
 
 <p class="hero-subtitle">
