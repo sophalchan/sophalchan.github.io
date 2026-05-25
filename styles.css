@@ -217,12 +217,6 @@ h2#featured-projects + p {
   box-shadow: 0 2px 8px rgba(185, 119, 14, 0.2);
 }
 
-#listing-portfolio-listing .listing-category[onclick*="UXVhbnR1bSUyMFNjaWVuY2U"] {
-  background: linear-gradient(135deg, #d1f2eb 0%, #a3e4d7 100%);
-  color: #0e6655;
-  box-shadow: 0 2px 8px rgba(17, 122, 101, 0.2);
-}
-
 #listing-portfolio-listing .listing-category[onclick*="UmVzZWFyY2glMjBhbmQlMjBBY2FkZW1pYw"] {
   background: linear-gradient(135deg, #eaecee 0%, #d5dbdb 100%);
   color: #2c3e50;

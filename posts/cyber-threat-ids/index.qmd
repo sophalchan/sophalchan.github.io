@@ -2,7 +2,7 @@
 title: "Cyber Threat Detection using Machine Learning Model"
 description: "An intrusion detection system (IDS) using real-world network logs, a Flask-based threat prediction API, and Docker containerization."
 date: 2025-11-15
-categories: [Cybersecurity, AI/ML, Quantum Science]
+categories: [Cybersecurity, AI/ML]
 author: Sophal Chan
 ---
 

@@ -21,21 +21,20 @@ listing:
 # Sophal Chan
 
 <p class="hero-subtitle">
-Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, **AI Engineering**, **Data Analytics**, and **Quantum Science**. Building intrusion detection systems, real-time anomaly dashboards, and data-driven security solutions for engineering teams and recruiters who need production-ready technical depth.
+Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, **AI Engineering**, and **Data Analytics**. Building intrusion detection systems, real-time anomaly dashboards, and data-driven security solutions for engineering teams and recruiters who need production-ready technical depth.
 </p>
 
 ::: {.hero-tags}
 <span class="hero-tag">Cybersecurity</span>
 <span class="hero-tag">AI / ML</span>
 <span class="hero-tag">Data Science and Analyst</span>
-<span class="hero-tag">Quantum Science</span>
 :::
 
 :::
 
 ## Featured Projects
 
-Browse **cybersecurity**, **AI/ML**, **data science**, and **quantum science** work below—including **21 projects** in the [**Data Science Projects Collection**](posts/data-science-collection/) from [PaulChanCyber/Data-Science-Project-](https://github.com/PaulChanCyber/Data-Science-Project-).
+Browse **cybersecurity**, **AI/ML**, and **data science** work below—including **21 projects** in the [**Data Science Projects Collection**](posts/data-science-collection/) from [PaulChanCyber/Data-Science-Project-](https://github.com/PaulChanCyber/Data-Science-Project-).
 
 Use the sidebar **category filters** to explore projects, or search by keyword. Publications: **[Research & Academic](research.qmd)**.
 

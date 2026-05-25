@@ -58,15 +58,6 @@ Alongside my IT and security work, I bring practical **manufacturing production*
 :::
 
 ::: {.skill-category markdown="1"}
-**Quantum Science**
-
-- Quantum computing & information fundamentals
-- Linear algebra for quantum systems
-- Quantum simulation (Qiskit-oriented workflows)
-- Quantum algorithms & optimization basics
-:::
-
-::: {.skill-category markdown="1"}
 **Research & Medical AI**
 
 - Medical image mining & texture analysis
@@ -97,7 +88,7 @@ Alongside my IT and security work, I bring practical **manufacturing production*
 
 ## Research & Academic
 
-My published research includes **four peer-reviewed outputs** on **machine learning and medical image mining for knee osteoarthritis** detection and staging (Prince of Songkla University), with first-author journal articles in *IJASEIT* (2020, **AUC 0.912**) and *International Journal of Computers and Applications* (2020, **AUC 0.917**), plus a Springer conference paper (2019) and M.S. thesis. I now extend that analytical foundation into **cybersecurity**, **quantum science**, and **data science education** at ITC and beyond.
+My published research includes **four peer-reviewed outputs** on **machine learning and medical image mining for knee osteoarthritis** detection and staging (Prince of Songkla University), with first-author journal articles in *IJASEIT* (2020, **AUC 0.912**) and *International Journal of Computers and Applications* (2020, **AUC 0.917**), plus a Springer conference paper (2019) and M.S. thesis. I now extend that analytical foundation into **cybersecurity** and **data science education** at ITC and beyond.
 
 **Selected publications:** Chan, Dittakan & Garcia-Constantino (2020); Chan, Dittakan & El Salhi (2020); Chan & Dittakan (2019, Springer).
 

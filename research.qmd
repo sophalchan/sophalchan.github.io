@@ -4,7 +4,7 @@ title: "Research & Academic"
 
 ## Research Profile
 
-My research career began at **Prince of Songkla University (PSU), Phuket Campus**, where I completed graduate work in **Information Technology** and published peer-reviewed studies on **medical image mining**, **texture analysis**, and **machine learning for osteoarthritis (OA) detection** from knee X-ray imagery. That foundation in AI, computer vision, and clinical decision support now informs my work in **cybersecurity**, **quantum science**, and **applied data science** as a lecturer, lab manager, and consultant.
+My research career began at **Prince of Songkla University (PSU), Phuket Campus**, where I completed graduate work in **Information Technology** and published peer-reviewed studies on **medical image mining**, **texture analysis**, and **machine learning for osteoarthritis (OA) detection** from knee X-ray imagery. That foundation in AI, computer vision, and clinical decision support now informs my work in **cybersecurity** and **applied data science** as a lecturer, lab manager, and consultant.
 
 I hold an **M.S. and B.S. in Information Technology** (GPA **3.91**, ASEAN Hub Scholar, Prince Sirindhorn Scholar), served as **Data Science Lab Manager** and **Lecturer** at the **Institute of Technology of Cambodia (ITC)**, and continue professional development in **cybersecurity** (Per Scholas, CompTIA CySA+ pathway).
 
@@ -15,7 +15,6 @@ I hold an **M.S. and B.S. in Information Technology** (GPA **3.91**, ASEAN Hub S
 - **Medical image mining & computer vision** — texture descriptors, ROI analysis, OA grading from radiographs
 - **Machine learning & deep learning** — SVM, ensemble methods, CNNs, feature selection (CFS)
 - **Cybersecurity & AI-driven threat detection** — SIEM/SOAR, intrusion analytics, automated response
-- **Quantum science & advanced computing** — quantum information fundamentals and optimization
 - **Data science education** — capstone supervision, reproducible pipelines, deployment (Flask, Docker, Streamlit)
 
 ## Academic Appointments

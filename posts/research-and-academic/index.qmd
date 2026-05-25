@@ -23,7 +23,7 @@ This hub collects **scholarly research and academic work** by **Sophal Chan**—
 
 ## Research Interests
 
-Medical image mining · texture & shape analysis · OA grading · SVM/CNN classifiers · cybersecurity analytics · quantum science · data science education.
+Medical image mining · texture & shape analysis · OA grading · SVM/CNN classifiers · cybersecurity analytics · data science education.
 
 ## Source
 
