@@ -1,0 +1,126 @@
+---
+title: "RAG Methods Comparison Lab — Chunking, Contextual & Vector DB"
+description: "Step-by-step comparison of three RAG methods—fixed chunking, contextual retrieval, and vector DB hybrid search with Chroma and BM25."
+date: 2026-05-26
+categories: [AI/ML]
+author: Sophal Chan
+repo-url: "https://github.com/sophalchan/rag-methods-comparison-lab"
+---
+
+## Overview
+
+This project compares **three Retrieval-Augmented Generation (RAG) methods** on the same document corpus so you can see how **chunking strategy**, **contextual enrichment**, and **vector database hybrid search** change retrieval quality.
+
+**GitHub:** [sophalchan/rag-methods-comparison-lab](https://github.com/sophalchan/rag-methods-comparison-lab)
+
+**Stack:** Python · sentence-transformers · ChromaDB · rank-bm25 · Flask
+
+## Background of the Study
+
+Not all RAG pipelines are the same. A naive fixed-size chunker may split sentences and lose meaning. **Contextual retrieval** adds parent-document context to each chunk before embedding. **Hybrid vector DB search** combines dense embeddings with sparse keyword matching for better recall on exact terms (HIPAA, SIEM, LoRA).
+
+AI engineering teams need a **repeatable framework** to A/B test these approaches before production deployment.
+
+## Motivation of the Study
+
+- **Compare chunking vs contextual vs hybrid** on identical source documents  
+- **Use ChromaDB** as the persistent local vector store for all methods  
+- **Quantify retrieval differences** with the same query across pipelines  
+- **Provide CLI + Flask API** for labs and demos  
+- **Complement** the [Medical IT RAG Assistant](../rag-medical-knowledge-assistant/) with methodology depth  
+
+## Three RAG Methods
+
+| # | Method | What it does |
+|---|--------|----------------|
+| 1 | **Fixed chunking** | Overlapping word chunks → embed → Chroma cosine search |
+| 2 | **Contextual retrieval** | Prepend `Document + summary + chunk` to each embedding |
+| 3 | **Vector DB hybrid** | Chroma vector search + BM25 fused with reciprocal rank fusion (RRF) |
+
+## Tools & Framework
+
+| Component | Purpose |
+|-----------|---------|
+| `configs/fixed_chunking.yaml` | Chunk size, overlap, Chroma collection name |
+| `configs/contextual_retrieval.yaml` | Context template for enriched chunks |
+| `configs/vector_db_hybrid.yaml` | Hybrid weights and RRF settings |
+| `src/documents.py` | Fixed + contextual chunk builders |
+| `src/vector_store.py` | ChromaDB upsert and vector query |
+| `src/hybrid_search.py` | BM25 + vector RRF ranking |
+| `src/pipeline.py` | Unified `build_index` / `retrieve` / `answer` |
+| `scripts/compare_all.py` | Build all three + same-question comparison |
+
+## Step-by-Step Workflow
+
+### Step 1 — Install
+
+```bash
+git clone https://github.com/sophalchan/rag-methods-comparison-lab.git
+cd rag-methods-comparison-lab
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Step 2 — Build index: fixed chunking
+
+```bash
+python scripts/build_index.py fixed_chunking
+python scripts/query.py fixed_chunking "What is HIPAA access control?"
+```
+
+Observe raw chunk text in retrieved sources.
+
+### Step 3 — Build index: contextual retrieval
+
+```bash
+python scripts/build_index.py contextual_retrieval
+python scripts/query.py contextual_retrieval "What is HIPAA access control?"
+```
+
+Each embedded chunk includes **document title, category, and summary** prefix—better isolation semantics.
+
+### Step 4 — Build index: vector DB hybrid
+
+```bash
+python scripts/build_index.py vector_db_hybrid
+python scripts/query.py vector_db_hybrid "BM25 hybrid search RAG"
+```
+
+Retrieval uses **Chroma vectors + BM25 keywords** merged by RRF—strong for exact terminology.
+
+### Step 5 — Compare all methods on one question
+
+```bash
+python scripts/compare_all.py
+```
+
+Prints side-by-side panels for the same query across all three pipelines.
+
+### Step 6 — Flask API
+
+```bash
+python app.py
+curl -X POST http://localhost:8090/ask \
+  -H "Content-Type: application/json" \
+  -d '{"method":"contextual_retrieval","question":"How does contextual retrieval help RAG?"}'
+```
+
+## Architecture
+
+```text
+documents.json
+    ├─► fixed_chunking ──► Chroma (rag_fixed_chunking)
+    ├─► contextual_retrieval ──► Chroma (rag_contextual)
+    └─► vector_db_hybrid ──► Chroma + BM25 ──► RRF merge
+              └─► answer with sources + scores
+```
+
+## Outcomes & Skills Gained
+
+- Practical understanding of **chunking vs contextual RAG**  
+- **ChromaDB** indexing and collection management  
+- **Hybrid retrieval** with BM25 and reciprocal rank fusion  
+- Side-by-side **method comparison** framework for AI engineering  
+- Foundation for choosing the right RAG stack in medical/security domains  
+
+**Related:** [Medical IT RAG Assistant](../rag-medical-knowledge-assistant/) · [Prompt Engineering Lab](../prompt-engineering-lab/) · [Local LLM Fine-Tuning Lab](../local-llm-finetuning-lab/)

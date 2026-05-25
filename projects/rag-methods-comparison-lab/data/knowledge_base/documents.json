@@ -1,0 +1,8 @@
+[
+  {"id": "doc-001", "title": "HIPAA Access Control", "category": "compliance", "text": "Role-based access control must limit PHI to job-required minimum. Quarterly reviews are mandatory for privileged accounts."},
+  {"id": "doc-002", "title": "RAG Chunking Best Practices", "category": "ai-engineering", "text": "Fixed-size chunking is fast but may split sentences. Use 10-15 percent overlap. Semantic chunking respects sentence boundaries for better retrieval quality."},
+  {"id": "doc-003", "title": "Contextual Retrieval", "category": "ai-engineering", "text": "Contextual retrieval prepends document context to each chunk before embedding so isolated chunks remain interpretable. This reduces missed context when chunks are short."},
+  {"id": "doc-004", "title": "Vector Database Operations", "category": "infrastructure", "text": "Vector databases store embeddings with metadata filters. Chroma supports persistent local indexes, cosine similarity, and collection per RAG method for A/B testing."},
+  {"id": "doc-005", "title": "Hybrid Search", "category": "ai-engineering", "text": "Combine dense vector search with sparse BM25 keyword matching. Reciprocal rank fusion merges ranked lists without calibrating incompatible scores."},
+  {"id": "doc-006", "title": "SOC Alert Triage", "category": "security", "text": "Correlate SIEM alerts with asset criticality. Escalate ransomware and bulk PHI export patterns within 15 minutes per incident response playbook."}
+]
