@@ -20,25 +20,6 @@ h1, h2, h3, .quarto-title {
   text-align: center;
 }
 
-.portfolio-hero .hero-photo {
-  width: clamp(7rem, 22vw, 9.5rem) !important;
-  height: clamp(7rem, 22vw, 9.5rem) !important;
-  max-width: none !important;
-  object-fit: cover;
-  object-position: center 28%;
-  border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
-  margin: 0 auto 1.25rem !important;
-  display: block !important;
-  flex-shrink: 0;
-}
-
-.portfolio-hero .quarto-figure,
-.portfolio-hero figure.figure {
-  margin: 0 0 1.25rem;
-}
-
 .portfolio-hero h1 {
   color: #ffffff;
   font-size: clamp(1.75rem, 4vw, 2.75rem);
@@ -339,11 +320,6 @@ h2#featured-projects + p {
 }
 
 /* --- About page (trestles) --- */
-.about-entity .about-image {
-  border-radius: 0.5rem;
-  box-shadow: 0 6px 20px rgba(44, 62, 80, 0.18);
-}
-
 .about-entity .about-links {
   margin-top: 1rem;
 }
