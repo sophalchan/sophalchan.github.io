@@ -1,0 +1,8 @@
+{"instruction": "Summarize HIPAA minimum necessary access in one sentence.", "input": "", "output": "Workforce may access only the PHI required for their job role, enforced with RBAC and periodic access reviews."}
+{"instruction": "What should a healthcare SOC do first for ransomware?", "input": "Alert: mass file encryption on EHR app server", "output": "Isolate affected systems, preserve logs, notify IR and legal, and begin recovery from immutable backups."}
+{"instruction": "Explain local LLM fine-tuning for medical NLP.", "input": "", "output": "Use de-identified data, on-prem GPUs, versioned models, and RAG or adapters instead of exposing PHI to public APIs."}
+{"instruction": "List three benefits of LoRA for local training.", "input": "", "output": "Fewer trainable parameters, lower VRAM use, and faster iteration while keeping the base model frozen."}
+{"instruction": "When should QLoRA be preferred over standard LoRA?", "input": "", "output": "When GPU memory is limited and you need 4-bit loading of large base models with adapter training on top."}
+{"instruction": "Describe smoke testing after a health IT deployment.", "input": "", "output": "Verify login, patient search, critical interfaces, and alerting before promoting builds to production."}
+{"instruction": "How do you reduce hallucination in policy Q&A?", "input": "", "output": "Ground answers with retrieval from approved documents and require citations in the prompt."}
+{"instruction": "What is the purpose of gradient checkpointing?", "input": "", "output": "It trades compute for memory by recomputing activations during backward pass, enabling larger models on one GPU."}

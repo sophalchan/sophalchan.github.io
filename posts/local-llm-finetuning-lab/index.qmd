@@ -1,0 +1,141 @@
+---
+title: "Local LLM Fine-Tuning Lab (LoRA, QLoRA, Full)"
+description: "Step-by-step local LLM fine-tuning framework—compare LoRA, QLoRA, and full fine-tuning with Hugging Face, PEFT, and reproducible YAML configs."
+date: 2026-05-24
+categories: [AI/ML]
+author: Sophal Chan
+repo-url: "https://github.com/sophalchan/local-llm-finetuning-lab"
+---
+
+## Overview
+
+This project is a **local LLM fine-tuning lab** for AI engineering teams preparing **domain-specific models** (medical IT, SOC playbooks, internal policy Q&A). It implements **three fine-tuning methods** side by side—**LoRA**, **QLoRA**, and **full fine-tuning**—with a shared data pipeline, YAML configs, and comparable training reports.
+
+**GitHub:** [sophalchan/local-llm-finetuning-lab](https://github.com/sophalchan/local-llm-finetuning-lab)
+
+**Stack:** Python · PyTorch · Hugging Face Transformers · PEFT · bitsandbytes (QLoRA) · TRL-compatible Trainer
+
+## Background of the Study
+
+Enterprise AI projects increasingly require **on-prem fine-tuning** instead of sending sensitive text to public APIs. Teams must choose how much of the base model to train:
+
+- **LoRA** trains small adapter matrices while freezing the base weights.  
+- **QLoRA** loads the base model in **4-bit** precision and applies LoRA on top—enabling large models on limited GPUs.  
+- **Full fine-tuning** updates every parameter—feasible for small models or when maximum task adaptation is required.
+
+This lab documents that decision framework with **runnable local code** and aligned sample data for **healthcare IT / security** instruction tasks.
+
+## Motivation of the Study
+
+- **Compare three methods** with the same dataset and reporting format  
+- **Run locally** with open-source tooling (no vendor lock-in)  
+- **Quantify trainable parameters** before committing GPU budget  
+- **Produce adapters** ready for inference or RAG orchestration  
+- **Mirror Krulabs-style medical AI engineering** (local LLM preparation, compliance-aware workflows)  
+
+## Tools & Framework Components
+
+| Layer | File / folder | Role |
+|-------|----------------|------|
+| Config | `configs/lora.yaml` | Rank, alpha, target modules, training args |
+| Config | `configs/qlora.yaml` | 4-bit NF4 settings + LoRA |
+| Config | `configs/full_finetune.yaml` | Full-weight training + gradient checkpointing |
+| Data | `data/sample_instructions.jsonl` | Instruction tuning examples |
+| Core | `src/data_loader.py` | Format prompts for causal LM |
+| Core | `src/model_utils.py` | Build LoRA / QLoRA / full models |
+| Core | `src/trainer.py` | Unified Hugging Face `Trainer` loop |
+| CLI | `scripts/train.py` | `python scripts/train.py lora` |
+| CLI | `scripts/compare_methods.py` | Parameter comparison table |
+| CLI | `scripts/inference_cli.py` | Test fine-tuned output |
+
+## Step-by-Step Workflow
+
+### Step 1 — Clone and install
+
+```bash
+git clone https://github.com/sophalchan/local-llm-finetuning-lab.git
+cd local-llm-finetuning-lab
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+```
+
+### Step 2 — Compare methods (before training)
+
+```bash
+python scripts/compare_methods.py
+```
+
+Review the table: **trainable parameter count** and **% of total weights** for LoRA vs QLoRA vs full.
+
+### Step 3 — Train with LoRA (recommended first run)
+
+```bash
+python scripts/train.py lora
+```
+
+Artifacts: `outputs/lora/final/` and `outputs/lora/training_report.json`.
+
+LoRA keeps the base model frozen and learns low-rank adapters—ideal for fast experiments on CPU or small GPU.
+
+### Step 4 — Train with QLoRA (CUDA GPU required)
+
+```bash
+python scripts/train.py qlora
+```
+
+QLoRA combines **4-bit quantization** with LoRA adapters. Use this when fine-tuning larger models (7B+) on a single consumer GPU.
+
+### Step 5 — Train with full fine-tuning
+
+```bash
+python scripts/train.py full
+```
+
+Updates **all weights**—use only on small base models (`distilgpt2`, `TinyLlama`) unless you have large GPU memory. Gradient checkpointing is enabled in config to save VRAM.
+
+### Step 6 — Run inference
+
+```bash
+python scripts/inference_cli.py "Summarize HIPAA minimum necessary access" --method lora
+```
+
+Swap `--method qlora` or `full` to test other output folders.
+
+### Step 7 — Scale to your production model
+
+1. Replace the sample JSONL with **de-identified** domain instructions.  
+2. Set `BASE_MODEL` in `.env` to your approved Hugging Face model ID.  
+3. Edit `target_modules` in `configs/lora.yaml` for your architecture (Llama, Mistral, Phi, etc.).  
+4. Integrate adapters with [Medical IT RAG Assistant](../rag-medical-knowledge-assistant/) for grounded deployment.
+
+## Method comparison summary
+
+| Method | Trainable params | VRAM | Typical use |
+|--------|------------------|------|-------------|
+| LoRA | Low (~0.1–2%) | Medium | Adapter sweeps, multi-tenant adapters |
+| QLoRA | Low adapters + 4-bit base | Lowest for large models | 7B–70B on one GPU |
+| Full | 100% | Highest | Small models, maximum task fit |
+
+## Architecture
+
+```text
+JSONL instructions
+    → format prompts (instruction / input / response)
+    → tokenize (max_seq_length)
+    → build model (LoRA | QLoRA | full)
+    → Hugging Face Trainer
+    → save adapters/weights + training_report.json
+    → inference_cli.py
+```
+
+## Outcomes & Skills Gained
+
+- Hands-on **LoRA / QLoRA / full fine-tuning** on local infrastructure  
+- **YAML-driven experiment** framework for AI engineering teams  
+- **Parameter efficiency analysis** before production training jobs  
+- Foundation for **medical and security domain adapters** paired with RAG  
+- Reproducible path from **lab notebook → scripted training → inference CLI**  
+
+**Related:** [Medical IT RAG Assistant](../rag-medical-knowledge-assistant/) · [Prompt Engineering Lab](../prompt-engineering-lab/)

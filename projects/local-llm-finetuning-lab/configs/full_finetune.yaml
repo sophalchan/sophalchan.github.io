@@ -1,0 +1,11 @@
+method: full_finetune
+description: "Update all base model weights (best on small models; highest VRAM use)"
+training:
+  num_train_epochs: 1
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 0.00005
+  warmup_ratio: 0.05
+  gradient_checkpointing: true
+  logging_steps: 5
+  save_steps: 50

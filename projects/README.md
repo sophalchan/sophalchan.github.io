@@ -6,6 +6,7 @@ Runnable project code lives here before you push each repo to GitHub.
 |---------|--------|----------------|---------------------|
 | Medical IT RAG Assistant | `rag-medical-knowledge-assistant/` | [Portfolio post](../posts/rag-medical-knowledge-assistant/) | [sophalchan/rag-medical-knowledge-assistant](https://github.com/sophalchan/rag-medical-knowledge-assistant) |
 | Prompt Engineering Lab | `prompt-engineering-lab/` | [Portfolio post](../posts/prompt-engineering-lab/) | [sophalchan/prompt-engineering-lab](https://github.com/sophalchan/prompt-engineering-lab) |
+| Local LLM Fine-Tuning Lab | `local-llm-finetuning-lab/` | [Portfolio post](../posts/local-llm-finetuning-lab/) | [sophalchan/local-llm-finetuning-lab](https://github.com/sophalchan/local-llm-finetuning-lab) |
 
 ## Push to GitHub (when ready)
 
