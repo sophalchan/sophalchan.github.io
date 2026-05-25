@@ -1,12 +1,17 @@
-# RAG Methods Comparison Lab
+# Advanced RAG Methods Comparison Lab
 
-Compare **three RAG architectures** on the same knowledge base:
+Compare **six RAG pipelines** emphasizing **advanced chunking** and **vector database retrieval** — inspired by [Pinecone chunking strategies](https://www.pinecone.io/learn/chunking-strategies/) and semantic/recursive approaches (Kamradt, LangChain).
 
-| Method | Key idea | Storage |
-|--------|----------|---------|
-| **fixed_chunking** | Traditional overlapping word chunks | Chroma vector DB |
-| **contextual_retrieval** | Prepend document context to each chunk before embedding | Chroma vector DB |
-| **vector_db_hybrid** | Vector DB + BM25 keyword search fused with RRF | Chroma + sparse index |
+## Six methods
+
+| # | Method | Technique |
+|---|--------|-----------|
+| 1 | **fixed_overlap_chunking** | Word windows + **sliding overlap** |
+| 2 | **sentence_window_chunking** | **Sentence boundaries** + overlapping sentence windows |
+| 3 | **recursive_hierarchical_chunking** | **Recursive** split: `\n\n` → `\n` → `. ` → words |
+| 4 | **semantic_breakpoint_chunking** | **Embedding similarity** drops = chunk boundary |
+| 5 | **contextual_retrieval** | Prepend **document + summary** to each chunk embedding |
+| 6 | **vector_db_hybrid** | **Chroma** vectors + **BM25** + **RRF** fusion |
 
 ## Quick start
 
@@ -15,35 +20,30 @@ cd projects/rag-methods-comparison-lab
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-python scripts/build_index.py fixed_chunking
-python scripts/build_index.py contextual_retrieval
-python scripts/build_index.py vector_db_hybrid
+# Preview chunk counts before embedding
+python scripts/chunk_stats.py
 
-python scripts/query.py fixed_chunking "What is contextual retrieval?"
+# Build + query one method
+python scripts/build_index.py sentence_window_chunking
+python scripts/query.py semantic_breakpoint_chunking "What is semantic chunking?"
+
+# Compare all six
 python scripts/compare_all.py
 ```
 
-## Framework layout
+## Framework
 
 ```
-configs/           # YAML per RAG method
-data/              # Shared JSON knowledge base
-src/
-  documents.py     # Chunking strategies
-  vector_store.py  # ChromaDB
-  hybrid_search.py # BM25 + RRF for hybrid method
-  pipeline.py      # Unified build + retrieve + answer
-scripts/           # build_index, query, compare_all
-app.py             # Flask API
+configs/                    # YAML hyperparameters per method
+src/chunking/strategies.py  # All chunking implementations
+src/vector_store.py         # ChromaDB
+src/hybrid_search.py        # BM25 + RRF
+src/pipeline.py             # build_index / retrieve / answer
+scripts/                    # CLI tools
 ```
 
-## API
+## Outputs
 
-```bash
-python app.py
-curl -X POST http://localhost:8090/build/fixed_chunking
-curl -X POST http://localhost:8090/ask -H "Content-Type: application/json" \
-  -d '{"method":"vector_db_hybrid","question":"How does hybrid search work?"}'
-```
+`outputs/<method>/build_report.json` — chunk count, avg/min/max tokens, collection name.
 
 **Author:** Sophal Chan

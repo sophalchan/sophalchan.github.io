@@ -5,7 +5,7 @@ from pathlib import Path
 import chromadb
 from chromadb.config import Settings as ChromaSettings
 
-from .documents import ChunkRecord
+from .chunking.strategies import ChunkRecord
 from .embeddings import embed
 
 
@@ -46,7 +46,9 @@ class ChromaVectorDB:
                     "doc_id": c.doc_id,
                     "title": c.title,
                     "category": c.category,
-                    "embed_text": c.embed_text[:500],
+                    "chunking_strategy": c.chunking_strategy,
+                    "chunk_index": c.chunk_index,
+                    "token_estimate": c.token_estimate,
                 }
                 for c in chunks
             ],
@@ -67,7 +69,7 @@ class ChromaVectorDB:
                     "chunk_id": res["ids"][0][i],
                     "text": res["documents"][0][i],
                     "metadata": res["metadatas"][0][i],
-                    "score": 1 - res["distances"][0][i],
+                    "score": round(1 - res["distances"][0][i], 4),
                     "source": "vector",
                 }
             )

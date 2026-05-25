@@ -1,0 +1,8 @@
+method: fixed_overlap_chunking
+description: "Fixed word windows with sliding overlap (token-bounded baseline)"
+chunking:
+  strategy: fixed_overlap
+  chunk_size_words: 28
+  overlap_words: 8
+vector_db:
+  collection: rag_fixed_overlap

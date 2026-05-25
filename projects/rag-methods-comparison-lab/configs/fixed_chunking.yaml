@@ -1,7 +1,0 @@
-method: fixed_chunking
-description: "Traditional fixed-size chunking with overlap, stored in Chroma vector DB"
-chunking:
-  chunk_size_words: 24
-  overlap_words: 6
-vector_db:
-  collection: rag_fixed_chunking

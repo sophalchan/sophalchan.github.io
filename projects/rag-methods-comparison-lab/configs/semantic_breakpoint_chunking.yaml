@@ -1,0 +1,8 @@
+method: semantic_breakpoint_chunking
+description: "Embedding similarity breakpoints detect topic shifts between sentences"
+chunking:
+  strategy: semantic_breakpoint
+  max_sentences_per_chunk: 4
+  similarity_threshold: 0.55
+vector_db:
+  collection: rag_semantic

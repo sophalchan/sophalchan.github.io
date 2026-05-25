@@ -2,17 +2,15 @@ from __future__ import annotations
 
 from rank_bm25 import BM25Okapi
 
-from .documents import ChunkRecord
+from .chunking.strategies import ChunkRecord
+from .vector_store import ChromaVectorDB
 
 
 def tokenize(text: str) -> list[str]:
     return text.lower().split()
 
 
-def reciprocal_rank_fusion(
-    rankings: list[list[str]],
-    k: int = 60,
-) -> list[tuple[str, float]]:
+def reciprocal_rank_fusion(rankings: list[list[str]], k: int = 60) -> list[tuple[str, float]]:
     scores: dict[str, float] = {}
     for ranking in rankings:
         for rank, doc_id in enumerate(ranking):
@@ -21,15 +19,12 @@ def reciprocal_rank_fusion(
 
 
 class HybridRetriever:
-    """BM25 over chunk corpus + vector DB scores fused with RRF."""
-
-    def __init__(self, chunks: list[ChunkRecord], vector_db, top_k: int = 4) -> None:
+    def __init__(self, chunks: list[ChunkRecord], vector_db: ChromaVectorDB, top_k: int = 4) -> None:
         self.chunks = {c.chunk_id: c for c in chunks}
         self.chunk_list = chunks
         self.vector_db = vector_db
         self.top_k = top_k
-        corpus = [tokenize(c.embed_text) for c in chunks]
-        self.bm25 = BM25Okapi(corpus)
+        self.bm25 = BM25Okapi([tokenize(c.embed_text) for c in chunks])
 
     def search(self, question: str) -> list[dict]:
         vector_hits = self.vector_db.query_vector(question, self.top_k * 2)
@@ -59,9 +54,10 @@ class HybridRetriever:
                         "doc_id": chunk.doc_id,
                         "title": chunk.title,
                         "category": chunk.category,
+                        "chunking_strategy": chunk.chunking_strategy,
                     },
                     "score": round(rrf_score, 4),
-                    "vector_score": round(vec_score, 4),
+                    "vector_score": vec_score,
                     "source": "hybrid_rrf",
                 }
             )

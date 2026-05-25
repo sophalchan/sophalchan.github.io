@@ -1,8 +1,10 @@
 method: contextual_retrieval
-description: "Contextual RAG — each chunk embeds with parent document context prepended"
+description: "Contextual RAG — document title, category, summary prepended to each chunk embedding"
 chunking:
-  chunk_size_words: 24
-  overlap_words: 4
-  context_template: "Document: {title} ({category}). Summary: {summary}\nChunk:\n"
+  strategy: contextual_retrieval
+  base_strategy: sentence_window
+  max_sentences: 2
+  sentence_overlap: 1
+  context_template: "Document: {title} | Category: {category}\nSummary: {summary}\nPassage:\n"
 vector_db:
   collection: rag_contextual

@@ -1,11 +1,9 @@
 method: vector_db_hybrid
-description: "Vector DB semantic search + BM25 keyword fusion (RRF)"
+description: "Chroma vector DB + BM25 keyword search fused with reciprocal rank fusion (RRF)"
 chunking:
-  chunk_size_words: 28
-  overlap_words: 5
+  strategy: recursive_hierarchical
+  chunk_size_words: 30
 vector_db:
   collection: rag_hybrid
 hybrid:
-  vector_weight: 0.6
-  bm25_weight: 0.4
   rrf_k: 60

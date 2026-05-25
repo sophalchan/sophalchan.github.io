@@ -1,0 +1,8 @@
+method: sentence_window_chunking
+description: "Sentence-boundary windows with overlapping sentences between chunks"
+chunking:
+  strategy: sentence_window
+  max_sentences: 2
+  sentence_overlap: 1
+vector_db:
+  collection: rag_sentence_window

@@ -1,0 +1,8 @@
+method: recursive_hierarchical_chunking
+description: "Recursive hierarchical split — paragraph, line, sentence, then word (LangChain-style)"
+chunking:
+  strategy: recursive_hierarchical
+  chunk_size_words: 32
+  separators: ["\n\n", "\n", ". ", " "]
+vector_db:
+  collection: rag_recursive
