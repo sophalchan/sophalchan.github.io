@@ -2,7 +2,7 @@
 title: "About Sophal Chan"
 about:
   template: trestles
-  image: assets/profile.png
+  image: assets/profile-avatar.png
   image-alt: "Professional headshot of Sophal Chan"
   links:
     - icon: github
