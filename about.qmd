@@ -163,8 +163,9 @@ Awarded the **Prince Sirindhorn Scholar**
 
 **AI Lecturer (Volunteer)** · Cambodia (Remote)
 
-- Delivered engaging lectures and hands-on labs in Artificial Intelligence and Machine Learning, covering Python, data analysis, model development, and real-world applications.
-- Mentor students on problem-solving, critical thinking, and industry best practices.
+- **Curriculum Delivery & Core AI Workflows:** Deliver hands-on instruction on the end-to-end AI lifecycle, teaching students advanced Prompt Engineering (Few-Shot, CoT), RAG architecture (vector databases and embeddings), and LLM Fine-tuning strategies (LoRA/QLoRA).
+- **Technical Mentorship & Hands-on Labs:** Guide students through building, evaluating, and troubleshooting local and cloud-based AI applications, emphasizing model evaluation frameworks to catch hallucinations and ensure output reliability.
+- **Architecture & Deployment Training:** Mentor students on infrastructure best practices, demonstrating how to containerize, secure, and deploy open-source LLMs using tools like Docker, FastAPI, and optimized local/cloud compute environments.
 :::
 
 ::: {.timeline-item markdown="1"}
