@@ -14,8 +14,6 @@ website:
         text: Home
       - href: about.qmd
         text: About
-      - href: it-iot.qmd
-        text: IT / IoT
       - href: research.qmd
         text: Research
     right:
@@ -30,7 +28,7 @@ website:
         aria-label: Email
 
   page-footer:
-    center: "[IT / IoT](it-iot.qmd) · [Research](research.qmd) · [About](about.qmd) · © 2026 Sophal Chan · Fairfield, OH"
+    center: "© 2026 Sophal Chan · Fairfield, OH"
     border: true
 
 format:
