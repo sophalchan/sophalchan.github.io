@@ -243,7 +243,7 @@ Yield is strongly structured in the synthetic generator; real farms would need c
 
 ## Related Work on This Site
 
-- **[IT / IoT hub](https://sophalchan.github.io/it-iot.html)** — infrastructure and smart systems  
+- **[IT / IoT hub](https://sophalchan.github.io/posts/it-iot-hub/)** — infrastructure and smart systems  
 - **[IT Service Desk & AD Lab](posts/it-service-desk-ad-automation/)** — operations automation  
 - **[AI/ML projects](https://sophalchan.github.io/)** — RAG, fine-tuning, threat detection  
 

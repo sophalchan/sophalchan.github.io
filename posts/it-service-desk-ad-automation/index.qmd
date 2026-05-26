@@ -207,7 +207,7 @@ Requester (HR, monitoring, user)
 
 - **[Cybersecurity](https://sophalchan.github.io/)** — identity, access, and incident workflows  
 - **[AI/ML](https://sophalchan.github.io/)** — RAG and automation for IT knowledge bases  
-- **[IT/IoT hub](https://sophalchan.github.io/it-iot.html)** — more infrastructure and operations projects  
+- **[IT/IoT hub](https://sophalchan.github.io/posts/it-iot-hub/)** — more infrastructure and operations projects  
 
 ---
 
