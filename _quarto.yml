@@ -35,6 +35,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    include-after-body: assets/hero-category-filters.html
     toc: true
     toc-depth: 3
     toc-location: right

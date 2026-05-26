@@ -3,6 +3,8 @@ title: "IT / IoT Hub"
 description: "Enterprise IT, Active Directory, server ops, and agriculture IoT projects—ticketing, automation, and sensor ML."
 date: 2026-05-21
 categories: [IT/IoT]
+navbar: false
+search: false
 ---
 
 ## IT & Infrastructure Portfolio

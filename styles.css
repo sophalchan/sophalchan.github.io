@@ -67,6 +67,34 @@ h1, h2, h3, .quarto-title {
   font-weight: 500;
 }
 
+.portfolio-hero a.hero-tag-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-hero a.hero-tag-link:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+
+.portfolio-hero a.hero-tag-link[data-filter-category="Cybersecurity"]:hover {
+  background: rgba(192, 57, 43, 0.35);
+  border-color: rgba(245, 183, 177, 0.6);
+}
+
+.portfolio-hero a.hero-tag-link[data-filter-category="AI/ML"]:hover {
+  background: rgba(108, 52, 131, 0.35);
+  border-color: rgba(210, 180, 222, 0.6);
+}
+
+.portfolio-hero a.hero-tag-link[data-filter-category="Data Science and Analyst"]:hover {
+  background: rgba(26, 82, 118, 0.4);
+  border-color: rgba(174, 214, 241, 0.6);
+}
+
 /* --- Navbar polish --- */
 .navbar {
   box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);

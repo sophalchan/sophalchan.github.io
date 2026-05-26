@@ -25,14 +25,14 @@ Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, *
 </p>
 
 ::: {.hero-tags}
-<span class="hero-tag">Cybersecurity</span>
-<span class="hero-tag">AI / ML</span>
-<span class="hero-tag">Data Science and Analyst</span>
+<a class="hero-tag hero-tag-link" href="#featured-projects" data-filter-category="Cybersecurity" title="Show Cybersecurity projects">Cybersecurity</a>
+<a class="hero-tag hero-tag-link" href="#featured-projects" data-filter-category="AI/ML" title="Show AI/ML projects">AI / ML</a>
+<a class="hero-tag hero-tag-link" href="#featured-projects" data-filter-category="Data Science and Analyst" title="Show Data Science projects">Data Science and Analyst</a>
 :::
 
 :::
 
-## Featured Projects
+## Featured Projects {#featured-projects}
 
 Browse **cybersecurity**, **AI/ML**, and **data science** work below—including **21 projects** in the [**Data Science Projects Collection**](posts/data-science-collection/) from [PaulChanCyber/Data-Science-Project-](https://github.com/PaulChanCyber/Data-Science-Project-).
 
