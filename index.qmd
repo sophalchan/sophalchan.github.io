@@ -1,6 +1,9 @@
 ---
 title: "Sophal Chan"
 page-layout: full
+format:
+  html:
+    title-block: false
 listing:
   id: portfolio-listing
   contents: posts

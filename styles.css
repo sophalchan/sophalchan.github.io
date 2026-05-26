@@ -96,6 +96,13 @@ h1, h2, h3, .quarto-title {
 }
 
 /* --- Navbar polish --- */
+/* Hide duplicate site title in top-left; name stays in hero and browser tab */
+.navbar .navbar-brand,
+.navbar a.navbar-title,
+.navbar-title {
+  display: none !important;
+}
+
 .navbar {
   box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);
 }
