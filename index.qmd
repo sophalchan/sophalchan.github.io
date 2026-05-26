@@ -1,5 +1,5 @@
 ---
-pagetitle: "Sophal Chan"
+pagetitle: ""
 title: ""
 page-layout: full
 format:
