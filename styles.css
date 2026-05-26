@@ -34,7 +34,8 @@ h1, h2, h3, .quarto-title {
   flex-shrink: 0;
 }
 
-.portfolio-hero h1 {
+.portfolio-hero h1,
+.portfolio-hero .hero-name {
   color: #ffffff;
   font-size: clamp(1.75rem, 4vw, 2.75rem);
   margin-bottom: 0.75rem;
@@ -95,13 +96,32 @@ h1, h2, h3, .quarto-title {
   border-color: rgba(174, 214, 241, 0.6);
 }
 
-/* --- Navbar polish --- */
-/* Hide duplicate site title in top-left; name stays in hero and browser tab */
+/* --- Hide duplicate "Sophal Chan" outside hero (navbar + auto page title) --- */
 .navbar .navbar-brand,
 .navbar a.navbar-title,
-.navbar-title {
+.navbar-title,
+a.navbar-brand,
+#quarto-header .title,
+#quarto-header h1,
+.quarto-title-block,
+.quarto-title-banner,
+.quarto-title-block > h1,
+#title-block-header,
+#title-block-header .title,
+header.quarto-title-block,
+.quarto-document-content > h1:first-child:not(.hero-name),
+#quarto-document-content > header:first-child,
+#quarto-margin-header .quarto-title,
+#quarto-margin-header h1.title {
   display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
+
+/* --- Navbar polish --- */
 
 .navbar {
   box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);

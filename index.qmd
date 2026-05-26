@@ -1,5 +1,6 @@
 ---
-title: "Sophal Chan"
+pagetitle: "Sophal Chan"
+title: ""
 page-layout: full
 format:
   html:
@@ -21,7 +22,7 @@ listing:
 
 <img src="assets/profile-avatar.png" alt="Sophal Chan — professional portrait" class="hero-photo" width="152" height="152" loading="eager">
 
-# Sophal Chan
+<h1 class="hero-name">Sophal Chan</h1>
 
 <p class="hero-subtitle">
 Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, **AI Engineering**, and **Data Analytics**. Building intrusion detection systems, real-time anomaly dashboards, and data-driven security solutions for engineering teams and recruiters who need production-ready technical depth.

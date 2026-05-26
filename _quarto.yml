@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Sophal Chan"
+  title: ""
   site-url: https://sophalchan.github.io/
   description: "Cybersecurity, AI Engineering & Data Analytics Portfolio"
   navbar:
