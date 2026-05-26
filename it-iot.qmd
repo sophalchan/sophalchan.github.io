@@ -1,0 +1,105 @@
+---
+title: "IT / IoT"
+---
+
+## IT & Infrastructure Portfolio
+
+This menu collects **enterprise IT** and **operations** work: **Active Directory**, **Windows servers**, **help desk ticketing (ITSM)**, and patterns that extend toward **IoT** (device inventory, alerts, and audited changes on gateways and edge hosts).
+
+I hold an **M.S. in Information Technology** (Prince of Songkla University), taught **Programming for Data Science** and led the **Data Science Lab** at ITC, and am completing **CompTIA CySA+** cybersecurity training. Projects here stress **documentation**, **least privilege**, and **ticket-linked changes**—the same habits expected in production IT and security teams.
+
+---
+
+## Featured article: IT Service Desk & Active Directory Automation Lab
+
+::: {.callout-note}
+## Read the full walkthrough
+
+**[IT Service Desk & Active Directory Automation Lab →](posts/it-service-desk-ad-automation/)**
+
+**Source code:** [github.com/sophalchan/it-service-desk-ad-automation](https://github.com/sophalchan/it-service-desk-ad-automation)
+:::
+
+### What this project is (in plain language)
+
+Imagine HR emails: *“Create a login for our new contractor Monday.”* At the same time, monitoring says *“SRV-APP01 CPU is over 90%.”* And another mail: *“Disable the account for someone who left Friday.”* In real companies, these are not three random tasks—they are **tickets** tied to **servers** and **Active Directory accounts**.
+
+This lab lets you practice that workflow on your laptop:
+
+1. **Open a ticket** (who asked, priority, which server, which AD username).  
+2. **Do the AD work** (create user, add to VPN group, disable account)—safely using a **mock directory** in SQLite.  
+3. **Close the ticket** with a note so auditors see *what* changed and *why*.  
+4. **Check a dashboard** (how many open tickets, how many critical, AD vs server breakdown).
+
+When you move to a real Windows domain, the included **PowerShell** scripts mirror the same steps as `New-ADUser` and `Disable-ADAccount`.
+
+### Background of the study
+
+Organizations depend on **Windows Server** (domain controllers, file servers, application servers) and **Active Directory** for logins and security groups. Without a **system of record**, IT work scatters across email and chat: SLAs are missed, offboarding is forgotten, and nobody can prove *which ticket authorized an AD change*.
+
+**IT service management (ITSM)** uses **tickets** as the central object. **Identity lifecycle management** links HR events (hire, transfer, terminate) to AD operations. This project teaches that pattern in a small, runnable stack—useful for **IT/IoT portfolios**, **CySA+** study, or developers moving into **infrastructure operations**.
+
+### Motivation of the study
+
+| Goal | How the lab helps |
+|------|-------------------|
+| Traceability | Every AD action can reference `ad_sam` and `server_hostname` on the ticket |
+| Safe practice | Mock AD on SQLite—no domain controller required for learning |
+| Real-world mapping | API routes match `New-ADUser`, `Disable-ADAccount`, `Add-ADGroupMember` |
+| Tooling skills | Flask REST API + CLI—same integration style as ServiceNow or Jira |
+| Visibility | Dashboard: open queue, critical items, counts by category |
+
+### Sample scenarios in the lab
+
+| Ticket | Category | What you practice |
+|--------|----------|-------------------|
+| New hire AD account — Engineering | Active Directory | Create SAM account, assign groups (VPN, Engineering) |
+| SRV-APP01 high CPU alert | Server | Link ticket to hostname in server inventory |
+| Disable AD account — terminated employee | Active Directory | Offboarding: disable account, document in ticket notes |
+
+### Technology stack
+
+| Layer | Tools |
+|-------|--------|
+| API | Python, Flask (port **8091**) |
+| Data | SQLite (`ad_users`, `tickets`, `ticket_notes`) |
+| Inventory | `data/servers.json`, `data/ad_users_seed.json` |
+| Production AD (optional) | PowerShell in `powershell/` |
+
+### Run it locally (5 minutes)
+
+```bash
+git clone https://github.com/sophalchan/it-service-desk-ad-automation.git
+cd it-service-desk-ad-automation
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python scripts/init_lab.py
+python app.py
+```
+
+```bash
+curl http://localhost:8091/dashboard
+curl http://localhost:8091/tickets
+```
+
+For all API examples, architecture diagram, and step-by-step curl commands, open the **[full project article](posts/it-service-desk-ad-automation/)**.
+
+---
+
+## Why IT/IoT on this site
+
+| Theme | Portfolio value |
+|-------|-----------------|
+| **Identity (AD)** | Onboarding, groups, offboarding |
+| **Server ops** | Hostname-linked incidents and maintenance |
+| **Service desk** | Priority, status workflow, audit notes |
+| **Automation** | REST + CLI for internal IT tools |
+| **IoT path** | Same inventory + alert + ticket pattern for devices and gateways |
+
+## More IT/IoT projects
+
+Use the **[Home](index.qmd)** page sidebar and click the **IT/IoT** category filter to see all posts tagged in this area.
+
+## Contact
+
+[sophalcamchan38@gmail.com](mailto:sophalcamchan38@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sophalchan) · [GitHub](https://github.com/sophalchan)

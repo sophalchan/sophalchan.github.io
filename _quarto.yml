@@ -16,6 +16,8 @@ website:
         text: About
       - href: research.qmd
         text: Research
+      - href: it-iot.qmd
+        text: IT/IoT
     right:
       - icon: github
         href: https://github.com/sophalchan

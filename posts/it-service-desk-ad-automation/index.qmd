@@ -1,0 +1,214 @@
+---
+title: "IT Service Desk & Active Directory Automation Lab"
+description: "Help desk ticketing for Windows servers linked to Active Directory user lifecycle—create accounts, group membership, disable on offboarding—with Flask API and PowerShell samples."
+date: 2026-05-21
+categories: [IT/IoT]
+author: Sophal Chan
+repo-url: "https://github.com/sophalchan/it-service-desk-ad-automation"
+---
+
+## Overview
+
+This project models how **enterprise IT teams** combine **service desk ticketing** with **Active Directory (AD)** and **Windows server** operations. Every request—new hire account, server CPU alert, offboarding disable—is tracked in a ticket with priority, assignee, and optional links to `server_hostname` and `ad_sam`. A **mock AD layer** (SQLite) mirrors real cmdlets (`New-ADUser`, `Disable-ADAccount`, `Add-ADGroupMember`) so you can practice safely on Linux or macOS before running scripts on a domain controller.
+
+**GitHub (source code):** [sophalchan/it-service-desk-ad-automation](https://github.com/sophalchan/it-service-desk-ad-automation)
+
+**Stack:** Python · Flask · SQLite · PowerShell (optional, for real Windows AD)
+
+## Background of the Study
+
+Small and mid-size organizations run on **Windows Server** roles—domain controllers, file servers, application hosts—and **Active Directory** as the identity store. Help desk and infrastructure teams receive a steady mix of requests: provision a contractor account, add someone to **VPN** or **Engineering** security groups, investigate **SRV-APP01** performance, or **disable** an account after HR offboarding. Without a system of record, work happens in email threads and chat messages; audits fail, SLAs slip, and AD changes are disconnected from *why* they were made.
+
+**IT service management (ITSM)** introduces **tickets** as the single workflow object: who asked, what server or SAM account is involved, priority, status, and notes. **Identity lifecycle management** ties HR events to AD operations. This lab compresses that real-world pattern into a teachable, runnable stack—appropriate for **IT/IoT** portfolios, CySA+ study, or anyone moving from pure development into **infrastructure and operations**.
+
+The design reflects experience teaching **Information Technology** (M.S. IT, PSU) and supporting engineering teams where **traceability** (ticket → AD action → server) matters as much as speed.
+
+## Motivation of the Study
+
+- **Connect tickets to infrastructure** — link each request to `server_hostname` and/or `ad_sam` for clear context  
+- **Practice AD workflows safely** — mock directory on SQLite; optional PowerShell for production domains  
+- **Learn REST APIs for IT tools** — same pattern as ServiceNow, Jira Service Management, or internal portals  
+- **Prepare for real AD cmdlets** — lab endpoints map 1:1 to `New-ADUser`, `Disable-ADAccount`, `Add-ADGroupMember`  
+- **Dashboard visibility** — open tickets, critical queue, counts by category (AD vs Server vs Network)  
+- **Ship a portfolio-ready repo** — clone, seed data, curl the API in minutes  
+
+## Tools & Components
+
+| Component | Purpose |
+|-----------|---------|
+| `data/servers.json` | Catalog of DC, file, and app servers (hostname, role, OS) |
+| `data/ad_users_seed.json` | Initial AD users for the mock forest |
+| `src/database.py` | SQLite schema: `ad_users`, `tickets`, `ticket_notes` |
+| `src/ad_service.py` | List/create/disable users; add to security groups |
+| `src/ticket_service.py` | Create tickets, update status, dashboard stats |
+| `app.py` | Flask REST API (port **8091**) |
+| `scripts/init_lab.py` | Seed sample tickets (onboarding, server alert, offboarding) |
+| `scripts/ticket_cli.py` | Command-line ticket list/create |
+| `powershell/New-AdLabUser.ps1` | Production-style user creation on Windows |
+| `powershell/Disable-AdLabUser.ps1` | Production-style account disable |
+
+## Step-by-Step Workflow
+
+### Step 1 — Clone and install
+
+```bash
+git clone https://github.com/sophalchan/it-service-desk-ad-automation.git
+cd it-service-desk-ad-automation
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Step 2 — Initialize the lab database
+
+```bash
+python scripts/init_lab.py
+```
+
+This creates `data/tickets.db`, loads seed AD users, and inserts three sample tickets (new hire AD, high CPU on **SRV-APP01**, disable terminated account).
+
+### Step 3 — Start the API
+
+```bash
+python app.py
+```
+
+Open `http://localhost:8091/health` — you should see `{"status": "ok", ...}`.
+
+### Step 4 — Review the dashboard
+
+```bash
+curl http://localhost:8091/dashboard
+```
+
+Note `open_tickets`, `critical_open`, and `by_category` (e.g. **Active Directory** vs **Server**).
+
+### Step 5 — List servers and AD users
+
+```bash
+curl http://localhost:8091/servers
+curl http://localhost:8091/ad/users
+curl "http://localhost:8091/ad/users?enabled_only=true"
+```
+
+### Step 6 — Create a ticket (new request)
+
+```bash
+curl -X POST http://localhost:8091/tickets \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Grant VPN access for remote engineer",
+    "description": "Add jsmith to VPN-Users after manager approval.",
+    "category": "Access",
+    "priority": "Medium",
+    "requester": "manager@corp.local",
+    "server_hostname": "SRV-DC01",
+    "ad_sam": "jsmith",
+    "assigned_to": "helpdesk"
+  }'
+```
+
+### Step 7 — Perform AD operations (linked to ticket work)
+
+**Create user:**
+
+```bash
+curl -X POST http://localhost:8091/ad/users \
+  -H "Content-Type: application/json" \
+  -d '{
+    "sam": "jsmith",
+    "display_name": "Jane Smith",
+    "email": "jsmith@corp.local",
+    "ou": "OU=Users,DC=corp,DC=local",
+    "groups": ["Domain Users", "VPN-Users"]
+  }'
+```
+
+**Add to group:**
+
+```bash
+curl -X POST http://localhost:8091/ad/users/jsmith/groups \
+  -H "Content-Type: application/json" \
+  -d '{"group": "Engineering"}'
+```
+
+**Disable user (offboarding):**
+
+```bash
+curl -X POST http://localhost:8091/ad/users/temp_user/disable
+```
+
+### Step 8 — Update ticket status (close the loop)
+
+```bash
+curl -X PATCH http://localhost:8091/tickets/1 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "status": "Resolved",
+    "note": "AD account created and added to VPN-Users.",
+    "author": "helpdesk"
+  }'
+```
+
+Valid statuses: `Open`, `In Progress`, `Resolved`, `Closed`.
+
+### Step 9 — CLI alternative
+
+```bash
+python scripts/ticket_cli.py list
+python scripts/ticket_cli.py create \
+  --title "Patch Tuesday reboot window" \
+  --desc "Schedule maintenance on SRV-FILE01" \
+  --category Server \
+  --priority Low \
+  --requester "server-ops@corp.local" \
+  --server SRV-FILE01
+```
+
+### Step 10 — Move to real Active Directory (Windows)
+
+On a domain controller or RSAT workstation, adapt the included PowerShell:
+
+```powershell
+.\powershell\New-AdLabUser.ps1 -SamAccountName jsmith -DisplayName "Jane Smith" -Email "jsmith@corp.local"
+.\powershell\Disable-AdLabUser.ps1 -SamAccountName temp_user
+```
+
+Always run AD changes **only after** the matching ticket is approved—same discipline as in production ITSM.
+
+## Architecture
+
+```text
+Requester (HR, monitoring, user)
+    → POST /tickets (category, priority, server_hostname, ad_sam)
+    → Help desk / server-ops assignment
+    → POST /ad/users | /disable | /groups  (mock AD or PowerShell on DC)
+    → PATCH /tickets (status + audit note in ticket_notes)
+    → GET /dashboard (queue metrics)
+```
+
+## What You Learn
+
+| Topic | Lab takeaway |
+|-------|----------------|
+| ITSM basics | Ticket lifecycle, priorities, categories |
+| Active Directory | SAM accounts, OUs, security groups, enable/disable |
+| Server ops | Inventory-driven hostname references in tickets |
+| APIs | REST design for internal IT automation |
+| Security mindset | Offboarding = disable AD + documented ticket note |
+
+## Limitations (Honest Notes)
+
+- Mock AD is **not** LDAP or Kerberos—use PowerShell samples for real forests  
+- No RBAC on API endpoints—add auth before any production deployment  
+- SQLite is single-file; scale-out would use PostgreSQL + real CMDB integration  
+
+## Related Portfolio Areas
+
+- **[Cybersecurity](https://sophalchan.github.io/)** — identity, access, and incident workflows  
+- **[AI/ML](https://sophalchan.github.io/)** — RAG and automation for IT knowledge bases  
+- **[IT/IoT hub](https://sophalchan.github.io/it-iot.html)** — more infrastructure and operations projects  
+
+---
+
+*Built by **Sophal Chan** — IT, cybersecurity, and data analytics portfolio: [sophalchan.github.io](https://sophalchan.github.io/).*

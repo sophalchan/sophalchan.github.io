@@ -218,6 +218,12 @@ h2#featured-projects + p {
   box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);
 }
 
+#listing-portfolio-listing .listing-category[onclick*="SVQvSW9U"] {
+  background: linear-gradient(135deg, #d5f5e3 0%, #abebc6 100%);
+  color: #145a32;
+  box-shadow: 0 2px 8px rgba(39, 174, 96, 0.2);
+}
+
 #listing-portfolio-listing .listing-description {
   flex: 1;
   margin: 0;
@@ -263,6 +269,10 @@ h2#featured-projects + p {
 
 #listing-portfolio-listing [data-categories*="RGF0YSUyMFNjaWVuY2UlMjBhbmQlMjBBbmFseXN0"] .quarto-grid-item {
   border-left-color: #2874a6;
+}
+
+#listing-portfolio-listing [data-categories*="SVQvSW9U"] .quarto-grid-item {
+  border-left-color: #27ae60;
 }
 
 .quarto-listing-default .quarto-grid-item {
