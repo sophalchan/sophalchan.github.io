@@ -77,6 +77,70 @@ h1, h2, h3, .quarto-title {
   font-weight: 500;
 }
 
+/* Keep all nav items visible on desktop (Home, About, IT/IoT, Research) */
+@media (min-width: 992px) {
+  #navbarCollapse .navbar-nav {
+    flex-wrap: nowrap;
+  }
+
+  .navbar .nav-link {
+    white-space: nowrap;
+    padding-left: 0.65rem !important;
+    padding-right: 0.65rem !important;
+  }
+}
+
+/* Highlight IT/IoT in top menu */
+.navbar .nav-link[href*="it-iot"] {
+  background: rgba(39, 174, 96, 0.22);
+  border-radius: 0.35rem;
+  font-weight: 700;
+}
+
+/* --- Hero quick links (IT/IoT always visible on home) --- */
+.hero-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+  margin-top: 1.1rem;
+}
+
+.hero-nav-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #1a5276;
+  background: linear-gradient(135deg, #eef4f8 0%, #e3edf5 100%);
+  border: 1px solid #c5d9e8;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 82, 118, 0.18);
+  color: #1a5276;
+}
+
+.hero-nav-btn--it {
+  background: linear-gradient(135deg, #d5f5e3 0%, #abebc6 100%);
+  border-color: #82e0aa;
+  color: #145a32;
+}
+
+.hero-tag-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-tag-link:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
 /* --- Featured Projects intro --- */
 #featured-projects + p,
 h2#featured-projects + p {

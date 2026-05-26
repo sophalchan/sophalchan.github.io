@@ -9,6 +9,7 @@ Runnable project code lives here before you push each repo to GitHub.
 | Local LLM Fine-Tuning Lab | `local-llm-finetuning-lab/` | [Portfolio post](../posts/local-llm-finetuning-lab/) | [sophalchan/local-llm-finetuning-lab](https://github.com/sophalchan/local-llm-finetuning-lab) |
 | RAG Methods Comparison Lab | `rag-methods-comparison-lab/` | [Portfolio post](../posts/rag-methods-comparison-lab/) | [sophalchan/rag-methods-comparison-lab](https://github.com/sophalchan/rag-methods-comparison-lab) |
 | IT Service Desk & AD Lab | `it-service-desk-ad-automation/` | [Portfolio post](../posts/it-service-desk-ad-automation/) | [sophalchan/it-service-desk-ad-automation](https://github.com/sophalchan/it-service-desk-ad-automation) |
+| Smart Farm Sensor ML | `smart-farm-sensor-ml/` | [Portfolio post](../posts/smart-farm-sensor-ml/) | [sophalchan/smart-farm-sensor-ml](https://github.com/sophalchan/smart-farm-sensor-ml) |
 
 ## Push to GitHub (when ready)
 

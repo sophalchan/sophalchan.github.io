@@ -28,7 +28,13 @@ Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, *
 <span class="hero-tag">Cybersecurity</span>
 <span class="hero-tag">AI / ML</span>
 <span class="hero-tag">Data Science and Analyst</span>
-<span class="hero-tag">IT / IoT</span>
+<a class="hero-tag hero-tag-link" href="it-iot.qmd">IT / IoT</a>
+:::
+
+::: {.hero-quick-links}
+<a class="hero-nav-btn hero-nav-btn--it" href="it-iot.qmd">IT / IoT Hub</a>
+<a class="hero-nav-btn" href="posts/it-service-desk-ad-automation/">AD &amp; Ticketing Lab</a>
+<a class="hero-nav-btn" href="research.qmd">Research</a>
 :::
 
 :::

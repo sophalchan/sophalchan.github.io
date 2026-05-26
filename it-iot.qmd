@@ -86,6 +86,28 @@ For all API examples, architecture diagram, and step-by-step curl commands, open
 
 ---
 
+## Featured article: Smart Farm Sensor ML (Agriculture IoT)
+
+::: {.callout-tip}
+## Read the full walkthrough
+
+**[Smart Farm Sensor ML — Agriculture IoT Analytics →](posts/smart-farm-sensor-ml/)**
+
+**Source code:** [github.com/sophalchan/smart-farm-sensor-ml](https://github.com/sophalchan/smart-farm-sensor-ml)
+:::
+
+**Machine learning on 1,500+ sensor rows** — soil moisture, weather, NPK nutrients, and crop type — to predict **crop stress**, **irrigation need**, and **yield (kg/ha)**. Includes a custom dataset generator, three scikit-learn models, and a Flask prediction API.
+
+```bash
+git clone https://github.com/sophalchan/smart-farm-sensor-ml.git
+cd smart-farm-sensor-ml && pip install -r requirements.txt
+python scripts/run_pipeline.py && python app.py
+```
+
+The **[full article](posts/smart-farm-sensor-ml/)** explains **background of the study** (precision agriculture, IoT, food security) and **motivation** (water efficiency, AgriTech careers, deployable AI).
+
+---
+
 ## Why IT/IoT on this site
 
 | Theme | Portfolio value |
@@ -95,6 +117,7 @@ For all API examples, architecture diagram, and step-by-step curl commands, open
 | **Service desk** | Priority, status workflow, audit notes |
 | **Automation** | REST + CLI for internal IT tools |
 | **IoT path** | Same inventory + alert + ticket pattern for devices and gateways |
+| **Smart agriculture** | Sensor ML — stress, irrigation, yield from 1,500+ field records |
 
 ## More IT/IoT projects
 
