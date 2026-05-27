@@ -1,0 +1,68 @@
+---
+title: "Advanced RAG Graduation Capstone — Syllabus & Specification"
+description: "Comprehensive 16-week AI Engineering capstone specification for Naive RAG, Advanced RAG, and GraphRAG with strict evaluation and deployment requirements."
+date: 2026-05-27
+categories: [AI/ML]
+author: Sophal Chan
+repo-url: "https://github.com/sophalchan/rag-capstone-graduation-project"
+---
+
+## Overview
+
+This project provides a full **semester-long Graduation Project Syllabus and Technical Specification** for final-year AI Engineering teams. The design explicitly moves students from **Naive RAG** to **Advanced RAG** (query rewriting, hybrid retrieval, reranking) and then to **Modular GraphRAG** with a knowledge graph plus vector database.
+
+**GitHub:** [sophalchan/rag-capstone-graduation-project](https://github.com/sophalchan/rag-capstone-graduation-project)
+
+**Stack references in syllabus:** LangChain/LlamaIndex · Neo4j · Milvus/Qdrant · Cross-encoders/Cohere Rerank · Ragas/TruLens
+
+## Background of the Study
+
+Retrieval-Augmented Generation has quickly become a default architecture for enterprise LLM applications, but many student projects remain limited to naive top-k retrieval and prompt stuffing. In real systems, that approach fails under domain pressure: legal interpretation requires jurisdiction-sensitive context, medical QA requires citation-grounded evidence, and financial analysis requires up-to-date filings across multiple documents.
+
+A modern AI Engineering curriculum must therefore train students to reason in terms of **retrieval systems**, not just model prompting. This includes ingestion quality, query planning, reranking, graph traversal, observability, evaluation science, and deployment reliability. The capstone addresses this by requiring measurable progression across three architecture tiers and strict quantitative validation.
+
+## Motivation of the Study
+
+- **Academic rigor:** convert capstone work from demo-only prototypes into measurable engineering systems  
+- **Industry alignment:** reflect current production patterns (hybrid search, reranking, GraphRAG)  
+- **Evaluation discipline:** enforce faithfulness and relevance metrics using Ragas/TruLens  
+- **Team training:** scope for 3-4 strong students with clear module ownership and milestone gates  
+- **Defense readiness:** prepare students for technical viva by linking design choices to metric outcomes  
+
+## What the specification includes
+
+1. **Project title and real-world overview**  
+2. **Three-tier architecture contrast**  
+   - Naive RAG baseline  
+   - Advanced RAG (pre-retrieval optimization, query rewriting, reranking)  
+   - Modular/Graph RAG (Neo4j + vector DB)  
+3. **Three domain tracks**  
+   - Legal compliance  
+   - Medical literature  
+   - Financial SEC filings  
+4. **Engineering requirements**  
+   - Multimodal ingestion (PDFs, tables, charts)  
+   - Hybrid dense+sparse retrieval + knowledge graph storage  
+   - Strict evaluation framework and failure taxonomy  
+5. **16-week timeline in 4 milestones**  
+6. **Detailed grading rubric** (architecture, code quality, evaluation rigor, presentation)
+
+## Local Usage
+
+```bash
+git clone https://github.com/sophalchan/rag-capstone-graduation-project.git
+cd rag-capstone-graduation-project
+python scripts/generate_syllabus.py
+```
+
+Generated output:
+
+- `outputs/GRADUATION_PROJECT_SYLLABUS.md`
+
+## Why this is useful for AI/ML portfolios
+
+This artifact demonstrates higher-level capability beyond model fine-tuning or API integration: **curriculum-aware system architecture design**, **evaluation-first AI engineering**, and **production-minded RAG thinking**.
+
+---
+
+Related: [Advanced RAG Methods Lab](../rag-methods-comparison-lab/) · [Medical IT RAG Assistant](../rag-medical-knowledge-assistant/) · [Prompt Engineering Lab](../prompt-engineering-lab/)
