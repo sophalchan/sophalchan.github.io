@@ -10,7 +10,7 @@ Runnable project code lives here before you push each repo to GitHub.
 | RAG Methods Comparison Lab | `rag-methods-comparison-lab/` | [Portfolio post](../posts/rag-methods-comparison-lab/) | [sophalchan/rag-methods-comparison-lab](https://github.com/sophalchan/rag-methods-comparison-lab) |
 | IT Service Desk & AD Lab | `it-service-desk-ad-automation/` | [Portfolio post](../posts/it-service-desk-ad-automation/) | [sophalchan/it-service-desk-ad-automation](https://github.com/sophalchan/it-service-desk-ad-automation) |
 | Smart Farm Sensor ML | `smart-farm-sensor-ml/` | [Portfolio post](../posts/smart-farm-sensor-ml/) | [sophalchan/smart-farm-sensor-ml](https://github.com/sophalchan/smart-farm-sensor-ml) |
-| Advanced RAG Graduation Capstone | `rag-capstone-graduation-project/` | [Portfolio post](../posts/rag-capstone-graduation-project/) | [sophalchan/rag-capstone-graduation-project](https://github.com/sophalchan/rag-capstone-graduation-project) |
+| Multi-Stage RAG Assistant | `rag-capstone-graduation-project/` | [Portfolio post](../posts/rag-capstone-graduation-project/) | [sophalchan/rag-capstone-graduation-project](https://github.com/sophalchan/rag-capstone-graduation-project) |
 
 ## Push to GitHub (when ready)
 

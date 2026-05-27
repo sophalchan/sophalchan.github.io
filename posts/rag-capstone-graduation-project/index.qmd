@@ -1,6 +1,6 @@
 ---
-title: "Advanced RAG Graduation Capstone — Syllabus & Specification"
-description: "A practical guide and runnable project that helps you compare simple and advanced AI search-and-answer systems—with a full 16-week plan anyone can follow."
+title: "Multi-Stage RAG Assistant — Compare Search Strategies"
+description: "Runnable Python project with naive, advanced, and graph-augmented retrieval on a built-in knowledge base—Flask API and side-by-side mode comparison."
 date: 2026-05-27
 categories: [AI/ML]
 author: Sophal Chan
@@ -9,72 +9,130 @@ repo-url: "https://github.com/sophalchan/rag-capstone-graduation-project"
 
 ## Overview
 
-This project is a **ready-to-run guide** for building smarter AI assistants that **look up real documents** before they answer—instead of guessing from memory.
+This project is a **working RAG (Retrieval-Augmented Generation) application** you can run on your laptop. It answers questions by **searching a real document library first**, then summarizing what it found—with **source titles and categories** listed in every response.
 
-You get a complete **16-week plan**, grading checklist, and a script that generates the full syllabus as a Markdown file on your computer.
+You can switch between **three retrieval strategies** on the same question and see how answers and sources change.
 
 **GitHub:** [sophalchan/rag-capstone-graduation-project](https://github.com/sophalchan/rag-capstone-graduation-project)
 
-## What is this, in simple terms?
+**Stack:** Python · scikit-learn (TF-IDF) · NetworkX · Flask
 
-Many chatbots give confident but **wrong** answers when questions need **fresh or specialized** information (laws, medical papers, company filings).
+## What it does (plain English)
 
-A better approach is **RAG** (Retrieval-Augmented Generation):
+Generic chatbots often **guess**. This app **looks up** short policy-style documents (cybersecurity, AI/ML, IT operations, data science, manufacturing, research) and builds an answer only from what was retrieved.
 
-1. **Find** the right paragraphs in your documents  
-2. **Show** those paragraphs to the AI  
-3. **Answer** using that evidence—with citations when possible  
-
-This capstone walks through **three levels** of that idea:
-
-| Level | Plain English | What improves |
-|-------|----------------|---------------|
-| **Basic** | Search once, paste text, ask the AI | Simple baseline |
-| **Advanced** | Rewrite the question, search keywords + meaning, re-rank best passages | More accurate answers |
-| **Graph-style** | Connect facts in a knowledge map + search | Better for complex, multi-step questions |
+| Mode | In simple terms |
+|------|------------------|
+| **Naive** | One search, take the best matches |
+| **Advanced** | Expand your question, search, then **rerank** the best passages |
+| **Graph** | Same as advanced, plus pull **related documents** linked in a small knowledge graph |
 
 ## Background of the Study
 
-Organizations in **law**, **healthcare**, and **finance** cannot rely on generic AI alone. Answers must be **traceable**, **up to date**, and **grounded in source documents**.
+Teams deploying internal Q&A over PDFs, wikis, and runbooks hit the same wall: a single “vector search + LLM” pipeline misses nuance. **Query wording** matters, **keyword vs meaning** both matter, and **related documents** (same category, linked topics) often hold the missing context.
 
-Educators and team leads need a structured way to teach **how to build** these systems—not only how to prompt a model. This project packages that structure: ingestion of PDFs and tables, hybrid search, optional knowledge graphs, and **measurable quality checks** (faithfulness, relevance, precision).
+This project isolates those ideas in a **small, transparent codebase**—no black-box hosted stack required for the demo. TF-IDF stands in for dense embeddings so results are fast and reproducible on any machine; the **graph layer** shows how category-linked expansion can surface extra evidence before the answer is formed.
 
 ## Motivation of the Study
 
-- **For learners:** turn a vague “chatbot project” into a step-by-step engineering roadmap  
-- **For instructors:** provide milestones, rubrics, and domain options (legal, medical, financial)  
-- **For builders:** align with tools used in industry (vector databases, rerankers, evaluation frameworks)  
-- **For reviewers:** show progress with numbers, not only demos  
+- **Compare pipelines fairly** — same corpus, same question, three modes  
+- **Show why “advanced RAG” exists** — rewrite + rerank beats one-shot search on several test questions  
+- **Demonstrate graph-augmented retrieval** — category nodes connect documents for broader context  
+- **Ship something runnable** — CLI demo, comparison script, and REST API for integration tests  
+- **Portfolio clarity** — recruiters and collaborators can clone, run, and inspect the logic in minutes  
 
-## What you get in the repository
+## Built-in knowledge base
 
-| Item | What it does |
-|------|----------------|
-| `scripts/generate_syllabus.py` | One command to build the full syllabus file |
-| `outputs/GRADUATION_PROJECT_SYLLABUS.md` | Complete specification (architecture, domains, 16 weeks, grading) |
-| `src/capstone_syllabus.py` | Source that generates the document |
+`data/knowledge_base.json` includes **10 documents**, for example:
 
-Topics inside the syllabus include: multimodal document ingestion, hybrid search, knowledge graphs, and evaluation with **Ragas** or **TruLens**.
+- Incident response checklist (Cybersecurity)  
+- RAG deployment governance (AI/ML)  
+- AD access control (IT/IoT)  
+- Feature store quality (Data Science and Analyst)  
 
-## Try it locally (verified workflow)
+You can add more JSON records in the same format to extend the system.
+
+## Project structure
+
+| Path | Purpose |
+|------|---------|
+| `src/retriever.py` | Load corpus, TF-IDF search, knowledge graph |
+| `src/pipeline.py` | Naive / advanced / graph orchestration + answers |
+| `scripts/run_demo.py` | Print all three modes for one question |
+| `scripts/compare_modes.py` | Write `outputs/mode_comparison.json` |
+| `app.py` | Flask API (`POST /ask`) on port **8093** |
+
+## Step-by-step — run locally
+
+### Step 1 — Clone and install
 
 ```bash
 git clone https://github.com/sophalchan/rag-capstone-graduation-project.git
 cd rag-capstone-graduation-project
-python3 scripts/generate_syllabus.py
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
 ```
 
-You should see: `Wrote syllabus -> .../outputs/GRADUATION_PROJECT_SYLLABUS.md`
+### Step 2 — Run the demo
 
-Open that file to read the full capstone plan.
+```bash
+python scripts/run_demo.py
+```
 
-## Who is this for?
+You should see three blocks: **NAIVE**, **ADVANCED**, and **GRAPH**, each with an answer and top source title.
 
-- Final-year **AI Engineering** students (teams of 3–4)  
-- Teachers designing a **graduation capstone**  
-- Developers who want a **clear RAG roadmap** without starting from a blank page  
+### Step 3 — Compare modes on multiple questions
 
-## Related projects on this site
+```bash
+python scripts/compare_modes.py
+```
+
+Opens `outputs/mode_comparison.json` with top document per mode per question.
+
+### Step 4 — Start the API
+
+```bash
+python app.py
+```
+
+```bash
+curl http://localhost:8093/health
+curl -X POST http://localhost:8093/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question":"How should AD operations be secured?","mode":"graph"}'
+```
+
+Response includes `answer`, `sources[]`, `mode`, and `effective_query` (when the question was expanded).
+
+## Architecture
+
+```text
+User question
+  → mode: naive | advanced | graph
+  → (optional) query rewrite
+  → TF-IDF retrieval over knowledge_base.json
+  → (optional) rerank by term overlap
+  → (optional) graph expand via category links
+  → grounded answer + source list
+```
+
+## Example API response fields
+
+| Field | Meaning |
+|-------|---------|
+| `answer` | Short summary with cited document titles |
+| `sources` | Ranked passages with `title`, `category`, `score` |
+| `effective_query` | Expanded query (advanced/graph modes) |
+| `mode` | Which pipeline ran |
+
+## Limitations
+
+- Uses **TF-IDF**, not neural embeddings—swap in sentence-transformers for production scale  
+- **Graph** is small (document ↔ category); not a full Neo4j deployment  
+- Answers are **extractive summaries**, not a hosted LLM—plug in OpenAI/Ollama as a next step  
+
+## Related work on this site
 
 [Advanced RAG Methods Lab](../rag-methods-comparison-lab/) · [Medical IT RAG Assistant](../rag-medical-knowledge-assistant/) · [Prompt Engineering Lab](../prompt-engineering-lab/)
 
