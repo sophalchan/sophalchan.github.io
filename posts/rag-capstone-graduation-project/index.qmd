@@ -1,6 +1,6 @@
 ---
 title: "Advanced RAG Graduation Capstone — Syllabus & Specification"
-description: "Comprehensive 16-week AI Engineering capstone specification for Naive RAG, Advanced RAG, and GraphRAG with strict evaluation and deployment requirements."
+description: "A practical guide and runnable project that helps you compare simple and advanced AI search-and-answer systems—with a full 16-week plan anyone can follow."
 date: 2026-05-27
 categories: [AI/ML]
 author: Sophal Chan
@@ -9,60 +9,75 @@ repo-url: "https://github.com/sophalchan/rag-capstone-graduation-project"
 
 ## Overview
 
-This project provides a full **semester-long Graduation Project Syllabus and Technical Specification** for final-year AI Engineering teams. The design explicitly moves students from **Naive RAG** to **Advanced RAG** (query rewriting, hybrid retrieval, reranking) and then to **Modular GraphRAG** with a knowledge graph plus vector database.
+This project is a **ready-to-run guide** for building smarter AI assistants that **look up real documents** before they answer—instead of guessing from memory.
+
+You get a complete **16-week plan**, grading checklist, and a script that generates the full syllabus as a Markdown file on your computer.
 
 **GitHub:** [sophalchan/rag-capstone-graduation-project](https://github.com/sophalchan/rag-capstone-graduation-project)
 
-**Stack references in syllabus:** LangChain/LlamaIndex · Neo4j · Milvus/Qdrant · Cross-encoders/Cohere Rerank · Ragas/TruLens
+## What is this, in simple terms?
+
+Many chatbots give confident but **wrong** answers when questions need **fresh or specialized** information (laws, medical papers, company filings).
+
+A better approach is **RAG** (Retrieval-Augmented Generation):
+
+1. **Find** the right paragraphs in your documents  
+2. **Show** those paragraphs to the AI  
+3. **Answer** using that evidence—with citations when possible  
+
+This capstone walks through **three levels** of that idea:
+
+| Level | Plain English | What improves |
+|-------|----------------|---------------|
+| **Basic** | Search once, paste text, ask the AI | Simple baseline |
+| **Advanced** | Rewrite the question, search keywords + meaning, re-rank best passages | More accurate answers |
+| **Graph-style** | Connect facts in a knowledge map + search | Better for complex, multi-step questions |
 
 ## Background of the Study
 
-Retrieval-Augmented Generation has quickly become a default architecture for enterprise LLM applications, but many student projects remain limited to naive top-k retrieval and prompt stuffing. In real systems, that approach fails under domain pressure: legal interpretation requires jurisdiction-sensitive context, medical QA requires citation-grounded evidence, and financial analysis requires up-to-date filings across multiple documents.
+Organizations in **law**, **healthcare**, and **finance** cannot rely on generic AI alone. Answers must be **traceable**, **up to date**, and **grounded in source documents**.
 
-A modern AI Engineering curriculum must therefore train students to reason in terms of **retrieval systems**, not just model prompting. This includes ingestion quality, query planning, reranking, graph traversal, observability, evaluation science, and deployment reliability. The capstone addresses this by requiring measurable progression across three architecture tiers and strict quantitative validation.
+Educators and team leads need a structured way to teach **how to build** these systems—not only how to prompt a model. This project packages that structure: ingestion of PDFs and tables, hybrid search, optional knowledge graphs, and **measurable quality checks** (faithfulness, relevance, precision).
 
 ## Motivation of the Study
 
-- **Academic rigor:** convert capstone work from demo-only prototypes into measurable engineering systems  
-- **Industry alignment:** reflect current production patterns (hybrid search, reranking, GraphRAG)  
-- **Evaluation discipline:** enforce faithfulness and relevance metrics using Ragas/TruLens  
-- **Team training:** scope for 3-4 strong students with clear module ownership and milestone gates  
-- **Defense readiness:** prepare students for technical viva by linking design choices to metric outcomes  
+- **For learners:** turn a vague “chatbot project” into a step-by-step engineering roadmap  
+- **For instructors:** provide milestones, rubrics, and domain options (legal, medical, financial)  
+- **For builders:** align with tools used in industry (vector databases, rerankers, evaluation frameworks)  
+- **For reviewers:** show progress with numbers, not only demos  
 
-## What the specification includes
+## What you get in the repository
 
-1. **Project title and real-world overview**  
-2. **Three-tier architecture contrast**  
-   - Naive RAG baseline  
-   - Advanced RAG (pre-retrieval optimization, query rewriting, reranking)  
-   - Modular/Graph RAG (Neo4j + vector DB)  
-3. **Three domain tracks**  
-   - Legal compliance  
-   - Medical literature  
-   - Financial SEC filings  
-4. **Engineering requirements**  
-   - Multimodal ingestion (PDFs, tables, charts)  
-   - Hybrid dense+sparse retrieval + knowledge graph storage  
-   - Strict evaluation framework and failure taxonomy  
-5. **16-week timeline in 4 milestones**  
-6. **Detailed grading rubric** (architecture, code quality, evaluation rigor, presentation)
+| Item | What it does |
+|------|----------------|
+| `scripts/generate_syllabus.py` | One command to build the full syllabus file |
+| `outputs/GRADUATION_PROJECT_SYLLABUS.md` | Complete specification (architecture, domains, 16 weeks, grading) |
+| `src/capstone_syllabus.py` | Source that generates the document |
 
-## Local Usage
+Topics inside the syllabus include: multimodal document ingestion, hybrid search, knowledge graphs, and evaluation with **Ragas** or **TruLens**.
+
+## Try it locally (verified workflow)
 
 ```bash
 git clone https://github.com/sophalchan/rag-capstone-graduation-project.git
 cd rag-capstone-graduation-project
-python scripts/generate_syllabus.py
+python3 scripts/generate_syllabus.py
 ```
 
-Generated output:
+You should see: `Wrote syllabus -> .../outputs/GRADUATION_PROJECT_SYLLABUS.md`
 
-- `outputs/GRADUATION_PROJECT_SYLLABUS.md`
+Open that file to read the full capstone plan.
 
-## Why this is useful for AI/ML portfolios
+## Who is this for?
 
-This artifact demonstrates higher-level capability beyond model fine-tuning or API integration: **curriculum-aware system architecture design**, **evaluation-first AI engineering**, and **production-minded RAG thinking**.
+- Final-year **AI Engineering** students (teams of 3–4)  
+- Teachers designing a **graduation capstone**  
+- Developers who want a **clear RAG roadmap** without starting from a blank page  
+
+## Related projects on this site
+
+[Advanced RAG Methods Lab](../rag-methods-comparison-lab/) · [Medical IT RAG Assistant](../rag-medical-knowledge-assistant/) · [Prompt Engineering Lab](../prompt-engineering-lab/)
 
 ---
 
-Related: [Advanced RAG Methods Lab](../rag-methods-comparison-lab/) · [Medical IT RAG Assistant](../rag-medical-knowledge-assistant/) · [Prompt Engineering Lab](../prompt-engineering-lab/)
+*Built by **Sophal Chan** — [sophalchan.github.io](https://sophalchan.github.io/)*
