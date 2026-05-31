@@ -1,0 +1,96 @@
+---
+title: "Modern LLM Fine-Tuning Lab — QLoRA, Unsloth, ORPO & DoRA"
+description: "Two local GPU projects: Llama-3.1-8B with Unsloth QLoRA for fast domain adaptation, and Qwen2.5-7B with ORPO + DoRA for single-step preference alignment."
+date: 2026-05-28
+categories: [AI/ML]
+author: Sophal Chan
+repo-url: "https://github.com/sophalchan/modern-llm-finetuning-lab"
+---
+
+## Overview
+
+This project packages **four modern fine-tuning techniques** into **two runnable local pipelines** for consumer GPUs (16–24 GB VRAM):
+
+| Project | Model | Method | Best for |
+|---------|-------|--------|----------|
+| **Speed Run** | Llama-3.1-8B-Instruct | **QLoRA + Unsloth** | Domain format, API syntax, corporate knowledge |
+| **Preference Align** | Qwen2.5-7B-Instruct | **ORPO + DoRA** | Tone, safety, chosen vs rejected responses |
+
+**GitHub:** [sophalchan/modern-llm-finetuning-lab](https://github.com/sophalchan/modern-llm-finetuning-lab)
+
+**Stack:** PyTorch · Unsloth · PEFT · TRL · bitsandbytes · Hugging Face
+
+## The 4 techniques (plain English)
+
+| Technique | What it does |
+|-----------|----------------|
+| **QLoRA** | Keeps the big model in 4-bit; trains only tiny adapter layers → fits on one GPU |
+| **Unsloth** | Faster training kernels → 2–5× speed, ~60% less memory |
+| **ORPO** | Aligns preferences in **one step** (no separate SFT then DPO) |
+| **DoRA** | Updates direction and magnitude separately → closer to full fine-tune quality |
+
+## Background of the Study
+
+Full fine-tuning of 7B–8B models on a laptop GPU is impractical. The industry moved to **parameter-efficient** methods: train adapters, not every weight. **QLoRA** made 8B models reachable on 16 GB cards; **Unsloth** made training fast enough for iteration; **ORPO** simplified preference alignment; **DoRA** improved adapter quality without full-parameter cost.
+
+This lab turns those ideas into **copy-paste scripts** with YAML configs—aligned with my AI engineering work (Krulabs.ai local LLM prep, AI Lecturer labs on LoRA/QLoRA/RAG).
+
+## Motivation of the Study
+
+- **Run locally** on consumer hardware instead of cloud-only fine-tuning  
+- **Compare two real use cases:** domain SFT vs preference alignment  
+- **Use community-standard tools** (Unsloth, TRL ORPO, PEFT DoRA)  
+- **Export adapters** for inference and optional GGUF (Ollama / LM Studio)  
+- **Document GPU requirements** honestly—8B training needs CUDA  
+
+## Project 1 — Llama-3.1-8B + Unsloth QLoRA
+
+Teaches formatting, instructions, or domain text quickly.
+
+```bash
+pip install -r requirements-base.txt
+pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+python project1_unsloth_qlora/train_llama31_unsloth.py
+python project1_unsloth_qlora/infer_llama31_unsloth.py
+python project1_unsloth_qlora/export_gguf.py
+```
+
+Config: `configs/project1_unsloth_qlora.yaml` · Output: `lora_model_llama3/`
+
+## Project 2 — Qwen2.5-7B + ORPO + DoRA
+
+Uses **chosen vs rejected** pairs (e.g. Intel/orca_dpo_pairs) for style and safety alignment in one training pass.
+
+```bash
+python project2_orpo_dora/train_qwen_orpo.py
+python project2_orpo_dora/infer_qwen_orpo.py
+python project2_orpo_dora/train_qwen_orpo.py --no-dora   # LoRA only
+```
+
+Config: `configs/project2_orpo_dora.yaml` · Output: `orpo_qwen_final/`
+
+## Environment check
+
+```bash
+python scripts/check_environment.py
+```
+
+Set `HF_TOKEN` in `.env` for gated models (Llama 3.1).
+
+## Hardware note
+
+| Requirement | Detail |
+|-------------|--------|
+| GPU | NVIDIA, **16 GB+ VRAM** (24 GB recommended) |
+| OS | Linux + CUDA (Unsloth optimized for Linux) |
+| Disk | ~20 GB+ for model weights cache |
+
+Scripts are validated locally; **full training runs on a CUDA machine** (not CPU-only).
+
+## Related projects
+
+[Local LLM Fine-Tuning Lab](../local-llm-finetuning-lab/) · [Advanced RAG Methods Lab](../rag-methods-comparison-lab/) · [Prompt Engineering Lab](../prompt-engineering-lab/)
+
+---
+
+*Built by **Sophal Chan** — [sophalchan.github.io](https://sophalchan.github.io/)*
