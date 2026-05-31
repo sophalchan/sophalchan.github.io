@@ -15,7 +15,7 @@ website:
         text: Home
       - href: about.qmd
         text: About
-      - href: ai-ml.qmd
+      - href: /#category=AI%2FML
         text: AI / ML
       - href: research.qmd
         text: Research

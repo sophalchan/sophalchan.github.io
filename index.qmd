@@ -29,14 +29,18 @@ Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, *
 </p>
 
 ::: {.hero-tags}
-<a class="hero-tag hero-tag-link" href="#featured-projects" data-filter-category="Cybersecurity" title="Show Cybersecurity projects">Cybersecurity</a>
-<a class="hero-tag hero-tag-link" href="#featured-projects" data-filter-category="AI/ML" title="Show AI/ML projects">AI / ML</a>
-<a class="hero-tag hero-tag-link" href="#featured-projects" data-filter-category="Data Science and Analyst" title="Show Data Science projects">Data Science and Analyst</a>
+<a class="hero-tag hero-tag-link" href="#category=Cybersecurity" data-filter-category="Cybersecurity" title="Show Cybersecurity projects">Cybersecurity</a>
+<a class="hero-tag hero-tag-link" href="#category=AI%2FML" data-filter-category="AI/ML" title="Show AI/ML projects">AI / ML</a>
+<a class="hero-tag hero-tag-link" href="#category=Data%20Science%20and%20Analyst" data-filter-category="Data Science and Analyst" title="Show Data Science projects">Data Science and Analyst</a>
 :::
 
 :::
 
 ## Featured Projects {#featured-projects}
+
+::: {.callout-tip appearance="simple"}
+**Latest AI/ML project:** [Multi-Stage RAG Assistant — Compare Search Strategies](posts/rag-capstone-graduation-project/) — naive, advanced, and graph-augmented retrieval with architecture diagrams. Click **AI / ML** above or in the sidebar to show all 7 AI/ML projects.
+:::
 
 Browse **cybersecurity**, **AI/ML**, and **data science** work below—including **21 projects** in the [**Data Science Projects Collection**](posts/data-science-collection/) from [PaulChanCyber/Data-Science-Project-](https://github.com/PaulChanCyber/Data-Science-Project-).
 

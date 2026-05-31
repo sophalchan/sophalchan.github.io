@@ -1,23 +1,67 @@
 <script>
 (function () {
-  function filterByCategory(categoryName) {
-    var root = document.getElementById("listing-portfolio-listing");
-    if (!root) return;
+  function normalizeLabel(text) {
+    return text.replace(/\s+/g, " ").trim();
+  }
 
-    var buttons = document.querySelectorAll(
-      "#listing-portfolio-listing .listing-category, .quarto-listing-category .listing-category"
-    );
+  function categoryFromHash() {
+    var hash = window.location.hash || "";
+    var match = hash.match(/^#category=(.+)$/);
+    if (!match) return null;
+    try {
+      return decodeURIComponent(match[1].replace(/\+/g, " "));
+    } catch (e) {
+      return match[1];
+    }
+  }
+
+  function setCategoryHash(categoryName) {
+    var encoded = encodeURIComponent(categoryName).replace(/%20/g, "+");
+    var next = "#category=" + encoded;
+    if (window.location.hash !== next) {
+      history.replaceState(null, "", next);
+    }
+  }
+
+  function filterByCategory(categoryName, updateHash) {
+    if (!categoryName) return false;
+
+    var selectors = [
+      "#listing-portfolio-listing .listing-category",
+      ".quarto-listing-category .listing-category",
+      ".quarto-listing-category .category",
+      "#listing-portfolio-listing .quarto-listing-category .category"
+    ];
+
+    var buttons = document.querySelectorAll(selectors.join(", "));
+    var target = normalizeLabel(categoryName);
 
     for (var i = 0; i < buttons.length; i++) {
-      var label = buttons[i].textContent.replace(/\s+/g, " ").trim();
-      if (label === categoryName) {
+      var label = normalizeLabel(buttons[i].textContent || "");
+      if (label === target) {
         buttons[i].click();
-        var target = document.getElementById("featured-projects");
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (updateHash !== false) {
+          setCategoryHash(categoryName);
         }
-        return;
+        var section = document.getElementById("featured-projects");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        return true;
       }
+    }
+    return false;
+  }
+
+  function applyHashCategory(retry) {
+    retry = retry || 0;
+    var category = categoryFromHash();
+    if (!category) return;
+
+    if (!filterByCategory(category, false) && retry < 20) {
+      window.setTimeout(function () {
+        applyHashCategory(retry + 1);
+      }, 100);
     }
   }
 
@@ -25,9 +69,16 @@
     document.querySelectorAll("[data-filter-category]").forEach(function (el) {
       el.addEventListener("click", function (e) {
         e.preventDefault();
-        filterByCategory(el.getAttribute("data-filter-category"));
+        var category = el.getAttribute("data-filter-category");
+        filterByCategory(category, true);
       });
     });
+
+    applyHashCategory(0);
+  });
+
+  window.addEventListener("hashchange", function () {
+    applyHashCategory(0);
   });
 })();
 </script>

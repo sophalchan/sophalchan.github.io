@@ -22,6 +22,8 @@ listing:
 
 ## AI & Machine Learning Portfolio
 
+Browse the same projects on the **[Home page AI/ML filter](/#category=AI%2FML)** — the RAG article appears first in that list.
+
 Projects here cover **retrieval-augmented generation (RAG)**, **LLM fine-tuning**, **prompt engineering**, and **ML for security analytics** — each with a GitHub repo you can clone and run locally.
 
 ::: {.callout-note}
