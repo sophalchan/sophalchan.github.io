@@ -1,3 +1,56 @@
+/* --- Architecture diagrams (Mermaid) --- */
+.architecture-diagram {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.25rem 0 1.75rem;
+  padding: 1rem 0.75rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: #fafbfc;
+  border: 1px solid #e8ecef;
+  border-radius: 0.5rem;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+}
+
+.architecture-diagram .mermaid,
+.architecture-diagram pre.mermaid,
+.architecture-diagram > div {
+  display: inline-block;
+  min-width: min(100%, 520px);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.architecture-diagram svg {
+  display: block;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto;
+}
+
+.architecture-diagram-compact svg {
+  max-width: min(100%, 420px) !important;
+}
+
+/* Mermaid nodes — improve readability on small screens */
+.architecture-diagram .nodeLabel,
+.architecture-diagram .label {
+  font-size: 14px !important;
+  line-height: 1.35 !important;
+}
+
+@media (max-width: 768px) {
+  .architecture-diagram {
+    padding: 0.75rem 0.35rem;
+  }
+
+  .architecture-diagram svg {
+    min-width: 280px;
+  }
+}
+
 /* --- Global typography & spacing --- */
 body {
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;

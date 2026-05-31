@@ -76,83 +76,111 @@ rag-capstone-graduation-project/
 
 ## Architecture diagram
 
-End-to-end flow from user question to grounded answer:
+Three views of the same system — **overview**, **mode comparison**, and **knowledge graph**. Each diagram is vertical so it fits the page width on desktop and mobile.
 
+### System overview
+
+::: {.architecture-diagram}
 ```{mermaid}
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "fontSize": "15px",
+    "fontFamily": "Segoe UI, system-ui, sans-serif",
+    "primaryColor": "#ebf5fb",
+    "primaryBorderColor": "#2980b9",
+    "primaryTextColor": "#1a252f",
+    "lineColor": "#566573"
+  },
+  "flowchart": {
+    "curve": "linear",
+    "padding": 16,
+    "nodeSpacing": 28,
+    "rankSpacing": 38,
+    "htmlLabels": true
+  }
+}}%%
 flowchart TB
-    subgraph Input["Input"]
-        Q[User question]
-        M["Mode: naive · advanced · graph"]
-    end
-
-    subgraph Data["data/knowledge_base.json"]
-        KB[("10 documents<br/>AI/ML · Data Science · IT · Research")]
-    end
-
-    subgraph Retriever["src/retriever.py"]
-        LOAD["Load docs<br/>title + category + text"]
-        TFIDF[TF-IDF vectorizer]
-        SEARCH[Cosine similarity search]
-        GRAPH[NetworkX knowledge graph]
-        EXPAND[Graph expansion]
-    end
-
-    subgraph Pipeline["src/pipeline.py"]
-        REWRITE[Query rewrite]
-        RERANK[Rerank by term overlap]
-        ANSWER["Grounded answer<br/>+ source citations"]
-    end
-
-    subgraph Output["Output channels"]
-        CLI[scripts/run_demo.py]
-        CMP[scripts/compare_modes.py]
-        API["Flask API :8093"]
-    end
+    Q["① User question"]
+    M["② Select mode"]
+    P["③ pipeline.py<br/>rewrite · rerank · build answer"]
+    R["④ retriever.py<br/>TF-IDF search · graph expand"]
+    A["⑤ Grounded answer + source list"]
+    O["⑥ Output<br/>run_demo · compare_modes · Flask API"]
 
     Q --> M
-    M -->|naive| SEARCH
-    M -->|advanced or graph| REWRITE
-    REWRITE --> SEARCH
-    KB --> LOAD --> TFIDF --> SEARCH
-    SEARCH --> RERANK
-    RERANK -->|graph mode| EXPAND
-    GRAPH --> EXPAND
-    EXPAND --> RERANK
-    RERANK --> ANSWER
-    ANSWER --> CLI
-    ANSWER --> CMP
-    ANSWER --> API
+    M --> P
+    P --> R
+    R --> A
+    A --> O
+
+    KB[("knowledge_base.json<br/>10 documents")]
+    KB -.-> R
+
+    style Q fill:#d6eaf8,stroke:#2471a3,stroke-width:2px
+    style M fill:#d6eaf8,stroke:#2471a3,stroke-width:2px
+    style P fill:#fdebd0,stroke:#ca6f1e,stroke-width:2px
+    style R fill:#fdebd0,stroke:#ca6f1e,stroke-width:2px
+    style A fill:#d5f5e3,stroke:#1e8449,stroke-width:2px
+    style O fill:#e8daef,stroke:#7d3c98,stroke-width:2px
+    style KB fill:#eafaf1,stroke:#229954,stroke-width:2px
 ```
+:::
 
-### Mode comparison
+### What each mode does
 
-How the three pipelines differ on the **same question and corpus**:
-
+::: {.architecture-diagram}
 ```{mermaid}
-flowchart LR
-    subgraph Naive["Naive mode"]
-        N1[Question] --> N2[TF-IDF search] --> N3[Answer]
+%%{init: {
+  "theme": "base",
+  "themeVariables": { "fontSize": "14px", "fontFamily": "Segoe UI, system-ui, sans-serif" },
+  "flowchart": { "curve": "linear", "padding": 12, "nodeSpacing": 20, "rankSpacing": 32 }
+}}%%
+flowchart TB
+    subgraph N["Naive — simplest path"]
+        direction LR
+        n1[Question] --> n2[Search] --> n3[Answer]
     end
 
-    subgraph Advanced["Advanced mode"]
-        A1[Question] --> A2[Rewrite query] --> A3[TF-IDF search] --> A4[Rerank] --> A5[Answer]
+    subgraph A["Advanced — rewrite + rerank"]
+        direction LR
+        a1[Question] --> a2[Rewrite] --> a3[Search] --> a4[Rerank] --> a5[Answer]
     end
 
-    subgraph Graph["Graph mode"]
-        G1[Question] --> G2[Rewrite query] --> G3[TF-IDF search] --> G4[Rerank] --> G5[Graph expand] --> G6[Rerank] --> G7[Answer]
+    subgraph G["Graph — advanced + related docs"]
+        direction LR
+        g1[Question] --> g2[Rewrite] --> g3[Search] --> g4[Rerank] --> g5[Expand] --> g6[Answer]
     end
+
+    style N fill:#f8f9fa,stroke:#95a5a6
+    style A fill:#fef9e7,stroke:#d68910
+    style G fill:#eafaf1,stroke:#27ae60
 ```
+:::
+
+| Mode | Steps |
+|------|--------|
+| **Naive** | Question → TF-IDF search → answer |
+| **Advanced** | Question → rewrite → search → rerank → answer |
+| **Graph** | Advanced steps + graph expand (same-category docs) → answer |
 
 ### Knowledge graph (simplified)
 
-Documents link to category nodes; graph mode uses those links to pull related context:
-
+::: {.architecture-diagram .architecture-diagram-compact}
 ```{mermaid}
-flowchart LR
-    D3["doc-003<br/>RAG Governance"] -->|belongs_to| C1[AI/ML]
-    D5["doc-005<br/>Feature Store Quality"] -->|belongs_to| C2[Data Science]
-    D8["doc-008<br/>Ticket Matrix"] -->|belongs_to| C3[IT/IoT]
+%%{init: {
+  "theme": "base",
+  "themeVariables": { "fontSize": "14px" },
+  "flowchart": { "curve": "linear", "padding": 10, "nodeSpacing": 24, "rankSpacing": 30 }
+}}%%
+flowchart TB
+    D1["RAG Governance doc"] --> C1[AI / ML category]
+    D2["Feature Store doc"] --> C2[Data Science category]
+    D3["Ticket Matrix doc"] --> C3[IT / IoT category]
+
+    C1 -.->|graph expand| D1
 ```
+:::
 
 When graph mode finds a document, it can pull in **another document from the same category** that was not already in the top results — surfacing related context before the answer is built.
 
