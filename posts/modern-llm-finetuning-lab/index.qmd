@@ -57,17 +57,27 @@ python project1_unsloth_qlora/export_gguf.py
 
 Config: `configs/project1_unsloth_qlora.yaml` · Output: `lora_model_llama3/`
 
-## Project 2 — Qwen2.5-7B + ORPO + DoRA
+## Project 2 — Qwen + ORPO + DoRA (8GB GPU config)
 
-Uses **chosen vs rejected** pairs (e.g. Intel/orca_dpo_pairs) for style and safety alignment in one training pass.
+Uses **chosen vs rejected** pairs for style and safety alignment in one training pass.
 
 ```bash
-python project2_orpo_dora/train_qwen_orpo.py
+python project2_orpo_dora/train_qwen_orpo.py --config project2_low_vram.yaml
 python project2_orpo_dora/infer_qwen_orpo.py
-python project2_orpo_dora/train_qwen_orpo.py --no-dora   # LoRA only
+python app_ui.py   # Web UI → http://localhost:7860
 ```
 
-Config: `configs/project2_orpo_dora.yaml` · Output: `orpo_qwen_final/`
+Config: `configs/project2_low_vram.yaml` · Output: `orpo_qwen_final/`
+
+## Web UI — test in your browser
+
+```bash
+source .venv/bin/activate
+pip install gradio
+python app_ui.py
+```
+
+Open **http://localhost:7860** — Gradio chat with example prompts, temperature slider, and max-token control.
 
 ## Environment check
 
@@ -81,7 +91,7 @@ Set `HF_TOKEN` in `.env` for gated models (Llama 3.1).
 
 | Requirement | Detail |
 |-------------|--------|
-| GPU | NVIDIA, **16 GB+ VRAM** (24 GB recommended) |
+| GPU | NVIDIA — **8 GB** works (Project 2 + low_vram config); **16 GB+** for 8B models |
 | OS | Linux + CUDA (Unsloth optimized for Linux) |
 | Disk | ~20 GB+ for model weights cache |
 
