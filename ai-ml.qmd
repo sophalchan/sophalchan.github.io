@@ -1,0 +1,40 @@
+---
+title: "AI / ML"
+description: "RAG assistants, LLM fine-tuning, prompt engineering, and applied machine learning — runnable projects with code and walkthroughs."
+listing:
+  id: ai-ml-listing
+  contents:
+    - posts/rag-capstone-graduation-project
+    - posts/modern-llm-finetuning-lab
+    - posts/local-llm-finetuning-lab
+    - posts/rag-methods-comparison-lab
+    - posts/rag-medical-knowledge-assistant
+    - posts/prompt-engineering-lab
+    - posts/cyber-threat-ids
+  type: grid
+  grid-columns: 2
+  sort: "date desc"
+  categories: false
+  filter-ui: false
+  feed: false
+  fields: [title, categories, date, description]
+---
+
+## AI & Machine Learning Portfolio
+
+Projects here cover **retrieval-augmented generation (RAG)**, **LLM fine-tuning**, **prompt engineering**, and **ML for security analytics** — each with a GitHub repo you can clone and run locally.
+
+::: {.callout-note}
+## Featured: Multi-Stage RAG Assistant
+
+**[Multi-Stage RAG Assistant — Compare Search Strategies →](posts/rag-capstone-graduation-project/)**
+
+Compare **naive**, **advanced**, and **graph-augmented** retrieval on the same knowledge base — includes architecture diagrams, step-by-step usage, and a Flask API.
+
+**Repo:** [github.com/sophalchan/rag-capstone-graduation-project](https://github.com/sophalchan/rag-capstone-graduation-project)
+:::
+
+## All AI / ML projects
+
+::: {#ai-ml-listing}
+:::

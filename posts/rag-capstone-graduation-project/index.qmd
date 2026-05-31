@@ -74,7 +74,89 @@ rag-capstone-graduation-project/
 | `scripts/compare_modes.py` | Batch comparison → `outputs/mode_comparison.json` |
 | `app.py` | REST API: `GET /health`, `GET /modes`, `POST /ask` |
 
-## Architecture
+## Architecture diagram
+
+End-to-end flow from user question to grounded answer:
+
+```{mermaid}
+flowchart TB
+    subgraph Input["Input"]
+        Q[User question]
+        M["Mode: naive · advanced · graph"]
+    end
+
+    subgraph Data["data/knowledge_base.json"]
+        KB[("10 documents<br/>AI/ML · Data Science · IT · Research")]
+    end
+
+    subgraph Retriever["src/retriever.py"]
+        LOAD["Load docs<br/>title + category + text"]
+        TFIDF[TF-IDF vectorizer]
+        SEARCH[Cosine similarity search]
+        GRAPH[NetworkX knowledge graph]
+        EXPAND[Graph expansion]
+    end
+
+    subgraph Pipeline["src/pipeline.py"]
+        REWRITE[Query rewrite]
+        RERANK[Rerank by term overlap]
+        ANSWER["Grounded answer<br/>+ source citations"]
+    end
+
+    subgraph Output["Output channels"]
+        CLI[scripts/run_demo.py]
+        CMP[scripts/compare_modes.py]
+        API["Flask API :8093"]
+    end
+
+    Q --> M
+    M -->|naive| SEARCH
+    M -->|advanced or graph| REWRITE
+    REWRITE --> SEARCH
+    KB --> LOAD --> TFIDF --> SEARCH
+    SEARCH --> RERANK
+    RERANK -->|graph mode| EXPAND
+    GRAPH --> EXPAND
+    EXPAND --> RERANK
+    RERANK --> ANSWER
+    ANSWER --> CLI
+    ANSWER --> CMP
+    ANSWER --> API
+```
+
+### Mode comparison
+
+How the three pipelines differ on the **same question and corpus**:
+
+```{mermaid}
+flowchart LR
+    subgraph Naive["Naive mode"]
+        N1[Question] --> N2[TF-IDF search] --> N3[Answer]
+    end
+
+    subgraph Advanced["Advanced mode"]
+        A1[Question] --> A2[Rewrite query] --> A3[TF-IDF search] --> A4[Rerank] --> A5[Answer]
+    end
+
+    subgraph Graph["Graph mode"]
+        G1[Question] --> G2[Rewrite query] --> G3[TF-IDF search] --> G4[Rerank] --> G5[Graph expand] --> G6[Rerank] --> G7[Answer]
+    end
+```
+
+### Knowledge graph (simplified)
+
+Documents link to category nodes; graph mode uses those links to pull related context:
+
+```{mermaid}
+flowchart LR
+    D3["doc-003<br/>RAG Governance"] -->|belongs_to| C1[AI/ML]
+    D5["doc-005<br/>Feature Store Quality"] -->|belongs_to| C2[Data Science]
+    D8["doc-008<br/>Ticket Matrix"] -->|belongs_to| C3[IT/IoT]
+```
+
+When graph mode finds a document, it can pull in **another document from the same category** that was not already in the top results — surfacing related context before the answer is built.
+
+### Pipeline summary (text)
 
 ```text
 User question
@@ -85,26 +167,6 @@ User question
   → (optional) graph expand via category links
   → grounded answer + source list
 ```
-
-**Mode flows:**
-
-```text
-NAIVE:    question → search → answer
-
-ADVANCED: question → rewrite → search → rerank → answer
-
-GRAPH:    question → rewrite → search → rerank → graph expand → rerank → answer
-```
-
-**Knowledge graph (simplified):**
-
-```text
-[doc-003 RAG Deployment Governance] ──belongs_to──► [AI/ML]
-[doc-005 Feature Store Quality]     ──belongs_to──► [Data Science and Analyst]
-[doc-008 Server Ticket Matrix]      ──belongs_to──► [IT/IoT]
-```
-
-When graph mode finds a document, it can pull in **another document from the same category** that was not already in the top results — surfacing related context before the answer is built.
 
 ## How each part works (step by step)
 

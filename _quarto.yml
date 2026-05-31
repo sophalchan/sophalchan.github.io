@@ -15,6 +15,8 @@ website:
         text: Home
       - href: about.qmd
         text: About
+      - href: ai-ml.qmd
+        text: AI / ML
       - href: research.qmd
         text: Research
     right:
@@ -35,6 +37,8 @@ website:
 format:
   html:
     theme: cosmo
+    mermaid:
+      theme: neutral
     css: styles.css
     include-after-body: assets/hero-category-filters.html
     toc: true
