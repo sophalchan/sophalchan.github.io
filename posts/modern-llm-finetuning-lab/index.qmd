@@ -1,7 +1,7 @@
 ---
 title: "Modern LLM Fine-Tuning Lab — QLoRA, Unsloth, ORPO & DoRA"
-description: "Step-by-step guide to local LLM fine-tuning with two GPU projects, a Gradio web UI, project structure, architecture, and usage — Qwen + ORPO + DoRA on 8 GB VRAM."
-date: 2026-05-31
+description: "Deep guide to local LLM fine-tuning on 8 GB GPU: background, motivation, Project 1 QLoRA architecture, Project 2 ORPO/DoRA, dual Gradio UIs, structure, and step-by-step usage."
+date: 2026-06-01
 categories: [AI/ML]
 author: Sophal Chan
 repo-url: "https://github.com/sophalchan/modern-llm-finetuning-lab"
@@ -9,49 +9,111 @@ repo-url: "https://github.com/sophalchan/modern-llm-finetuning-lab"
 
 ## Overview
 
-This project packages **four modern fine-tuning techniques** into **two runnable local pipelines** on a consumer NVIDIA GPU. You download a base language model, train small **adapter layers** on your machine, then chat with the result in a **Gradio web UI** — no cloud API required.
+This project packages **four modern fine-tuning techniques** into **two runnable local pipelines** on a consumer NVIDIA GPU. You download a base language model, train small **adapter layers** on your machine, then chat with the result in **two Gradio web UIs** — no cloud API required.
 
-| Project | Model | Method | Best for |
-|---------|-------|--------|----------|
-| **1 — Speed Run** | Llama-3.1-8B-Instruct | **QLoRA + Unsloth** | Domain format, instructions, corporate knowledge |
-| **2 — Preference Align** | Qwen2.5-1.5B / 7B-Instruct | **ORPO + DoRA** | Tone, style, chosen vs rejected responses |
+| Project | Model | Method | Best for | Web UI |
+|---------|-------|--------|----------|--------|
+| **1 — Instruction Tune** | Qwen2.5-1.5B-Instruct | **QLoRA + SFT** | Domain format, instructions, Q&A style | port **7861** |
+| **2 — Preference Align** | Qwen2.5-1.5B-Instruct | **ORPO + DoRA** | Tone, style, chosen vs rejected answers | port **7860** |
 
 **GitHub:** [sophalchan/modern-llm-finetuning-lab](https://github.com/sophalchan/modern-llm-finetuning-lab)
 
 **Stack:** PyTorch · PEFT · TRL · bitsandbytes · Gradio · Hugging Face
 
 ::: {.callout-note}
-**Results & testing:** Training benchmarks, sample outputs, and GPU metrics will be published in a **separate follow-up article**. This page covers project structure, architecture, and how to run the lab.
+**Results & testing:** Training benchmarks, sample outputs, loss curves, and GPU metrics will be published in a **separate follow-up article**. This page covers background, motivation, architecture, structure, and how to run the lab.
 :::
 
 ## What it does (plain English)
 
-A base model like **Qwen2.5-1.5B** already knows general language. This lab **teaches it your preferred style** by showing pairs of good vs bad answers during training (**ORPO**), using efficient adapter updates (**DoRA**), and loading the model in **4-bit** so it fits an **8 GB GPU**.
+A base chat model like **Qwen2.5-1.5B-Instruct** already knows general language. This lab **teaches it new behaviour** in two different ways:
 
-After training you get a small folder (`orpo_qwen_final/`, ~40 MB) — your custom layer on top of the base model. The **Web UI** lets you chat in a browser at `http://localhost:7860` without typing terminal commands.
+- **Project 1 (QLoRA):** show instruction → answer examples; the model learns to follow that format and style (**supervised fine-tuning**).
+- **Project 2 (ORPO + DoRA):** show good vs bad answer pairs; the model learns to **prefer** better responses (**preference alignment**).
+
+Both projects load the base model in **4-bit** so training and inference fit an **8 GB GPU**. After training you get a small adapter folder (~40 MB) — a custom layer on top of the base model — and chat in the browser without terminal commands.
+
+## Background of the Study
+
+### The problem: full fine-tuning does not fit on a laptop
+
+Large language models (LLMs) with 7B–70B parameters contain billions of floating-point weights. **Full fine-tuning** updates every weight during training. That requires:
+
+- Tens of gigabytes of VRAM just to hold the model in memory
+- Additional memory for optimizer states (Adam stores momentum per parameter)
+- More memory still for activations during the backward pass
+
+On a typical laptop GPU (8–12 GB), full fine-tuning of even a 7B model is **impossible** without multi-GPU clusters or cloud instances costing dollars per hour.
+
+### The industry response: parameter-efficient fine-tuning (PEFT)
+
+Research and open-source tools converged on a practical compromise: **freeze the base model** and train only a tiny set of **adapter parameters**.
+
+| Era | Technique | Key idea |
+|-----|-----------|----------|
+| 2019–2021 | **LoRA** | Add low-rank matrices (A × B) to attention layers; train ~0.1–1% of params |
+| 2023 | **QLoRA** | Store frozen base in 4-bit; train LoRA adapters in higher precision → 8B on 16 GB |
+| 2023–2024 | **Unsloth** | Optimized CUDA kernels for faster LoRA training on consumer GPUs |
+| 2024 | **ORPO** | Combine SFT + preference alignment in **one** training step (no separate DPO) |
+| 2024 | **DoRA** | Decompose weight updates into direction + magnitude → closer to full fine-tune quality |
+
+### Why these four techniques together
+
+Each technique solves a different bottleneck:
+
+1. **QLoRA** — makes the model **fit in memory**
+2. **Unsloth** — makes training **fast enough to iterate** (Project 1 Llama path, 16 GB+)
+3. **ORPO** — makes **preference alignment simple** (no two-stage SFT → DPO pipeline)
+4. **DoRA** — makes **adapters more expressive** without full-parameter cost
+
+### Academic and professional context
+
+Fine-tuning sits between **prompt engineering** (zero training, limited control) and **training from scratch** (prohibitively expensive). For portfolio and production work — custom chatbots, domain Q&A, internal copilots, RAG answer formatting — **adapter-based fine-tuning** is the standard middle path used by Hugging Face, TRL, PEFT, and most ML engineering teams.
+
+This lab implements that path **locally and transparently**: YAML configs, readable Python scripts, shared inference engine, and browser UIs — so every stage (load, train, save, generate) can be inspected and explained in an interview or capstone defense.
+
+### The 8 GB constraint
+
+Many students and professionals have **8 GB laptop GPUs** (e.g. RTX 3060 Laptop, RTX 2000 Ada). Standard 7B/8B recipes assume 16–24 GB. This project adds **`project1_low_vram.yaml`** and **`project2_low_vram.yaml`** using **Qwen2.5-1.5B-Instruct** — a capable instruct model that fits 8 GB with 4-bit loading, gradient checkpointing, and batch size 1.
+
+## Motivation of the Study
+
+### Personal and professional motivation
+
+- **Run locally, own your data** — no API keys, no per-token billing, sensitive prompts stay on your machine
+- **Portfolio depth** — recruiters can clone, train, and chat in under an hour; architecture is inspectable
+- **Bridge teaching and engineering** — same stack used in AI/ML courses (LoRA, SFT, alignment) and in industry (PEFT, TRL, Hugging Face)
+- **Honest hardware documentation** — clearly state what works on 8 GB vs what needs 16 GB+
+- **Two real use cases in one repo** — instruction tuning (Project 1) vs preference alignment (Project 2), not just one demo script
+
+### Technical motivation
+
+| Goal | How this project addresses it |
+|------|-------------------------------|
+| Reproducible experiments | YAML configs separate hyperparameters from code |
+| Fair comparison | Same base model (Qwen 1.5B), same 4-bit stack, different trainers |
+| Fast demo iteration | `max_steps: 10` proves pipeline in seconds; scale up for production |
+| Shared inference | One `inference_engine.py` serves CLI + both UIs |
+| Dual Web UIs | Gradio on ports 7860 and 7861 for live demos |
+| No gated models on 8 GB path | Qwen 1.5B is public — no HF token required for low-VRAM configs |
+
+### Research questions this lab explores
+
+1. Can **QLoRA instruction tuning** run end-to-end on an 8 GB consumer GPU?
+2. Can **ORPO + DoRA preference alignment** run on the same hardware with the same base model?
+3. How do **SFT (Project 1)** and **ORPO (Project 2)** differ in architecture when sharing inference code?
+4. What is the **memory and time cost** of training vs inference on laptop-class GPUs?
+
+(Answers with metrics and sample outputs — in the upcoming results article.)
 
 ## The 4 techniques (simple definitions)
 
 | Technique | What it does |
 |-----------|----------------|
-| **QLoRA** | Keeps the big model in 4-bit; trains only tiny adapter layers → fits on one GPU |
-| **Unsloth** | Optimized training kernels → 2–5× faster (Project 1) |
+| **QLoRA** | Keeps the base model in 4-bit; trains only tiny LoRA adapter layers → fits on one GPU |
+| **Unsloth** | Optimized training kernels → 2–5× faster (optional Llama 8B path, 16 GB+) |
 | **ORPO** | Aligns preferences in **one step** — no separate SFT then DPO |
 | **DoRA** | Weight-decomposed LoRA — updates direction and magnitude separately for better quality |
-
-## Background of the Study
-
-Full fine-tuning of 7B–8B models on a laptop GPU is impractical. The industry moved to **parameter-efficient** methods: train adapters, not every weight. **QLoRA** made 8B models reachable on 16 GB cards; **Unsloth** made training fast enough for iteration; **ORPO** simplified preference alignment; **DoRA** improved adapter quality without full-parameter cost.
-
-This lab turns those ideas into **copy-paste scripts** with YAML configs — runnable on Linux + NVIDIA CUDA.
-
-## Motivation of the Study
-
-- **Run locally** on consumer hardware instead of cloud-only fine-tuning
-- **Compare two real use cases:** domain instruction tuning vs preference alignment
-- **Use community-standard tools** (Unsloth, TRL ORPO, PEFT DoRA)
-- **Ship a Web UI** for portfolio demos and interviews
-- **Document GPU requirements honestly** — 8 GB works for Project 2 with the low-VRAM config
 
 ## Project structure
 
@@ -59,171 +121,224 @@ This lab turns those ideas into **copy-paste scripts** with YAML configs — run
 modern-llm-finetuning-lab/
 │
 ├── configs/
-│   ├── project1_unsloth_qlora.yaml   ← Llama 8B + Unsloth settings
-│   ├── project1_low_vram.yaml
-│   ├── project2_orpo_dora.yaml       ← Qwen 7B ORPO settings
-│   └── project2_low_vram.yaml        ← Qwen 1.5B for 8 GB GPU
+│   ├── project1_low_vram.yaml        ← Project 1: Qwen 1.5B QLoRA (8 GB)
+│   ├── project1_unsloth_qlora.yaml   ← Project 1: Llama 8B + Unsloth (16 GB+)
+│   ├── project2_low_vram.yaml        ← Project 2: Qwen 1.5B ORPO (8 GB)
+│   └── project2_orpo_dora.yaml       ← Project 2: Qwen 7B ORPO (16 GB+)
 │
 ├── project1_unsloth_qlora/
-│   ├── train_llama31_unsloth.py      ← Project 1: train
-│   ├── infer_llama31_unsloth.py      ← Project 1: terminal inference
+│   ├── train_qwen_qlora.py           ← Project 1 train (8 GB, standard PEFT)
+│   ├── infer_qwen_qlora.py           ← Project 1 terminal inference
+│   ├── train_llama31_unsloth.py      ← Project 1 Llama + Unsloth (16 GB+)
 │   └── export_gguf.py                ← Export for Ollama / LM Studio
 │
 ├── project2_orpo_dora/
-│   ├── train_qwen_orpo.py            ← Project 2: ORPO + DoRA train
-│   └── infer_qwen_orpo.py            ← Project 2: terminal inference
+│   ├── train_qwen_orpo.py            ← Project 2 ORPO + DoRA train
+│   └── infer_qwen_orpo.py            ← Project 2 terminal inference
 │
 ├── src/
-│   ├── inference_engine.py           ← Shared model loader (CLI + UI)
+│   ├── inference_engine.py           ← Shared PEFT loader (CLI + both UIs)
 │   └── utils.py                      ← GPU check, YAML loader, HF token
 │
-├── app_ui.py                         ← Gradio Web UI (port 7860)
+├── app_ui_project1.py                ← Gradio UI — Project 1 (port 7861)
+├── app_ui.py                         ← Gradio UI — Project 2 (port 7860)
+│
+├── lora_model_qwen/                  ← Project 1 trained adapters
+├── orpo_qwen_final/                  ← Project 2 trained adapters
+│
 ├── scripts/
 │   ├── install.sh                    ← One-command setup (Python 3.11)
-│   ├── run_ui.sh                     ← Start Web UI
-│   └── check_environment.py          ← Verify CUDA + packages
+│   ├── run_ui_project1.sh
+│   ├── run_ui.sh
+│   └── check_environment.py
 │
-├── orpo_qwen_final/                  ← Trained adapters (after Project 2)
-│   ├── adapter_config.json
-│   └── adapter weights (~40 MB)
-│
-├── requirements-base.txt
-├── .env.example                      ← Optional HF_TOKEN
-└── README.md
+└── requirements-base.txt
 ```
 
 | Path | Role |
 |------|------|
 | `configs/*.yaml` | Hyperparameters — model, steps, learning rate, output folder |
-| `train_qwen_orpo.py` | Loads base model in 4-bit, runs ORPOTrainer, saves adapters |
-| `inference_engine.py` | Loads base + adapters once; generates answers for CLI and UI |
-| `app_ui.py` | Browser chat — temperature, max tokens, example prompts |
-| `orpo_qwen_final/` | Your trained adapter checkpoint |
+| `train_qwen_qlora.py` | Project 1: 4-bit base + LoRA + SFTTrainer |
+| `train_qwen_orpo.py` | Project 2: 4-bit base + DoRA + ORPOTrainer |
+| `inference_engine.py` | Loads base + adapters once; generates for CLI and UIs |
+| `app_ui_project1.py` / `app_ui.py` | Browser chat interfaces |
+| `lora_model_qwen/` / `orpo_qwen_final/` | Saved adapter checkpoints (~40 MB each) |
 
-**Three layers to remember:** Config (recipe) → Train/infer scripts (work) → UI + engine (talk to the model).
+**Four layers:** Config (recipe) → Train scripts (learn) → Inference engine (generate) → Gradio UI (browser).
 
-## Architecture diagram
+---
 
-### System overview — training vs inference
+## Project 1 — QLoRA instruction tuning (deep dive)
 
-::: {.architecture-diagram}
-```{mermaid}
-%%{init: {
-  "theme": "base",
-  "themeVariables": { "fontSize": "14px", "fontFamily": "Segoe UI, system-ui, sans-serif" },
-  "flowchart": { "curve": "linear", "padding": 14, "nodeSpacing": 26, "rankSpacing": 36 }
-}}%%
-flowchart TB
-    subgraph TRAIN["Training (once)"]
-        direction TB
-        T1["Preference dataset<br/>question + chosen + rejected"]
-        T2["train_qwen_orpo.py"]
-        T3["Qwen base model · 4-bit · DoRA adapters"]
-        T4["ORPOTrainer"]
-        T5[("orpo_qwen_final/")]
-        T1 --> T2 --> T3 --> T4 --> T5
-    end
+### Architectural goal
 
-    subgraph INFER["Inference (every chat)"]
-        direction TB
-        I1["Browser or terminal question"]
-        I2["app_ui.py or infer_qwen_orpo.py"]
-        I3["inference_engine.py"]
-        I4["Base Qwen + saved adapters"]
-        I5["Answer on GPU"]
-        I1 --> I2 --> I3 --> I4 --> I5
-    end
+Project 1 teaches the model **instruction-following format**: user asks a question → assistant gives a helpful answer. Training uses **Supervised Fine-Tuning (SFT)** with **QLoRA** — the base model stays frozen in 4-bit; only LoRA adapters receive gradients.
 
-    T5 -.->|loads adapters| I4
+### Design pattern: separation of concerns
 
-    style TRAIN fill:#fef9e7,stroke:#d68910
-    style INFER fill:#ebf5fb,stroke:#2980b9
+```text
+┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
+│   CONFIG    │   │   TRAINING  │   │  INFERENCE  │   │     UI      │
+│  YAML recipe│ → │  SFTTrainer │ → │ PEFT engine │ → │ Gradio 7861 │
+└─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘
 ```
-:::
 
-### Web UI flow (when you click Send)
+### Project 1 architecture — training
 
 ::: {.architecture-diagram}
 ```{mermaid}
 %%{init: {
   "theme": "base",
   "themeVariables": { "fontSize": "14px" },
-  "flowchart": { "curve": "linear", "padding": 12, "nodeSpacing": 24, "rankSpacing": 32 }
+  "flowchart": { "curve": "linear", "padding": 14, "nodeSpacing": 24, "rankSpacing": 34 }
 }}%%
 flowchart TB
-    U["① You type a question in browser"]
-    G["② app_ui.py · Gradio chat"]
-    E["③ get_engine() · inference_engine.py"]
-    L["④ Load Qwen2.5-1.5B in 4-bit + orpo_qwen_final adapters"]
-    P["⑤ Format as chat prompt · tokenize"]
-    R["⑥ model.generate() on GPU"]
-    A["⑦ Return assistant reply to chat window"]
+    C["project1_low_vram.yaml"]
+    T["train_qwen_qlora.py"]
+    D["yahma/alpaca-cleaned<br/>instruction + output"]
+    M["Qwen2.5-1.5B · 4-bit frozen"]
+    L["LoRA adapters · r=8 · trainable"]
+    S["TRL SFTTrainer"]
+    O[("lora_model_qwen/")]
 
-    U --> G --> E --> L --> P --> R --> A
+    C --> T
+    D --> T
+    T --> M
+    T --> L
+    M --> S
+    L --> S
+    S --> O
 
-    style U fill:#d6eaf8,stroke:#2471a3
-    style G fill:#fdebd0,stroke:#ca6f1e
-    style E fill:#fdebd0,stroke:#ca6f1e
-    style L fill:#d5f5e3,stroke:#1e8449
-    style A fill:#e8daef,stroke:#7d3c98
+    style C fill:#d6eaf8,stroke:#2471a3
+    style O fill:#d5f5e3,stroke:#1e8449
 ```
 :::
 
-### What the Web UI status line means
+**Training stages (step by step):**
 
-When you see:
+1. **Load config** — model ID, dataset, LoRA rank, max steps
+2. **Load base model in 4-bit** (bitsandbytes NF4) — ~4× less VRAM than FP16
+3. **Attach LoRA** to attention + MLP layers (`q_proj`, `k_proj`, `v_proj`, `o_proj`, `gate_proj`, `up_proj`, `down_proj`)
+4. **Enable gradient checkpointing** — trades compute for memory (critical on 8 GB)
+5. **Format dataset** as chat messages → apply Qwen chat template
+6. **SFTTrainer** — loss on assistant tokens only; batch size 1 + gradient accumulation 4
+7. **Save adapters** to `lora_model_qwen/` (~40 MB; base model stays on Hugging Face cache)
 
-> **Status: Ready — Qwen/Qwen2.5-1.5B-Instruct (ORPO + DoRA)**
+**LoRA in one equation:** effective weight = frozen W + (A × B), where A and B are small matrices with rank r=8.
 
-| Part | Meaning |
-|------|---------|
-| **Ready** | CUDA GPU found, adapters loaded, model can answer |
-| **Qwen2.5-1.5B-Instruct** | Base model (fits 8 GB VRAM in 4-bit) |
-| **ORPO + DoRA** | Trained with preference alignment and DoRA adapters |
+### Project 1 architecture — inference + UI
 
-## How each part works (step by step)
+::: {.architecture-diagram}
+```{mermaid}
+%%{init: {
+  "theme": "base",
+  "themeVariables": { "fontSize": "14px" },
+  "flowchart": { "curve": "linear", "padding": 12, "nodeSpacing": 22, "rankSpacing": 30 }
+}}%%
+flowchart TB
+    B["Browser · localhost:7861"]
+    U["app_ui_project1.py"]
+    E["get_engine(lora_model_qwen)"]
+    P["PeftInferenceEngine"]
+    G["model.generate() on GPU"]
+    R["Assistant reply"]
 
-### Step 1 — Config (`configs/project2_low_vram.yaml`)
+    B --> U --> E --> P --> G --> R --> B
 
-The training recipe for an **8 GB GPU**:
+    style B fill:#d6eaf8,stroke:#2471a3
+    style U fill:#fdebd0,stroke:#ca6f1e
+    style P fill:#d5f5e3,stroke:#1e8449
+```
+:::
+
+**When you click Send:**
+
+1. Gradio calls `chat()` → `get_engine("lora_model_qwen")`
+2. Engine loads once (singleton cache) — base Qwen 1.5B in 4-bit + LoRA adapters
+3. Question wrapped in Qwen chat template → tokenized → `model.generate()`
+4. Assistant portion decoded and shown in chat window
+
+**Status line example:**
+
+> **Ready — Qwen/Qwen2.5-1.5B-Instruct (QLoRA)**
+
+### Project 1 config (`project1_low_vram.yaml`)
 
 | Setting | Value | Why |
 |---------|-------|-----|
-| `model_id` | Qwen2.5-1.5B-Instruct | Small enough for 8 GB VRAM |
-| `use_dora: true` | DoRA enabled | Better adapter quality |
-| `max_steps: 10` | Short demo run | Proves pipeline works quickly |
-| `output_dir` | orpo_qwen_final | Where adapters are saved |
+| `model_id` | Qwen2.5-1.5B-Instruct | Public model; fits 8 GB |
+| `dataset_name` | yahma/alpaca-cleaned | General instruction → answer pairs |
+| `train_samples` | 200 | Enough for demo; scale up for production |
+| `max_seq_length` | 512 | Limits VRAM per example |
+| `lora_r` | 8 | Small adapters; low memory |
+| `max_steps` | 10 | Fast pipeline proof (~10–30 s) |
+| `output_dir` | lora_model_qwen | Saved adapters |
 
-Increase `max_steps` and `train_samples` for production-quality training (covered in the results article).
+### Memory design (8 GB GPU)
 
-### Step 2 — Training (`project2_orpo_dora/train_qwen_orpo.py`)
+| Component | Approx. VRAM |
+|-----------|--------------|
+| Qwen 1.5B in 4-bit | ~1–1.5 GB |
+| LoRA adapters + optimizer (training) | ~1–2 GB |
+| Activations + grad checkpointing | ~2–4 GB |
+| **Training total** | ~5–7 GB ✓ |
+| **Inference total** | ~2–3 GB ✓ |
 
-1. Load Qwen base model in **4-bit** (bitsandbytes)
-2. Attach **DoRA** adapter layers (PEFT)
-3. Load preference dataset — each row has a question, a **chosen** answer, and a **rejected** answer
-4. **ORPOTrainer** teaches the model to prefer chosen over rejected
-5. Save adapters to `orpo_qwen_final/`
+---
 
-### Step 3 — Inference engine (`src/inference_engine.py`)
+## Project 2 — ORPO + DoRA preference alignment
 
-Shared by the **terminal CLI** and **Web UI**:
+### Architectural goal
 
-1. Read `orpo_qwen_final/adapter_config.json` (base model name, DoRA flag)
-2. Load base Qwen in 4-bit on GPU
-3. Attach saved PEFT adapters
-4. `generate()` — format question as chat, run `model.generate()`, return assistant text
+Project 2 teaches the model **which answers are better** using chosen vs rejected pairs in a **single ORPO training step** with **DoRA** adapters (direction + magnitude decomposition).
 
-The engine loads **once** and reuses the model for every question (faster after the first reply).
+### Project 2 architecture — training vs inference
 
-### Step 4 — Web UI (`app_ui.py`)
+::: {.architecture-diagram}
+```{mermaid}
+%%{init: {
+  "theme": "base",
+  "themeVariables": { "fontSize": "14px" },
+  "flowchart": { "curve": "linear", "padding": 14, "nodeSpacing": 24, "rankSpacing": 34 }
+}}%%
+flowchart TB
+    subgraph TRAIN["Project 2 — Training"]
+        T1["Preference dataset<br/>question + chosen + rejected"]
+        T2["train_qwen_orpo.py"]
+        T3["Qwen 1.5B · 4-bit · DoRA"]
+        T4["ORPOTrainer"]
+        T5[("orpo_qwen_final/")]
+        T1 --> T2 --> T3 --> T4 --> T5
+    end
 
-Gradio chat interface on port **7860**:
+    subgraph INFER["Project 2 — Inference"]
+        I1["app_ui.py · port 7860"]
+        I2["inference_engine.py"]
+        I3["Generate answer"]
+        I1 --> I2 --> I3
+    end
 
-- **Status bar** — model name and method
-- **Temperature slider** — 0 = more factual, 1 = more creative
-- **Max tokens slider** — controls answer length
-- **Chat window** — conversation history
-- **Example prompts** — one-click test questions
+    T5 -.-> I2
+
+    style TRAIN fill:#fef9e7,stroke:#d68910
+    style INFER fill:#ebf5fb,stroke:#2980b9
+```
+:::
+
+### Project 1 vs Project 2
+
+| | **Project 1 — QLoRA + SFT** | **Project 2 — ORPO + DoRA** |
+|---|---------------------------|----------------------------|
+| **Goal** | Instruction format & content | Prefer good over bad answers |
+| **Trainer** | `SFTTrainer` | `ORPOTrainer` |
+| **Data** | instruction + output | question + chosen + rejected |
+| **Adapters** | Standard LoRA | DoRA |
+| **Output** | `lora_model_qwen/` | `orpo_qwen_final/` |
+| **UI** | http://localhost:7861 | http://localhost:7860 |
+
+Both share `inference_engine.py` and the same 4-bit loading path.
+
+---
 
 ## Step-by-step — run locally
 
@@ -239,89 +354,112 @@ python scripts/check_environment.py
 
 Requires **Linux**, **NVIDIA GPU**, **Python 3.11**, and CUDA PyTorch.
 
-### Step 2 — Train Project 2 (ORPO + DoRA)
+### Step 2 — Train Project 1 (QLoRA, 8 GB)
+
+```bash
+python project1_unsloth_qlora/train_qwen_qlora.py --config project1_low_vram.yaml
+```
+
+Creates `lora_model_qwen/`.
+
+### Step 3 — Train Project 2 (ORPO + DoRA, 8 GB)
 
 ```bash
 python project2_orpo_dora/train_qwen_orpo.py --config project2_low_vram.yaml
 ```
 
-Creates `orpo_qwen_final/` with your trained adapters.
+Creates `orpo_qwen_final/`.
 
-### Step 3 — Terminal inference (optional)
-
-```bash
-python project2_orpo_dora/infer_qwen_orpo.py --prompt "What is ORPO fine-tuning?"
-```
-
-### Step 4 — Launch the Web UI
+### Step 4 — Launch both Web UIs
 
 ```bash
 pip install gradio
-python app_ui.py
+python app_ui_project1.py   # Project 1 → http://localhost:7861
+python app_ui.py            # Project 2 → http://localhost:7860
 ```
 
-Open **http://localhost:7860** — chat with your fine-tuned model in the browser.
-
-Or use the shortcut:
+Or use shortcuts:
 
 ```bash
+bash scripts/run_ui_project1.sh
 bash scripts/run_ui.sh
 ```
 
-### Step 5 — Project 1 (optional, 16 GB+ VRAM)
+### Step 5 — Terminal inference (optional)
+
+```bash
+python project1_unsloth_qlora/infer_qwen_qlora.py --prompt "Explain QLoRA in plain language."
+python project2_orpo_dora/infer_qwen_orpo.py --prompt "What is ORPO fine-tuning?"
+```
+
+### Step 6 — Llama 8B + Unsloth (optional, 16 GB+ VRAM)
 
 ```bash
 pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+# Set HF_TOKEN in .env for gated Llama weights
 python project1_unsloth_qlora/train_llama31_unsloth.py
-python project1_unsloth_qlora/infer_llama31_unsloth.py
-python project1_unsloth_qlora/export_gguf.py   # Ollama / LM Studio
 ```
 
-Set `HF_TOKEN` in `.env` for gated models (Llama 3.1).
+## Software design patterns used
+
+| Pattern | Where | Why |
+|---------|-------|-----|
+| Configuration as code | YAML configs | Reproducible experiments without code changes |
+| Separation of concerns | train / infer / UI / engine | Each module has one responsibility |
+| Singleton cache | `get_engine()` | Avoid reloading GPU model every message |
+| Fail fast | `require_cuda()` | Clear error if no GPU |
+| Adapter pattern (ML) | PEFT LoRA / DoRA | Small trainable patch on frozen base |
+| Thin client UI | Gradio → engine only | UI can change without touching ML code |
+| Shared inference layer | Both projects | DRY — one loader for all paths |
 
 ## Advantages of this project
 
 | Advantage | Why it matters |
 |-----------|----------------|
-| **Runs locally** | No API keys, no cloud cost, data stays on your machine |
-| **8 GB GPU works** | 1.5B + 4-bit + low_vram config fits consumer laptops |
-| **ORPO in one step** | No separate SFT then DPO pipeline |
-| **DoRA quality** | Better than plain LoRA for preference tuning |
-| **Web UI included** | Easy demo for portfolio and interviews |
-| **Shared inference code** | Same engine for CLI and UI |
-| **YAML configs** | Change model or steps without editing Python |
-| **Two projects in one repo** | Compare speed-run SFT vs preference alignment |
+| **Runs locally** | No API cost; data stays on your machine |
+| **8 GB GPU works** | Both projects use Qwen 1.5B + 4-bit + low-VRAM configs |
+| **Two training paradigms** | SFT vs ORPO in one repo — fair comparison |
+| **Dual Web UIs** | Live demo for portfolio and interviews |
+| **Shared inference engine** | Same code path for CLI and browser |
+| **YAML-driven** | Change model, steps, LR without editing Python |
+| **Public base model** | No HF token required for 8 GB path |
+| **Transparent architecture** | Every stage inspectable for learning and defense |
 
 ## Hardware note
 
 | Requirement | Detail |
 |-------------|--------|
-| GPU | NVIDIA — **8 GB** works (Project 2 + `project2_low_vram.yaml`); **16 GB+** for Llama 8B / Qwen 7B |
+| GPU | NVIDIA — **8 GB** works (Qwen 1.5B low-VRAM configs); **16 GB+** for Llama 8B / Qwen 7B |
 | OS | Linux + CUDA |
-| Python | **3.11** recommended (3.14 breaks some packages) |
-| Disk | ~20 GB+ for model weight cache |
+| Python | **3.11** recommended (3.14 breaks some ML packages) |
+| Disk | ~20 GB+ for Hugging Face model cache |
+
+Verified on **NVIDIA RTX 2000 Ada Laptop GPU (7.6 GB VRAM)**.
 
 ## Limitations
 
-- Demo config uses **10 training steps** — enough to prove the pipeline; production needs thousands of steps
-- **Project 1 (Unsloth)** needs more VRAM and may have package conflicts on some setups
-- Web UI runs **locally only** — not hosted on GitHub Pages (needs your GPU)
-- Preference data is a public Hugging Face sample — swap in your own dataset for domain-specific alignment
+- Demo configs use **10 training steps** — pipeline proof only; production needs thousands of steps and more data
+- **Unsloth + Llama 8B** path needs 16 GB+ VRAM and may have package conflicts on some setups
+- Web UIs run **locally** — not hosted on GitHub Pages (requires your GPU)
+- Training datasets are public Hugging Face samples — swap in your own data for domain-specific models
+- Results and benchmarks documented in a **separate upcoming article**
 
 ## Quick reference
 
 ```text
-┌──────────────────────────────────────────────────────────┐
-│  Modern LLM Fine-Tuning Lab — Project 2 + Web UI        │
-├──────────────────────────────────────────────────────────┤
-│  BASE MODEL    Qwen2.5-1.5B-Instruct (4-bit)            │
-│  METHOD        ORPO + DoRA                               │
-│  TRAIN         train_qwen_orpo.py --config low_vram      │
-│  ADAPTERS      orpo_qwen_final/                          │
-│  TERMINAL      infer_qwen_orpo.py --prompt "..."         │
-│  WEB UI        python app_ui.py → localhost:7860         │
-│  ENGINE        src/inference_engine.py                   │
-└──────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│  PROJECT 1 — QLoRA + SFT                                        │
+│  TRAIN   train_qwen_qlora.py --config project1_low_vram.yaml    │
+│  ADAPTERS lora_model_qwen/                                      │
+│  UI      app_ui_project1.py → http://localhost:7861             │
+├─────────────────────────────────────────────────────────────────┤
+│  PROJECT 2 — ORPO + DoRA                                        │
+│  TRAIN   train_qwen_orpo.py --config project2_low_vram.yaml     │
+│  ADAPTERS orpo_qwen_final/                                      │
+│  UI      app_ui.py → http://localhost:7860                      │
+├─────────────────────────────────────────────────────────────────┤
+│  SHARED  src/inference_engine.py · src/utils.py                 │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ## Related projects
