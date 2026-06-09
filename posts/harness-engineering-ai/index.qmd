@@ -1,0 +1,421 @@
+---
+title: "Harness Engineering in AI Engineering — Build Reliable LLM Systems"
+description: "Deep guide to harness engineering for LLMs: background, motivation, Agent = Model + Harness, architecture, benefits, and a step-by-step playbook with portfolio examples."
+date: 2026-06-02
+categories: [AI/ML]
+author: Sophal Chan
+---
+
+## Overview
+
+**Harness engineering** is the discipline of designing everything *around* a large language model (LLM) so it becomes a **reliable, production-ready agent** — not just a chat box that sometimes hallucinates.
+
+The core idea, popularized in 2026 by practitioners including [Mitchell Hashimoto](https://mitchellh.com/writing/harness-engineering) and framed for coding agents by [Birgitta Böckeler on Martin Fowler's site](https://martinfowler.com/articles/harness-engineering.html):
+
+```text
+Agent = Model + Harness
+```
+
+The **model** provides intelligence. The **harness** provides structure: context, tools, guardrails, feedback loops, memory, orchestration, and observability.
+
+This article explains **why harness engineering matters for LLM systems**, how it evolved beyond prompt engineering, and a **step-by-step playbook** you can apply — with examples drawn from runnable projects on this portfolio (RAG, fine-tuning, prompt labs, and APIs).
+
+**Stack concepts:** LLM · RAG · PEFT/LoRA · MCP/tools · evaluators · guardrails · observability
+
+## What it does (plain English)
+
+A raw LLM answers text. A **harnessed LLM system** can:
+
+- **Retrieve** documents before answering (RAG) instead of guessing
+- **Validate** outputs with schemas, tests, or linters (sensors)
+- **Steer** behaviour with rules, prompts, and examples (guides)
+- **Call tools** safely (APIs, databases, filesystem) with permissions
+- **Log and replay** what happened when something goes wrong (observability)
+- **Improve over time** by fixing the harness when the agent fails — not by hoping the next prompt works
+
+Prompt engineering asks: *"What should I say to the model?"*  
+Harness engineering asks: *"What system must exist so the model cannot fail the same way twice?"*
+
+## Background of the Study
+
+### From prompts to production systems
+
+Between 2022 and 2024, **prompt engineering** dominated applied LLM work: craft instructions, add few-shot examples, tune temperature, iterate in a notebook. That works for demos — but production teams hit repeatable failures:
+
+| Failure mode | Why prompts alone fail |
+|--------------|------------------------|
+| Hallucination | Model has no grounded context |
+| Wrong JSON format | No schema enforcement after generation |
+| Unsafe tool use | No permission boundary on actions |
+| Inconsistent style | No preference alignment or eval loop |
+| Silent regressions | No traces, tests, or versioned prompts |
+| Cost blowups | No routing, caching, or token budgets |
+
+**Context engineering** (2025) extended the idea: architect the full information environment — retrieval, chat history, tool results, output formats. Research and industry showed that *what the model sees* often matters more than *how you phrase the question*.
+
+**Harness engineering** (2026) completes the picture: design the **entire operational envelope** — before, during, and after the model runs. Industry case studies (e.g. OpenAI Codex teams shipping at high PR velocity with agent-first workflows) demonstrated that engineering effort shifts from writing every line of code to **designing the system around the agent**.
+
+### The cybernetics framing: guides and sensors
+
+[Birgitta Böckeler's harness framework](https://martinfowler.com/articles/harness-engineering.html) borrows from control theory:
+
+| Control type | Harness name | When it acts | Examples |
+|--------------|--------------|--------------|----------|
+| **Feedforward** | **Guides** | Before the agent acts | System prompts, `AGENTS.md`, rules, tool schemas, RAG context |
+| **Feedback** | **Sensors** | After the agent acts | Unit tests, linters, JSON validators, citation checks, human approval |
+
+A mature harness uses **both**: guides reduce mistakes upfront; sensors catch what slips through and trigger self-correction.
+
+### Harness vs model quality
+
+Benchmarks and field reports increasingly show that **harness design** can move scores more than swapping models of similar class — because failures in production are often **system failures** (missing context, wrong tool, no verifier), not raw reasoning failures. NVIDIA's [agent harness guidelines](https://nvidia.github.io/elements/docs/internal/guidelines/agent-harness/) state plainly: deterministic rules outside the model narrow the space where non-deterministic token prediction can go wrong.
+
+For LLM engineers, the implication is strategic: **invest in architecture around the model**, not only in picking the newest checkpoint.
+
+## Motivation of the Study
+
+### Why this matters for AI engineering careers
+
+- **Production reality** — Hiring teams want engineers who ship **reliable LLM features**, not notebook demos
+- **Portfolio depth** — Showing RAG + fine-tuning + **harness layers** (validation, APIs, eval) demonstrates systems thinking
+- **Teaching alignment** — AI/ML courses cover models; industry needs **integration, safety, and ops**
+- **Cost and trust** — Harnesses reduce wasted tokens (failed retries) and increase reviewer confidence
+- **Composable skill** — Guides and sensors reuse across projects; prompts alone do not
+
+### Personal motivation (portfolio lens)
+
+My runnable projects on this site are intentionally built as **harness exercises**, not model showcases:
+
+| Project | Harness role |
+|---------|----------------|
+| [Multi-Stage RAG Assistant](../rag-capstone-graduation-project/) | Context pipeline + retrieval sensors |
+| [Modern LLM Fine-Tuning Lab](../modern-llm-finetuning-lab/) | Model adaptation inside the harness |
+| [Prompt Engineering Lab](../prompt-engineering-lab/) | Guides (templates, few-shot, CoT) |
+| [Advanced RAG Methods Lab](../rag-methods-comparison-lab/) | Compare context pipelines fairly |
+| Flask / Gradio UIs | Tool interfaces for humans and integrators |
+
+Harness engineering is the **umbrella discipline** that explains why these pieces exist together.
+
+### Research and practice questions
+
+1. How do **guides** (prompts, rules, schemas) and **sensors** (tests, validators, RAG citations) combine for trustworthy LLM outputs?
+2. Where does **fine-tuning** fit — model layer vs harness layer?
+3. What is the minimum harness for a **portfolio-grade** LLM demo vs **production**?
+4. How do you **iterate**: when the agent fails, what do you change in the harness?
+
+## The harness formula and components
+
+### Agent = Model + Harness
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                        AGENT                                 │
+├──────────────────────────┬──────────────────────────────────┤
+│  MODEL                   │  HARNESS                          │
+│  · LLM weights           │  · Guides (feedforward)           │
+│  · Fine-tuned adapters   │  · Sensors (feedback)             │
+│  · Embeddings (optional) │  · Context pipeline (RAG)         │
+│                          │  · Tools & permissions (MCP/API)  │
+│                          │  · Memory & session state         │
+│                          │  · Orchestration & hooks          │
+│                          │  · Observability & eval           │
+└──────────────────────────┴──────────────────────────────────┘
+```
+
+### Evolution: prompt → context → harness
+
+```text
+2022–2024  Prompt engineering     → shape one interaction
+2025       Context engineering    → shape what the model sees
+2026       Harness engineering    → shape the full execution system
+```
+
+Prompt and context engineering are **sub-disciplines inside the harness**, not replacements for it.
+
+## Architecture diagram
+
+### End-to-end harness flow for an LLM application
+
+::: {.architecture-diagram}
+```{mermaid}
+%%{init: {
+  "theme": "base",
+  "themeVariables": { "fontSize": "14px" },
+  "flowchart": { "curve": "linear", "padding": 14, "nodeSpacing": 26, "rankSpacing": 36 }
+}}%%
+flowchart TB
+    U["User or API request"]
+    G["① Guides<br/>prompts · rules · schemas"]
+    C["② Context pipeline<br/>RAG · memory · history"]
+    M["③ Model<br/>base LLM · adapters"]
+    T["④ Tools<br/>search · code · APIs"]
+    S["⑤ Sensors<br/>validators · tests · citations"]
+    O["⑥ Output + observability<br/>logs · traces · eval scores"]
+
+    U --> G
+    G --> C
+    C --> M
+    M --> T
+    T --> S
+    S -->|pass| O
+    S -->|fail| G
+
+    style G fill:#d6eaf8,stroke:#2471a3
+    style C fill:#ebf5fb,stroke:#2980b9
+    style M fill:#fdebd0,stroke:#ca6f1e
+    style S fill:#d5f5e3,stroke:#1e8449
+    style O fill:#e8daef,stroke:#7d3c98
+```
+:::
+
+The **feedback arrow** from sensors back to guides is the harness loop: when validation fails, the system retries with corrected context or stricter instructions — instead of shipping a bad answer.
+
+### Guides vs sensors (detailed)
+
+::: {.architecture-diagram}
+```{mermaid}
+%%{init: {
+  "theme": "base",
+  "themeVariables": { "fontSize": "14px" },
+  "flowchart": { "curve": "linear", "padding": 12, "nodeSpacing": 22, "rankSpacing": 30 }
+}}%%
+flowchart LR
+    subgraph GF["Guides — before"]
+        g1[System prompt]
+        g2[Rules / AGENTS.md]
+        g3[Few-shot examples]
+        g4[Tool allowlist]
+        g5[RAG retrieval policy]
+    end
+
+    subgraph AG["Agent core"]
+        a1[LLM generate]
+    end
+
+    subgraph SN["Sensors — after"]
+        s1[JSON schema check]
+        s2[Unit / integration tests]
+        s3[Citation / grounding check]
+        s4[Lint / security scan]
+        s5[Human approval gate]
+    end
+
+    GF --> AG --> SN
+
+    style GF fill:#d6eaf8,stroke:#2471a3
+    style AG fill:#fdebd0,stroke:#ca6f1e
+    style SN fill:#d5f5e3,stroke:#1e8449
+```
+:::
+
+## Benefits of harness engineering for LLM systems
+
+| Benefit | Explanation |
+|---------|-------------|
+| **Reliability** | Deterministic checks catch non-deterministic model errors |
+| **Grounding** | RAG and citation sensors reduce hallucination |
+| **Safety** | Permissions, sandboxes, and approval gates limit tool risk |
+| **Debuggability** | Traces show whether failure was model, context, or tool |
+| **Cost control** | Fewer retry loops; routing and caching in the harness |
+| **Maintainability** | Fix the harness once when a mistake repeats — not re-prompt forever |
+| **Team scale** | Rules files and evals onboard new engineers faster than tribal prompt lore |
+| **Model swap** | Better harness survives model upgrades with less rework |
+| **Portfolio / interview clarity** | You can explain *system design*, not just "I used ChatGPT" |
+
+### Fine-tuning's place in the harness
+
+**Fine-tuning** (QLoRA, ORPO, DoRA — see [Modern LLM Fine-Tuning Lab](../modern-llm-finetuning-lab/)) improves the **model layer**: style, format, domain phrasing, preference alignment. It does **not** replace:
+
+- Retrieval for fresh facts
+- Schema validation for machine-readable output
+- Tool permission boundaries
+- Production logging
+
+Best practice: **harness first for structure, fine-tune second for behaviour** inside that structure.
+
+## Step-by-step — build a harness for an LLM project
+
+Use this playbook for any new AI feature — from portfolio demos to production pilots.
+
+### Step 1 — Define the task contract
+
+Write one paragraph:
+
+- **Input** — what the user or system provides
+- **Output** — exact format (prose, JSON, API response)
+- **Tools** — what the agent may call (search, DB, shell)
+- **Failure policy** — refuse, retry, or escalate to human
+
+Example (RAG Q&A):
+
+```text
+Input:  user question
+Output: answer + source titles (JSON or markdown)
+Tools:  retrieval over knowledge_base.json only
+Failure: if no sources, return "no strong match" — do not invent
+```
+
+### Step 2 — Build guides (feedforward)
+
+| Guide type | Action |
+|------------|--------|
+| System prompt | Role, tone, refusal rules |
+| Rules file | `AGENTS.md`, `.cursor/rules`, project conventions |
+| Few-shot examples | 2–5 input/output pairs in [Prompt Engineering Lab](../prompt-engineering-lab/) style |
+| Output schema | Pydantic / JSON Schema for downstream code |
+| RAG policy | When to retrieve, top-k, rerank mode ([RAG capstone](../rag-capstone-graduation-project/)) |
+
+**Check:** Could a new engineer run the task with only these guides?
+
+### Step 3 — Build context pipeline
+
+- Load documents, chunk, embed or TF-IDF index
+- Inject only **relevant** passages into the prompt
+- Log `effective_query` and `sources[]` (as in the RAG Flask API)
+
+Context engineering lives here — the harness decides **what the model sees**.
+
+### Step 4 — Choose and wrap the model
+
+| Need | Approach |
+|------|----------|
+| General Q&A with sources | Base model + RAG |
+| Custom tone / format | QLoRA or ORPO adapters |
+| Low latency / cost | Smaller model + strong harness |
+| Gated models (Llama) | HF token + 4-bit loading |
+
+Model choice is one line in the harness — not the whole design.
+
+### Step 5 — Add tools with permissions
+
+- Expose **narrow** APIs (e.g. `POST /ask` with mode enum — not open shell)
+- MCP servers: pin tool definitions; vault credentials ([enterprise practice](https://www.lunar.dev/post/agent-harness-engineering))
+- Allowlist filesystem paths and network hosts
+
+### Step 6 — Add sensors (feedback)
+
+| Sensor | When to use |
+|--------|-------------|
+| JSON schema validation | Structured outputs |
+| Citation check | RAG answers must list retrieved doc IDs |
+| Regex / lint rules | Code or log format agents |
+| Automated eval scores | [Prompt Lab](../prompt-engineering-lab/) A/B evaluators |
+| Unit tests | Code-generation agents |
+| Human-in-the-loop | High-risk actions |
+
+On failure: **retry with error message in context** (sensor output becomes guide for next turn).
+
+### Step 7 — Add observability
+
+Log at minimum:
+
+- Request ID, model name, harness version
+- Retrieved sources or tool calls
+- Token usage and latency
+- Pass/fail of each sensor
+
+When something breaks, you can answer: *model, context, tool, or sensor gap?*
+
+### Step 8 — Iterate the harness (Hashimoto rule)
+
+> When the agent makes a mistake, engineer the system so it **cannot make that mistake again.**
+
+| Mistake | Harness fix (not "try again") |
+|---------|-------------------------------|
+| Hallucinated policy | Add RAG + citation sensor |
+| Invalid JSON | Add Pydantic sensor + repair prompt |
+| Wrong file edited | Narrow tool allowlist + path rules |
+| Unsafe command | Block shell tool; require approval hook |
+| Off-domain answer | Add refusal guide + eval case |
+
+### Step 9 — Ship interfaces
+
+- **CLI** — for developers and CI
+- **REST API** — for integrators (Flask in RAG project)
+- **Gradio UI** — for demos ([Fine-Tuning Lab](../modern-llm-finetuning-lab/) ports 7860/7861)
+- **Portfolio article** — document architecture for reviewers
+
+### Step 10 — Evaluate before scaling
+
+- Hold-out question set for RAG
+- Prompt A/B tables for guides
+- Training loss + sample outputs for fine-tuning (separate results article)
+- Do **not** self-modify production prompts/tools without eval gates ([production harness audits](https://contextosai.com/blog/agent-harness-whitepaper))
+
+## Worked example — RAG as a harness
+
+The [Multi-Stage RAG Assistant](../rag-capstone-graduation-project/) is a **minimal but complete harness**:
+
+| Harness layer | RAG project implementation |
+|---------------|----------------------------|
+| Guides | Query rewrite rules in `pipeline.py` |
+| Context | `knowledge_base.json` + TF-IDF retrieval |
+| Model | Extractive answer builder (plug LLM later) |
+| Sensors | Source list in every response; mode comparison script |
+| Tools | `POST /ask` API with `mode` parameter |
+| Observability | `effective_query`, `sources[]`, scores in JSON |
+
+Naive vs advanced vs graph modes are **harness variants** on the same model and corpus — a fair comparison design.
+
+## Worked example — fine-tuning inside the harness
+
+The [Modern LLM Fine-Tuning Lab](../modern-llm-finetuning-lab/) places adaptation at the **model slot**:
+
+```text
+Harness (Gradio UI, inference_engine, configs)
+    └── Model slot: Qwen 1.5B + QLoRA or ORPO/DoRA adapters
+```
+
+The UI, shared inference engine, and YAML configs are harness engineering. Training scripts update the model weights; the harness stays stable.
+
+## Maturity levels
+
+| Level | Description | Example on this site |
+|-------|-------------|----------------------|
+| **L0 — Prompt only** | Single chat, no validation | Basic ChatGPT usage |
+| **L1 — Guided** | Templates + schemas | Prompt Engineering Lab |
+| **L2 — Grounded** | RAG + sources | RAG capstone, medical RAG |
+| **L3 — Adapted** | Fine-tuned adapters | Fine-Tuning Lab |
+| **L4 — Observed** | APIs, logs, comparisons | Flask APIs, `compare_modes.py` |
+| **L5 — Governed** | Permissions, eval gates, CI | Target for production teams |
+
+Aim portfolio projects at **L2–L4**; production agents add **L5**.
+
+## Limitations
+
+- Harness engineering **adds engineering overhead** — overkill for one-off questions
+- Sensors are never complete — adversarial inputs and model drift still exist
+- Multi-agent orchestration increases **debug surface** — needs strong traces
+- **Self-modifying harnesses** (agents that edit their own rules) are risky without eval gates
+- Harness quality varies by domain — copy-paste rules from one repo may not transfer
+
+## Quick reference
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│  HARNESS ENGINEERING FOR LLMs — CHEAT SHEET                  │
+├─────────────────────────────────────────────────────────────┤
+│  FORMULA     Agent = Model + Harness                         │
+│  GUIDES      prompts · rules · schemas · RAG (before)        │
+│  SENSORS     validators · tests · citations (after)          │
+│  LOOP        sensor fail → feed back into guides → retry     │
+│  MODEL SLOT  base LLM · QLoRA · ORPO (swap without redo)    │
+│  ITERATE     fix harness when mistake repeats                │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Further reading
+
+- [Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html) — Martin Fowler / Thoughtworks
+- [Harness Engineering](https://mitchellh.com/writing/harness-engineering) — Mitchell Hashimoto
+- [Agent Harness Engineering at Enterprise Scale](https://www.lunar.dev/post/agent-harness-engineering) — Lunar.dev
+- [NVIDIA Agent Harness Guidelines](https://nvidia.github.io/elements/docs/internal/guidelines/agent-harness/) — NVIDIA Elements
+- [Agent Harness whitepaper](https://contextosai.com/blog/agent-harness-whitepaper) — ContextOS
+
+## Related projects on this site
+
+[Multi-Stage RAG Assistant](../rag-capstone-graduation-project/) · [Modern LLM Fine-Tuning Lab](../modern-llm-finetuning-lab/) · [Prompt Engineering Lab](../prompt-engineering-lab/) · [Advanced RAG Methods Lab](../rag-methods-comparison-lab/) · [Local LLM Fine-Tuning Lab](../local-llm-finetuning-lab/)
+
+---
+
+*Built by **Sophal Chan** — [sophalchan.github.io](https://sophalchan.github.io/)*

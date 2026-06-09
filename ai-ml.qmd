@@ -4,6 +4,7 @@ description: "RAG assistants, LLM fine-tuning, prompt engineering, and applied m
 listing:
   id: ai-ml-listing
   contents:
+    - posts/harness-engineering-ai
     - posts/rag-capstone-graduation-project
     - posts/modern-llm-finetuning-lab
     - posts/local-llm-finetuning-lab

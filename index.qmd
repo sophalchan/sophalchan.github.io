@@ -39,7 +39,7 @@ Certified CompTIA CySA+ professional at the intersection of **Cybersecurity**, *
 ## Featured Projects {#featured-projects}
 
 ::: {.callout-tip appearance="simple"}
-**Latest AI/ML:** [Modern LLM Fine-Tuning Lab](posts/modern-llm-finetuning-lab/) — QLoRA + ORPO/DoRA on 8 GB GPU, dual Gradio UIs, full architecture guide · [Multi-Stage RAG Assistant](posts/rag-capstone-graduation-project/) — compare naive, advanced, and graph RAG. Click **AI / ML** above to filter all projects.
+**Latest AI/ML:** [Harness Engineering in AI Engineering](posts/harness-engineering-ai/) — Agent = Model + Harness, guides, sensors, step-by-step playbook · [Modern LLM Fine-Tuning Lab](posts/modern-llm-finetuning-lab/) · [Multi-Stage RAG Assistant](posts/rag-capstone-graduation-project/). Click **AI / ML** above to filter all projects.
 :::
 
 Browse **cybersecurity**, **AI/ML**, and **data science** work below—including **21 projects** in the [**Data Science Projects Collection**](posts/data-science-collection/) from [PaulChanCyber/Data-Science-Project-](https://github.com/PaulChanCyber/Data-Science-Project-).
